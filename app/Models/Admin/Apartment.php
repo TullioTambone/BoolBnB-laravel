@@ -14,6 +14,22 @@ class Apartment extends Model
 
     protected $table = 'apartments';
 
+    protected $fillable = [
+        'user_id',
+        'title',
+        'rooms',
+        'bedrooms',
+        'bathrooms',
+        'square_meters',
+        'address',
+        'visibility',
+        'slug',
+        'longitude',
+        'latitude',
+        'description',
+        'cover'
+    ];
+
 
     //collegamento one to many con Model User
     public function user(){
