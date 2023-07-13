@@ -67,9 +67,21 @@ class ApartmentController extends Controller
         // salvo nell'istanza apartment i dati compilati nel form dall'utente
         $new_apartment->fill($form_data);
         
+        
         //  salvo le informazioni
         $new_apartment->save();
-
+        
+        // controllo che in $request abbia le informazioni dell'input nel create(services) che mi manderà tramite array gli id della tabella 'services'
+        if($request->has('services')) {
+            
+            /* 
+                $new_apartment->services() :
+                    interrogo la funzione di relazione scritta nel modello Apartment
+                ->attach($request->services) :
+                    con la funzione attach() creiamo tanti record quanti sono i collegamenti nella tabella pivot
+            */
+            $new_apartment->services()->attach($request->services);
+        }
         // reindirizzamento alla pagina index
         return redirect()->route('admin.index');
     }
