@@ -32,12 +32,21 @@ class Apartment extends Model
         'longitude',
         'latitude',
         'description',
-        'cover'
+        'cover',
+        'price'
     ];
 
 
     //collegamento one to many con Model User
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function services() {
+        return $this->belongsToMany(Service::class);
+    }
+
+    public function images() {
+        return $this->hasMany(Image::class);
     }
 }

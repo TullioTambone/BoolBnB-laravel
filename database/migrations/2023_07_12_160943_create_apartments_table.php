@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->text('description');
+            $table->decimal('price', 8,2);
             $table->string('cover')->nullable();
             $table->timestamps();
         });

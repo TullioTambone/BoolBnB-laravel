@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Apartment;
+use App\Models\Admin\Service;
 use Illuminate\Http\Request;
 
 
@@ -31,8 +32,10 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.create');
+    {   
+        $services = Service::all();
+        
+        return view('admin.create', compact('services'));
     }
 
     /**
@@ -43,7 +46,6 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-
       
         // salvataggio campi form
         $form_data = $request->all();
