@@ -43,7 +43,6 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-
       
         // salvataggio campi form
         $form_data = $request->all();
