@@ -4,6 +4,7 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 //import del Model per percorso differente 
 use App\Models\User;
@@ -11,6 +12,10 @@ use App\Models\User;
 class Apartment extends Model
 {
     use HasFactory;
+
+    public static function toSlug($title) {
+        return Str::slug($title, '-');
+    }
 
     protected $table = 'apartments';
 
