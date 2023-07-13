@@ -6,7 +6,7 @@
     
         <div class="row justify-content-center">
             <div class="col-7">
-                <form action="{{ route('apartment.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     @csrf
 
@@ -62,9 +62,9 @@
                         @enderror
                     </div>
                     <div>
-                        <input type="radio" name="visibility" value="true">
+                        <input type="radio" name="visibility" value="1">
                         <label for="visibility">yes</label><br>
-                        <input type="radio" name="visibility" value="false" selected >
+                        <input type="radio" name="visibility" value="0" selected >
                         <label for="visibility">no</label><br>
                       
                     </div>
@@ -76,7 +76,9 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                
+                    
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
                     <button class="btn btn-success" type="submit">Salva</button>
                 </form>
             </div>
