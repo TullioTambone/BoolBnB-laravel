@@ -54,10 +54,6 @@ return  [
         'icon' => 'fa-soap'
     ],
     [
-        'name' => 'Asciugacapelli',
-        'icon' => 'fa-raygun'
-    ],
-    [
         'name' => 'Asciugatrice',
         'icon' => 'fa-shirt'
     ],

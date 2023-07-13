@@ -76,6 +76,26 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    <div class="mb-3">
+                        @foreach ($services as $element)
+                        <div>
+                            <label for="check-service-{{ $element->id }}" class="form-label">
+                                {{ $element->name }}
+                                <i class="fa-solid {{ $element->icon }}"></i>
+                            </label>
+                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}">
+                        </div>
+                        @endforeach
+                    </div>
+
+                    <div>
+                        <label for="price">Prezzo</label>
+                        <input class="form-control" @error('price') is-invalid  @enderror type="number" id="price" name="price">
+                        @error('price')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                     
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 

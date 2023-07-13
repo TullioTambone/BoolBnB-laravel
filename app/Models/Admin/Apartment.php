@@ -32,7 +32,8 @@ class Apartment extends Model
         'longitude',
         'latitude',
         'description',
-        'cover'
+        'cover',
+        'price'
     ];
 
 
