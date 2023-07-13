@@ -52,6 +52,6 @@ class User extends Authenticatable
 
     //collegamento one to many con Model Apartment 
     public function apartments(){
-        return $this->belongsTo(Apartment::class);
+        return $this->hasMany(Apartment::class);
     }
 }

@@ -33,6 +33,6 @@ class Apartment extends Model
 
     //collegamento one to many con Model User
     public function user(){
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }
