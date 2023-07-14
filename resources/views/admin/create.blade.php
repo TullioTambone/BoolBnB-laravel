@@ -33,6 +33,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div>
                         <label for="bedrooms">bedrooms</label>
                         <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0">
@@ -40,6 +41,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div>
                         <label for="bathrooms">bathrooms</label>
                         <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0">
@@ -47,6 +49,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div>
                         <label for="square_meters">square_meters</label>
                         <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0">
@@ -54,6 +57,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div>
                         <label for="address">address</label>
                         <input class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address">
@@ -61,13 +65,14 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div>
                         <input type="radio" name="visibility" value="1">
                         <label for="visibility">yes</label><br>
                         <input type="radio" name="visibility" value="0" selected >
                         <label for="visibility">no</label><br>
-                      
                     </div>
+
                     <div class="mb-3">
                         <label for="cover" class="form-label">immagine principale dell'appartamento</label>
                         <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
@@ -79,10 +84,10 @@
 
                     {{-- per inserire più immagini alla volta --}}
                     <div class="mb-3">
-                        <label for="cover" class="form-label">inserire l'album immagini</label>
-                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="images[]" multiple>
+                        <label for="url" class="form-label">inserire l'album immagini</label>
+                        <input type="file" class="form-control @error('url') is-invalid @enderror" id="url" name="images[]" multiple>
                         {{-- error --}}
-                        @error('cover')
+                        @error('url')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
