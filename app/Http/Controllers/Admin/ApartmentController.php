@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Apartment;
 use App\Models\Admin\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class ApartmentController extends Controller
@@ -64,9 +65,13 @@ class ApartmentController extends Controller
             $form_data['visibility'] = 0;
         }
 
+        if ($request->hasFile('cover')) {
+            $path = Storage::disk('public')->put('apartment_cover_img', $request->cover);
+            $form_data['cover'] = $path;
+        }
+        
         // salvo nell'istanza apartment i dati compilati nel form dall'utente
         $new_apartment->fill($form_data);
-        
         
         //  salvo le informazioni
         $new_apartment->save();

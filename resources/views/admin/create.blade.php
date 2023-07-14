@@ -28,28 +28,28 @@
 
                     <div>
                         <label for="rooms">rooms</label>
-                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms">
+                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0">
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div>
                         <label for="bedrooms">bedrooms</label>
-                        <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms">
+                        <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0">
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div>
                         <label for="bathrooms">bathrooms</label>
-                        <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms">
+                        <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0">
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div>
                         <label for="square_meters">square_meters</label>
-                        <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters">
+                        <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0">
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -69,8 +69,18 @@
                       
                     </div>
                     <div class="mb-3">
-                        <label for="cover" class="form-label">cover</label>
+                        <label for="cover" class="form-label">immagine principale dell'appartamento</label>
                         <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
+                        {{-- error --}}
+                        @error('cover')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- per inserire più immagini alla volta --}}
+                    <div class="mb-3">
+                        <label for="cover" class="form-label">inserire l'album immagini</label>
+                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="images[]" multiple>
                         {{-- error --}}
                         @error('cover')
                             <div class="alert alert-danger">{{ $message }}</div>
