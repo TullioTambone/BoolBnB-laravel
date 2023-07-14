@@ -2,17 +2,19 @@
 
 @section('content')
 <div class="container">
-    <h2>create apartment</h2>
+    <h2>edit apartment</h2>
     
         <div class="row justify-content-center">
             <div class="col-7">
-                <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.update',  ['admin' => $singolo_apartment->id]) }}" method="POST" enctype="multipart/form-data">
                     
                     @csrf
+                    {{-- token --}}
+                    @method('PUT')
 
                     <div>
                         <label for="title">Titolo</label>
-                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title">
+                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -20,7 +22,7 @@
                     
                     <div>
                         <label for="description">Content</label>
-                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="10"></textarea>
+                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="10" value="{{old('description') ?? $singolo_apartment->description }}"></textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -28,7 +30,7 @@
 
                     <div>
                         <label for="rooms">rooms</label>
-                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0">
+                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -36,7 +38,7 @@
 
                     <div>
                         <label for="bedrooms">bedrooms</label>
-                        <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0">
+                        <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -44,7 +46,7 @@
 
                     <div>
                         <label for="bathrooms">bathrooms</label>
-                        <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0">
+                        <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -52,7 +54,7 @@
 
                     <div>
                         <label for="square_meters">square_meters</label>
-                        <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0">
+                        <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -60,16 +62,16 @@
 
                     <div>
                         <label for="address">address</label>
-                        <input class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address">
+                        <input class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
 
                     <div>
-                        <input type="radio" name="visibility" value="1">
-                        <label for="visibility">yes</label><br>
-                        <input type="radio" name="visibility" value="0" checked>
+                        <input type="radio" name="visibility" value="1" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
+                        <label for="visibility" >yes</label><br>
+                        <input type="radio" name="visibility" value="0" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
                         <label for="visibility">no</label><br>
                     </div>
 
@@ -99,14 +101,20 @@
                                 {{ $element->name }}
                                 <i class="fa-solid {{ $element->icon }}"></i>
                             </label>
-                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}">
+
+
+                            @if( $errors->any())
+                                <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ in_array($element->id, old('services, []')) ? "checked" : '' }}>
+                            @else
+                                <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $singolo_apartment->services->contains($element) ? "checked" : '' }}>  
+                            @endif
                         </div>
                         @endforeach
                     </div>
 
                     <div>
                         <label for="price">Prezzo</label>
-                        <input class="form-control" @error('price') is-invalid  @enderror type="number" id="price" name="price">
+                        <input class="form-control" @error('price') is-invalid  @enderror type="number" id="price" name="price" value="{{old('price') ?? $singolo_apartment->price }}">
                         @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

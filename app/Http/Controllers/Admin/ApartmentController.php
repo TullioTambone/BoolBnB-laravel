@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Apartment;
+use App\Models\Admin\Image;
+
 use App\Models\Admin\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Validator;
 
 class ApartmentController extends Controller
 {
@@ -35,7 +37,8 @@ class ApartmentController extends Controller
     public function create()
     {   
         $services = Service::all();
-        
+        $images = Image::all();
+
         return view('admin.create', compact('services'));
     }
 
@@ -47,7 +50,14 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-      
+        $validator = Validator::make(
+            $request->all(), 
+            [
+            'cover' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'array', // Aggiornamento qui
+            'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // E qui
+            ]
+        );
         // salvataggio campi form
         $form_data = $request->all();
         
@@ -77,7 +87,21 @@ class ApartmentController extends Controller
         
         //  salvo le informazioni
         $new_apartment->save();
-        
+
+        // Controllo e salvataggio delle immagini aggiuntive
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                if ($image && $image->isValid()) {
+                    $path = Storage::disk('public')->put('images', $image);
+    
+                    $new_image = new Image();
+                    $new_image->url = $path;
+                    $new_image->apartment_id = $new_apartment->id;
+                    $new_image->save();
+                }
+            }
+        }
+            
         // controllo che in $request abbia le informazioni dell'input nel create(services) che mi manderà tramite array gli id della tabella 'services'
         if($request->has('services')) {
             
@@ -101,7 +125,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -110,9 +134,11 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment $apartment)
+    public function edit($id)
     {
-        //
+        $singolo_apartment = Apartment::findOrFail($id);
+        $services = Service::all();
+        return view('admin.edit', compact('singolo_apartment', 'services'));
     }
 
     /**
@@ -124,7 +150,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        //
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -133,8 +159,17 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Apartment $apartment)
+    public function destroy($id)
     {
-        //
+        $apartment = Apartment::findOrFail($id);
+        
+        if($apartment->cover) {
+            Storage::delete($apartment->cover);
+        }
+
+        $apartment->services()->sync([]);
+        
+        $apartment->delete();
+        return redirect()->route('admin.index');
     }
 }
