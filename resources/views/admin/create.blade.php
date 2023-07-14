@@ -69,7 +69,7 @@
                     <div>
                         <input type="radio" name="visibility" value="1">
                         <label for="visibility">yes</label><br>
-                        <input type="radio" name="visibility" value="0" selected >
+                        <input type="radio" name="visibility" value="0" checked>
                         <label for="visibility">no</label><br>
                     </div>
 
