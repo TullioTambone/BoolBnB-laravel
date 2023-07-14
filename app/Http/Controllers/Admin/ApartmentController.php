@@ -59,12 +59,14 @@ class ApartmentController extends Controller
         $slug = Apartment::toSlug($request->title);
         $form_data['slug'] = $slug;
 
+        //condizione per passare true o false come numeri poiché mysql accetta per valori boolean 0 e 1 e non stringhe
         if($request->has('visibility') == 'true'){
             $form_data['visibility'] = 1;
         }else {
             $form_data['visibility'] = 0;
         }
 
+        // controllo e salvataggio delle immagini di copertina
         if ($request->hasFile('cover')) {
             $path = Storage::disk('public')->put('apartment_cover_img', $request->cover);
             $form_data['cover'] = $path;
