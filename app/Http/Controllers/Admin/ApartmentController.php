@@ -10,9 +10,11 @@ use App\Models\Admin\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Http;
 
 class ApartmentController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -100,6 +102,13 @@ class ApartmentController extends Controller
             $path = Storage::disk('public')->put('apartment_cover_img', $request->cover);
             $form_data['cover'] = $path;
         }
+
+        $latitude = $request->input('latitude');
+        $longitude = $request->input('longitude');
+
+        dd($latitude, $longitude);
+        $form_data['latitude'] = $latitude;
+        $form_data['longitude'] = $longitude;
         
         // salvo nell'istanza apartment i dati compilati nel form dall'utente
         $new_apartment->fill($form_data);

@@ -19,6 +19,7 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+    @vite(['resources/js/tom.js'])
 </head>
 
 <body>
@@ -93,10 +94,13 @@
             </div>
         </nav>
 
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
         <main class="">
             @yield('content')
         </main>
     </div>
+
 </body>
 
 </html>

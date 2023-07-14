@@ -5,6 +5,7 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 
 //import del Model per percorso differente 
 use App\Models\User;
@@ -49,4 +50,6 @@ class Apartment extends Model
     public function images() {
         return $this->hasMany(Image::class);
     }
+    
+    
 }

@@ -6,7 +6,7 @@
     
         <div class="row justify-content-center">
             <div class="col-7">
-                <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form-create" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     @csrf
 
@@ -113,6 +113,8 @@
                     </div>
                     
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="latitude" id="latitude" value="">
+                    <input type="hidden" name="longitude" id="longitude" value="">
 
                     <button class="btn btn-success" type="submit">Salva</button>
                 </form>
