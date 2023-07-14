@@ -125,7 +125,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -134,9 +134,11 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment $apartment)
+    public function edit($id)
     {
-        //
+        $singolo_apartment = Apartment::findOrFail($id);
+        $services = Service::all();
+        return view('admin.edit', compact('singolo_apartment', 'services'));
     }
 
     /**
@@ -148,7 +150,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        //
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -157,8 +159,17 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Apartment $apartment)
+    public function destroy($id)
     {
-        //
+        $apartment = Apartment::findOrFail($id);
+        
+        if($apartment->cover) {
+            Storage::delete($apartment->cover);
+        }
+
+        $apartment->services()->sync([]);
+        
+        $apartment->delete();
+        return redirect()->route('admin.index');
     }
 }
