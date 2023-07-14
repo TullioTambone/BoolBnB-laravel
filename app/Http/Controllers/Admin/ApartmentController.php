@@ -39,7 +39,7 @@ class ApartmentController extends Controller
         $services = Service::all();
         $images = Image::all();
 
-        return view('admin.create', compact('services'));
+        return view('admin.create', compact('services', 'images'));
     }
 
     /**
@@ -50,12 +50,31 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(), 
+
+        $request->validate(
             [
-            'cover' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'images.*' => 'array', // Aggiornamento qui
-            'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // E qui
+                'title' => 'required',
+                'rooms' => 'required',
+                'bedrooms' => 'required',
+                'bathrooms' => 'required',
+                'square_meters' => 'required',
+                'address' => 'required',
+                'description' => 'required',
+                'price' => 'required',
+                'description' => 'required',
+                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+                'images.*' => 'array', // Aggiornamento
+                'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+            ],
+            [
+                'title.required' => 'il titolo è obbligatorio',
+                'rooms.required' => 'inserire il numero di stanze totali',
+                'bedrooms.required' => 'inserire il numero di stanze da letto',
+                'bathrooms.required' => 'inserire il numero di bagni',
+                'square_meters.required' => 'metri quadri richiesti',
+                'address.required' => 'inserire la via',
+                'description.required' => 'la descrizione è obbligatoria',
+                'price.required' => 'inserire un prezzo',
             ]
         );
         // salvataggio campi form
@@ -148,8 +167,69 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Apartment $apartment)
+    public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'title' => 'required',
+                'rooms' => 'required',
+                'bedrooms' => 'required',
+                'bathrooms' => 'required',
+                'square_meters' => 'required',
+                'address' => 'required',
+                'description' => 'required',
+                'price' => 'required',
+                'description' => 'required',
+                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+                'images.*' => 'array', // Aggiornamento
+                'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+            ],
+            [
+                'title.required' => 'il titolo è obbligatorio',
+                'rooms.required' => 'inserire il numero di stanze totali',
+                'bedrooms.required' => 'inserire il numero di stanze da letto',
+                'bathrooms.required' => 'inserire il numero di bagni',
+                'square_meters.required' => 'metri quadri richiesti',
+                'address.required' => 'inserire la via',
+                'description.required' => 'la descrizione è obbligatoria',
+                'price.required' => 'inserire un prezzo',
+                'cover.max' => 'formato troppo grande, deve essere minore di 2MB',
+            ]
+        );
+
+        $apartment = Apartment::findOrFail($id);
+        // chiamata all di informazioni
+        $form_data = $request->all();
+
+        //se nella richiesta è presente il file cover
+        if ($request->hasfile('cover')) {
+            
+            //se il file esiste
+            if( $form_data['cover'] ){
+                //cancellalo
+                Storage::delete( $apartment->cover );
+            }
+
+            if ($form_data['cover']->isValid()) {
+                //aggiorna il file all'interno della cartella dedicata per le immagini cover
+                $path = Storage::disk('public')->put('apartment_cover_img', $request->cover);
+        
+                $form_data['cover'] = $path; 
+            }
+        }
+        //aggiorna le informazioni
+        $apartment->update($form_data);
+
+        //gestione e aggiornamento delle checkbox
+        // se esistono gli id
+        if($request->has('services')) {
+            $apartment->services()->sync($request->services);
+
+        // altrimenti va svuotato
+        } else {
+            $apartment->services()->sync([]);
+        }
+
         return redirect()->route('admin.index');
     }
 

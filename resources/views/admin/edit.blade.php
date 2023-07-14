@@ -6,6 +6,15 @@
     
         <div class="row justify-content-center">
             <div class="col-7">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('admin.update',  ['admin' => $singolo_apartment->id]) }}" method="POST" enctype="multipart/form-data">
                     
                     @csrf
@@ -22,7 +31,7 @@
                     
                     <div>
                         <label for="description">Content</label>
-                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="10" value="{{old('description') ?? $singolo_apartment->description }}"></textarea>
+                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="10" >{{old('description') ?? $singolo_apartment->description }}</textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -73,6 +82,10 @@
                         <label for="visibility" >yes</label><br>
                         <input type="radio" name="visibility" value="0" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
                         <label for="visibility">no</label><br>
+
+                        @error('visibility')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
@@ -82,6 +95,8 @@
                         @error('cover')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
+
+                        <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $singolo_apartment->cover)}}" alt="">
                     </div>
 
                     {{-- per inserire più immagini alla volta --}}
@@ -101,13 +116,13 @@
                                 {{ $element->name }}
                                 <i class="fa-solid {{ $element->icon }}"></i>
                             </label>
+                            
+                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $singolo_apartment->services->contains($element) ? "checked" : '' }}> 
+                             
+                            @error('services')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
 
-
-                            @if( $errors->any())
-                                <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ in_array($element->id, old('services, []')) ? "checked" : '' }}>
-                            @else
-                                <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $singolo_apartment->services->contains($element) ? "checked" : '' }}>  
-                            @endif
                         </div>
                         @endforeach
                     </div>
