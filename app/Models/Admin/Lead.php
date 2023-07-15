@@ -5,15 +5,16 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Lead extends Model
 {
     use HasFactory;
 
-    protected $table = 'images';
+    protected $table = 'leads';
 
     protected $fillable = [
-        'url',
-        'apartment_id'
+        'name',
+        'email',
+        'message'
     ];
 
     // collegamento many to one con tabella Apartments
