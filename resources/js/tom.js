@@ -31,7 +31,8 @@ form.addEventListener('submit', async (e) => {
     ttServices.services.geocode({
         batchMode: 'async',
         key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
-        query: address
+        query: address,
+        countrySet: 'IT'
         // language: 'it-IT',
     }).then(
         function (response) {
@@ -44,7 +45,7 @@ form.addEventListener('submit', async (e) => {
             if (results && results.length > 0) {
                 // Ottenimento delle coordinate di latitudine e longitudine
                 const latitude = results[0].position.lat;
-                const longitude = results[0].position.lon;
+                const longitude = results[0].position.lng;
         
                 // Assegna le coordinate ai campi nascosti nel form
                 document.querySelector('#latitude').value = latitude;
@@ -53,7 +54,7 @@ form.addEventListener('submit', async (e) => {
                 console.log(latitude,longitude)
         
                 // Invia il form
-                // form.submit();
+                form.submit();
             } else {
                 console.error('Nessun risultato trovato per l\'indirizzo fornito.');
                 // Puoi gestire l'errore come preferisci, ad esempio mostrando un messaggio di errore all'utente.
