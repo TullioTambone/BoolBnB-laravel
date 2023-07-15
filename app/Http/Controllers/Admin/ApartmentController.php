@@ -115,7 +115,7 @@ class ApartmentController extends Controller
         
         //  salvo le informazioni
         $new_apartment->save();
-
+        // dd($request->file('images'));
         // Controllo e salvataggio delle immagini aggiuntive
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -151,9 +151,18 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment)
+    public function show($id)
     {
-        return view('admin.show', compact('apartment'));
+
+        $apartment = Apartment::findOrFail($id);
+
+        // chiamata per i servizzi
+        $services = Service::all(); 
+
+        // chiamata per le img
+        $images = Image::where('apartment_id', '=', $id);
+
+        return view('admin.show', compact('apartment', 'services', 'images'));
     }
 
     /**
