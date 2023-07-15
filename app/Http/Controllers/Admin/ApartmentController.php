@@ -106,7 +106,7 @@ class ApartmentController extends Controller
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');
 
-        dd($latitude, $longitude);
+        // dd($latitude, $longitude);
         $form_data['latitude'] = $latitude;
         $form_data['longitude'] = $longitude;
         
