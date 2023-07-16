@@ -154,13 +154,7 @@ class ApartmentController extends Controller
 
         $apartment = Apartment::findOrFail($id);
 
-        // chiamata per i servizzi
-        $services = Service::all(); 
-
-        // chiamata per le img
-        $images = Image::where('apartment_id', '=', $id);
-
-        return view('admin.show', compact('apartment', 'services', 'images'));
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -219,7 +213,7 @@ class ApartmentController extends Controller
         if ($request->hasfile('cover')) {
             
             //se il file esiste
-            if( $form_data['cover'] ){
+            if( $apartment->cover ){
                 //cancellalo
                 Storage::delete( $apartment->cover );
             }
