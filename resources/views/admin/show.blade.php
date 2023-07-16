@@ -1,24 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container mt-4">
 
     <div class="row">
 
-        <div class="col-12 col-md-6 col-lg-6">
+        <div class="col-12 col-md-6 col-lg-6 text-center">
 
             {{-- cover --}}
-            <img style="width:300px" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
-
-            <div class="row">
+            @if ($apartment->cover)
+                <div>
+                    <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
+                </div>
+                
+            @else
+                <div style="width: 300px; height: 300px">
+                    <h3 style="color:lightgray">NON CI SONO IMMAGINI</h3>
+                </div>
+            @endif
+            <div class="row justify-content-center mt-3">
 
                 {{-- per prendere le immagini usiamo la relazione con la tabella images --}}
                 @if($apartment->images)
-                    @foreach($apartment->images as $elem)
-                        <div class="col-12 col-md-6 col-lg-4">
+                <div class="carousel slide col-12 col-md-8 col-lg-8" id="carouselExampleAutoplaying" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach($apartment->images as $index => $e)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ asset('storage/'. $e->url) }}" class="d-block w-100" alt="{{$e->id}}">
+                            </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                
+                        {{-- <div class=" p-0">
                             <img class="img-fluid" src="{{ asset('storage/'. $elem->url) }}" alt="">
-                        </div>
-                    @endforeach
+                        </div> --}}
                 @endif
             </div>
         </div>
@@ -53,7 +77,7 @@
                     @endforeach
                 @endif
 
-                <div class="d-flex column-gap-5 mt-3">
+                <div class="d-flex column-gap-1 mt-2">
 
                     {{-- edit --}}
                     <a href="{{route('admin.edit', $apartment)}}"
