@@ -94,7 +94,8 @@
             </div>
         </nav>
 
-    <div id="map" style="width: 100%; height: 400px;"></div>
+        {{-- map ( posizione provvisoria ) --}}
+        <div id="map" style="width: 100%; height: 200px;"></div>
 
         <main class="">
             @yield('content')

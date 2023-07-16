@@ -6,14 +6,28 @@
     
         <div class="row justify-content-center">
             <div class="col-7">
+
+                {{-- errors list --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                {{-- form create --}}
                 <form id="form-create" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
+                    {{-- token --}}
                     @csrf
 
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo</label>
-                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title">
+                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{ old('title') }}">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -22,7 +36,7 @@
                     {{-- description --}}
                     <div>
                         <label for="description">Content</label>
-                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="10"></textarea>
+                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="5"></textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

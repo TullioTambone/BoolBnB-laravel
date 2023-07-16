@@ -64,9 +64,7 @@ class ApartmentController extends Controller
                 'description' => 'required',
                 'price' => 'required',
                 'description' => 'required',
-                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
-                'images.*' => 'array', // Aggiornamento
-                'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
             ],
             [
                 'title.required' => 'il titolo è obbligatorio',
@@ -198,9 +196,7 @@ class ApartmentController extends Controller
                 'description' => 'required',
                 'price' => 'required',
                 'description' => 'required',
-                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
-                'images.*' => 'array', // Aggiornamento
-                'images.*.image' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
             ],
             [
                 'title.required' => 'il titolo è obbligatorio',
@@ -235,10 +231,18 @@ class ApartmentController extends Controller
                 $form_data['cover'] = $path; 
             }
         }
+
+        $latitude = $request->input('latitude');
+        $longitude = $request->input('longitude');
+
+        // dd($latitude, $longitude);
+        $form_data['latitude'] = $latitude;
+        $form_data['longitude'] = $longitude;
+
         //aggiorna le informazioni
         $apartment->update($form_data);
 
-        //gestione e aggiornamento delle checkbox
+        // gestione e aggiornamento delle checkbox
         // se esistono gli id
         if($request->has('services')) {
             $apartment->services()->sync($request->services);
@@ -246,6 +250,24 @@ class ApartmentController extends Controller
         // altrimenti va svuotato
         } else {
             $apartment->services()->sync([]);
+        }
+
+        if ($request->hasFile('images')) {
+
+            // la funzione delete() rimuoverà tutte le immagini associate all'appartamento prima di salvare le nuove immagini
+            $apartment->images()->delete();
+
+            foreach ($request->file('images') as $image) {
+
+                if ($image && $image->isValid()) {
+                    $path = Storage::disk('public')->put('images', $image);
+    
+                    $new_image = new Image();
+                    $new_image->url = $path;
+                    $new_image->apartment_id = $id;
+                    $new_image->save();
+                }
+            }
         }
 
         return redirect()->route('admin.index');
@@ -266,6 +288,8 @@ class ApartmentController extends Controller
         }
 
         $apartment->services()->sync([]);
+
+        $apartment->images()->delete();
         
         $apartment->delete();
         return redirect()->route('admin.index');
