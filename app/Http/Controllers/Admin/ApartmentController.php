@@ -3,14 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Apartment;
-use App\Models\Admin\Image;
 
-use App\Models\Admin\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
+
+// models
+use App\Models\Admin\Apartment;
+use App\Models\Admin\Image;
+use App\Models\Admin\Service;
+
+// requests
+use App\Http\Requests\StoreApartmentRequest;
+use App\Http\Requests\UpdateApartmentRequest;
 
 class ApartmentController extends Controller
 {
@@ -50,35 +56,10 @@ class ApartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreApartmentRequest $request)
     {
-
-        $request->validate(
-            [
-                'title' => 'required',
-                'rooms' => 'required',
-                'bedrooms' => 'required',
-                'bathrooms' => 'required',
-                'square_meters' => 'required',
-                'address' => 'required',
-                'description' => 'required',
-                'price' => 'required',
-                'description' => 'required',
-                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
-            ],
-            [
-                'title.required' => 'il titolo è obbligatorio',
-                'rooms.required' => 'inserire il numero di stanze totali',
-                'bedrooms.required' => 'inserire il numero di stanze da letto',
-                'bathrooms.required' => 'inserire il numero di bagni',
-                'square_meters.required' => 'metri quadri richiesti',
-                'address.required' => 'inserire la via',
-                'description.required' => 'la descrizione è obbligatoria',
-                'price.required' => 'inserire un prezzo',
-            ]
-        );
-        // salvataggio campi form
-        $form_data = $request->all();
+        // salvataggio campi form passati dalla validazione di StoreApartmentRequest
+        $form_data = $request->validated();
         
         // creazione nuova istanza dalla classe padre 
         $new_apartment = new Apartment();
@@ -154,13 +135,7 @@ class ApartmentController extends Controller
 
         $apartment = Apartment::findOrFail($id);
 
-        // chiamata per i servizzi
-        $services = Service::all(); 
-
-        // chiamata per le img
-        $images = Image::where('apartment_id', '=', $id);
-
-        return view('admin.show', compact('apartment', 'services', 'images'));
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -183,43 +158,19 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateApartmentRequest $request, $id)
     {
-        $request->validate(
-            [
-                'title' => 'required',
-                'rooms' => 'required',
-                'bedrooms' => 'required',
-                'bathrooms' => 'required',
-                'square_meters' => 'required',
-                'address' => 'required',
-                'description' => 'required',
-                'price' => 'required',
-                'description' => 'required',
-                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
-            ],
-            [
-                'title.required' => 'il titolo è obbligatorio',
-                'rooms.required' => 'inserire il numero di stanze totali',
-                'bedrooms.required' => 'inserire il numero di stanze da letto',
-                'bathrooms.required' => 'inserire il numero di bagni',
-                'square_meters.required' => 'metri quadri richiesti',
-                'address.required' => 'inserire la via',
-                'description.required' => 'la descrizione è obbligatoria',
-                'price.required' => 'inserire un prezzo',
-                'cover.max' => 'formato troppo grande, deve essere minore di 2MB',
-            ]
-        );
 
         $apartment = Apartment::findOrFail($id);
-        // chiamata all di informazioni
-        $form_data = $request->all();
+
+        // salvataggio campi form passati dalla validazione di UpdateApartmentRequest
+        $form_data = $request->validated();
 
         //se nella richiesta è presente il file cover
         if ($request->hasfile('cover')) {
             
-            //se il file esiste
-            if( $form_data['cover'] ){
+            // solo se il file esiste dentro la tabella 'apartments'
+            if( $apartment->cover ){
                 //cancellalo
                 Storage::delete( $apartment->cover );
             }
