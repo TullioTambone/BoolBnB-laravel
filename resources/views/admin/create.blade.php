@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h2>create apartment</h2>
     
         <div class="row justify-content-center">
