@@ -5,12 +5,12 @@ import ttServices from "@tomtom-international/web-sdk-services"
 
 console.log('ciaone');
 
-tt.map({
-    key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
-    center: [0, 0],
-    container: "map",
-    zoom: '2'
-});
+// tt.map({
+//     key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
+//     center: [0, 0],
+//     container: "map",
+//     zoom: '2'
+// });
 
 // Ottenimento del riferimento al form
 const form = document.querySelector('#form-create');
