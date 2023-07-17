@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
-            $table->text('description');
-            $table->decimal('price', 8,2);
+            $table->text('description')->nullable();
+            $table->decimal('price', 8,2)->nullable();
             $table->string('cover')->nullable();
             $table->timestamps();
         });

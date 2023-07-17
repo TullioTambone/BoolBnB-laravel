@@ -2,6 +2,7 @@
 import tt from "@tomtom-international/web-sdk-maps";
 
 import ttServices from "@tomtom-international/web-sdk-services"
+import { includes } from "lodash";
 
 console.log('ciaone');
 
@@ -15,9 +16,9 @@ console.log('ciaone');
 // Ottenimento del riferimento al form
 const form = document.querySelector('#form-create');
 console.log(form);
-
+const formAddress = document.querySelector('#address');
 // Aggiunta di un gestore di eventi al submit del form
-form.addEventListener('submit', async (e) => {
+formAddress.addEventListener('keyup', async (e) => {
     e.preventDefault(); // Previeni il comportamento di default del submit
 
     // Ottenimento dell'indirizzo dal campo input
@@ -36,7 +37,14 @@ form.addEventListener('submit', async (e) => {
             function (response) {
                 
                 const results = response.results;
-                console.log(results )
+                console.log(results)
+
+                
+
+                results.forEach((elem) => {
+                    document.getElementById('data').innerHTML += `<option value="${elem.address.freeformAddress}">${elem.address.freeformAddress}</option>`
+                })
+                
     
     
                 // Verifica se ci sono risultati validi
@@ -50,9 +58,14 @@ form.addEventListener('submit', async (e) => {
                     document.querySelector('#longitude').value = longitude;
             
                     console.log(latitude,longitude)
-            
+                
+                    
                     // Invia il form
-                    form.submit();
+                    form.addEventListener('submit', (e) =>{
+                        // e.preventDefault();
+                        form.submit();
+                    })
+                    // form.submit();
                 } else {
                     console.error('Nessun risultato trovato per l\'indirizzo fornito.');
                 }

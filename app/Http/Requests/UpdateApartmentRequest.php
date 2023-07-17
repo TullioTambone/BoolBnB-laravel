@@ -31,8 +31,6 @@ class UpdateApartmentRequest extends FormRequest
             'square_meters' => 'required',
             'address' => 'required',
             'description' => 'required',
-            'price' => 'required',
-            'description' => 'required',
             'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
         ];
     }
@@ -46,8 +44,6 @@ class UpdateApartmentRequest extends FormRequest
             'bathrooms.required' => 'Inserire il numero di bagni',
             'square_meters.required' => 'Metri quadri richiesti',
             'address.required' => "Inserire l'indirizzo",
-            'description.required' => 'La descrizione è obbligatoria',
-            'price.required' => 'Inserire un prezzo',
         ];
     }
 }

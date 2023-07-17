@@ -28,7 +28,7 @@
 
                     {{-- title --}}
                     <div>
-                        <label for="title">Titolo</label>
+                        <label for="title">Titolo *</label>
                         <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -37,16 +37,13 @@
                     
                     {{-- description --}}
                     <div>
-                        <label for="description">Content</label>
-                        <textarea class="form-control" @error('description') is-invalid  @enderror name="description" id="description" rows="5" >{{old('description') ?? $singolo_apartment->description }}</textarea>
-                        @error('description')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                        <label for="description">Descrizione</label>
+                        <textarea class="form-control"  name="description" id="description" rows="5" >{{old('description') ?? $singolo_apartment->description }}</textarea>
                     </div>
 
                     {{-- rooms --}}
                     <div>
-                        <label for="rooms">rooms</label>
+                        <label for="rooms">Stanze *</label>
                         <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -55,7 +52,7 @@
 
                     {{-- bedrooms --}}
                     <div>
-                        <label for="bedrooms">bedrooms</label>
+                        <label for="bedrooms">Camera da letto *</label>
                         <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -64,7 +61,7 @@
 
                     {{-- bathrooms --}}
                     <div>
-                        <label for="bathrooms">bathrooms</label>
+                        <label for="bathrooms">Bagni *</label>
                         <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -73,7 +70,7 @@
 
                     {{-- square meters --}}
                     <div>
-                        <label for="square_meters">square_meters</label>
+                        <label for="square_meters">Metri Quadrati *</label>
                         <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -82,7 +79,7 @@
 
                     {{-- address --}}
                     <div>
-                        <label for="address">address</label>
+                        <label for="address">Indirizzo *</label>
                         <input class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -91,7 +88,7 @@
 
                     {{-- visibility --}}
                     <div>
-                        <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento?</label>
+                        <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento? *</label>
                         <input type="radio" name="visibility" value="1" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
                         <label for="visibility" >yes</label><br>
                         <input type="radio" name="visibility" value="0" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
@@ -104,7 +101,7 @@
 
                     {{-- cover --}}
                     <div class="mb-3">
-                        <label for="cover" class="form-label">immagine principale dell'appartamento</label>
+                        <label for="cover" class="form-label">Immagine principale dell'appartamento *</label>
                         <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
                         {{-- error --}}
                         @error('cover')
@@ -117,15 +114,12 @@
                     {{-- send more images togheter --}}
                     <div class="mb-3">
                         <label for="url" class="form-label">inserire l'album immagini</label>
-                        <input type="file" class="form-control @error('url') is-invalid @enderror" id="url" name="images[]" multiple>
-                        {{-- error --}}
-                        @error('url')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                        <input type="file" class="form-control" id="url" name="images[]" multiple>
                     </div>
 
                     {{-- services --}}
                     <div class="mb-3">
+                        <label for="services">Servizi *</label>
                         @foreach ($services as $element)
                         <div>
                             <label for="check-service-{{ $element->id }}" class="form-label">
@@ -146,10 +140,7 @@
                     {{-- price --}}
                     <div>
                         <label for="price">Prezzo</label>
-                        <input class="form-control" @error('price') is-invalid  @enderror type="number" id="price" name="price" value="{{old('price') ?? $singolo_apartment->price }}">
-                        @error('price')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                        <input class="form-control"  type="number" id="price" name="price" min="0" value="{{old('price') ?? $singolo_apartment->price }}">
                     </div>
                     
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
