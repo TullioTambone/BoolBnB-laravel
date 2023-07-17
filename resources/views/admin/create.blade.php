@@ -91,6 +91,7 @@
 
                     {{-- visibility --}}
                     <div>
+                        <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento?</label>
                         <input type="radio" name="visibility" value="1">
                         <label for="visibility">yes</label><br>
                         <input type="radio" name="visibility" value="0" checked>

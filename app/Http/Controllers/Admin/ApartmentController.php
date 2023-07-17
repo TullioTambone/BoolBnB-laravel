@@ -76,8 +76,11 @@ class ApartmentController extends Controller
 
         $new_apartment->user_id = auth()->user()->id;
 
-        $slug = Apartment::toSlug($request->title);
+        $slug = Apartment::toSlug($request->title, $new_apartment->user_id);
+        // dd($new_apartment->user_id);
         $form_data['slug'] = $slug;
+
+        
 
         //condizione per passare true o false come numeri poiché mysql accetta per valori boolean 0 e 1 e non stringhe
         if($request->has('visibility') == 'true'){
@@ -205,6 +208,15 @@ class ApartmentController extends Controller
                 $form_data['cover'] = $path; 
             }
         }
+
+        
+
+        
+            $slug = Apartment::toSlug($request->title, $request->id);
+            $form_data['slug'] = $slug;
+
+            
+        
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');

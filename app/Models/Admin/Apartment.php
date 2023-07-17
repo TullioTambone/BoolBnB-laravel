@@ -14,8 +14,8 @@ class Apartment extends Model
 {
     use HasFactory;
 
-    public static function toSlug($title) {
-        return Str::slug($title, '-');
+    public static function toSlug($title, $id) {
+        return Str::slug($title . $id, '-');
     }
 
     protected $table = 'apartments';

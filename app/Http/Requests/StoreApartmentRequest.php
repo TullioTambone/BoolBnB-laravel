@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreApartmentRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class StoreApartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => ['required', Rule::unique('apartments')->ignore($this->apartment)],
             'rooms' => 'required',
             'bedrooms' => 'required',
             'bathrooms' => 'required',
@@ -33,13 +34,15 @@ class StoreApartmentRequest extends FormRequest
             'description' => 'required',
             'price' => 'required',
             'description' => 'required',
-            'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000'
+            'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+            'services' => 'required'
         ];
     }
     
     public function messages()
     {
         return [
+            'title.unique' => 'il titolo è gia stato inserito',
             'title.required' => 'Il campo titolo è obbligatorio',
             'rooms.required' => 'Inserire il numero di stanze totali',
             'bedrooms.required' => 'Inserire il numero di stanze da letto',
@@ -48,6 +51,7 @@ class StoreApartmentRequest extends FormRequest
             'address.required' => "Inserire l'indirizzo",
             'description.required' => 'La descrizione è obbligatoria',
             'price.required' => 'Inserire un prezzo',
+            'services.required' => 'inserisci almeno un campo'
         ];
     }
 }
