@@ -21,7 +21,6 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
                     <p>
                         Benvenuto nella tua Dashboard personale! Questo è il centro di controllo dove puoi gestire tutti gli aspetti dei tuoi servizi su Airbnb. Qui potrai tenere traccia di tutte le informazioni importanti relative ai tuoi appartamenti e offerte.
                     </p>

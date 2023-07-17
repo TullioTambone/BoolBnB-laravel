@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h2>create apartment</h2>
+    <h2>Crea il tuo Appartamento</h2>
     
         <div class="row justify-content-center">
             <div class="col-7">
@@ -94,9 +94,9 @@
                     <div>
                         <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento? *</label>
                         <input type="radio" name="visibility" value="1">
-                        <label for="visibility">yes</label><br>
+                        <label for="visibility">Si</label><br>
                         <input type="radio" name="visibility" value="0" checked>
-                        <label for="visibility">no</label><br>
+                        <label for="visibility">No</label><br>
                     </div>
 
                     {{-- cover --}}

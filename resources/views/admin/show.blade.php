@@ -83,14 +83,14 @@
                     <a href="{{route('admin.edit', $apartment)}}"
                         class="btn btn-primary"
                     >
-                        edit
+                        Modifica
                     </a>
     
                     {{-- delete --}}
                     <form action="{{ route('admin.destroy', $apartment) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger" type="submit">elimina</button>
+                        <button class="btn btn-danger" type="submit">Elimina</button>
                     </form>
                 </div>
             </div>

@@ -90,9 +90,9 @@
                     <div>
                         <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento? *</label>
                         <input type="radio" name="visibility" value="1" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
-                        <label for="visibility" >yes</label><br>
+                        <label for="visibility" >Si</label><br>
                         <input type="radio" name="visibility" value="0" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
-                        <label for="visibility">no</label><br>
+                        <label for="visibility">No</label><br>
 
                         @error('visibility')
                             <div class="alert alert-danger">{{ $message }}</div>
