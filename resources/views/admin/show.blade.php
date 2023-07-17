@@ -87,7 +87,7 @@
                     </a>
     
                     {{-- delete --}}
-                    <form action="{{ route('admin.destroy', $apartment) }}" method="POST">
+                    <form action="{{ route('admin.destroy', $apartment) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit">elimina</button>
