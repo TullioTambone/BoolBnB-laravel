@@ -4,7 +4,7 @@
 <div class="jumbotron p-5 mb-4 bg-light rounded-3">
     <div class="container py-5">
         <h1 class="display-5 fw-bold">
-            Welcome to BoolBnB
+            Benvenuto su BoolBnB
         </h1>
         <div class="row">
             <p class="col-12 col-md-8 fs-4">
@@ -14,7 +14,7 @@
                 <h3>Inizia da qui</h3>
                 <div class="d-flex gap-2">
                     <a href="{{ route('login') }}" class="btn btn-primary btn-lg" type="button">Login</a>
-                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg" type="button">Register</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg" type="button">Registrazione</a>
                 </div>
             </div>
         </div>
