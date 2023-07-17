@@ -32,9 +32,15 @@ class ApartmentController extends Controller
         // $apartments = Apartment::All();
 
         $apartments = auth()->user()->apartments;
-        
 
+        // if ($apartments->user_id !== auth()->user()->id) {
+        //     abort(403, "Non hai il permesso di visualizzare questo appartamento.");
+        // } else {
+        //    
+        // }
         return view('admin.index', compact('apartments'));
+
+       
     }
 
     /**
@@ -44,10 +50,14 @@ class ApartmentController extends Controller
      */
     public function create()
     {   
+    
+
         $services = Service::all();
         $images = Image::all();
+     
+        return view('admin.create', compact('services', 'images', ));
 
-        return view('admin.create', compact('services', 'images'));
+        
     }
 
     /**
@@ -135,7 +145,14 @@ class ApartmentController extends Controller
 
         $apartment = Apartment::findOrFail($id);
 
-        return view('admin.show', compact('apartment'));
+            // Verifica se l'utente loggato è il proprietario dell'appartamento
+        if ($apartment->user_id !== auth()->user()->id) {
+            abort(403, "Non hai il permesso di visualizzare questo appartamento.");
+        } else {
+            return view('admin.show', compact('apartment'));
+        }
+
+        
     }
 
     /**
@@ -148,7 +165,13 @@ class ApartmentController extends Controller
     {
         $singolo_apartment = Apartment::findOrFail($id);
         $services = Service::all();
-        return view('admin.edit', compact('singolo_apartment', 'services'));
+
+        if ($apartment->user_id !== auth()->user()->id) {
+            abort(403, "Non hai il permesso di visualizzare questo appartamento.");
+        } else {
+            return view('admin.edit', compact('singolo_apartment', 'services'));
+        }
+        
     }
 
     /**

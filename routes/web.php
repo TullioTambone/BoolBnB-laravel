@@ -20,10 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard/{ param }', function ($param) {
     $user = auth()->user();
-    
-    return view('admin.dashboard', compact('user'));
+    $param = $user->name;
+
+    return view('admin.dashboard', compact('user', 'param'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
