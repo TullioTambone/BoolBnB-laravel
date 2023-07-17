@@ -166,7 +166,7 @@ class ApartmentController extends Controller
         $singolo_apartment = Apartment::findOrFail($id);
         $services = Service::all();
 
-        if ($apartment->user_id !== auth()->user()->id) {
+        if ( $singolo_apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
         } else {
             return view('admin.edit', compact('singolo_apartment', 'services'));
