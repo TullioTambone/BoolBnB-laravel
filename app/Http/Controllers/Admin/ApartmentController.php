@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\Rule;
 
 // models
 use App\Models\Admin\Apartment;
@@ -187,10 +188,14 @@ class ApartmentController extends Controller
     public function update(UpdateApartmentRequest $request, $id)
     {
 
-        $apartment = Apartment::findOrFail($id);
-
         // salvataggio campi form passati dalla validazione di UpdateApartmentRequest
         $form_data = $request->validated();
+        
+        $apartment = Apartment::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|max:50|unique:apartments,title,'.$apartment->id,
+        ]);
 
         //se nella richiesta è presente il file cover
         if ($request->hasfile('cover')) {
@@ -208,15 +213,9 @@ class ApartmentController extends Controller
                 $form_data['cover'] = $path; 
             }
         }
-
         
-
-        
-            $slug = Apartment::toSlug($request->title, $request->id);
-            $form_data['slug'] = $slug;
-
-            
-        
+        $slug = Apartment::toSlug($request->title, $request->id);
+        $form_data['slug'] = $slug;
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');

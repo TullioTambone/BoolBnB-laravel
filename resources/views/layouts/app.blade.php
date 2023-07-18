@@ -20,6 +20,7 @@
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
     @vite(['resources/js/tom.js'])
+    @yield('script')
 </head>
 
 <body>
