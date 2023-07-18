@@ -37,15 +37,18 @@ formAddress.addEventListener('keyup', async (e) => {
             function (response) {
                 
                 const results = response.results;
-                console.log(results)
-
-                
+                console.log(results)                
 
                 results.forEach((elem) => {
-                    document.getElementById('data').innerHTML += `<option value="${elem.address.freeformAddress}">${elem.address.freeformAddress}</option>`
-                })
-                
-    
+
+                    document.getElementById('data').innerHTML += `<option value="${elem.address.freeformAddress}">${elem.address.freeformAddress}</option>`;
+
+                    if (elem.address.freeformAddress !== formAddress.value) {
+                        formAddress.setAttribute('class', 'form-control is-invalid');
+                    } else {
+                        formAddress.setAttribute('class', 'form-control is-valid');
+                    }
+                })    
     
                 // Verifica se ci sono risultati validi
                 if (results && results.length > 0) {

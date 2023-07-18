@@ -29,7 +29,7 @@
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo *</label>
-                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}">
+                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}" autocomplete="off">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -84,10 +84,11 @@
                     {{-- address --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}">
+                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}" autocomplete="off">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
+                        <div class="invalid-feedback">Inserisci un indirizzo valido!</div>
                         <datalist id="data">                            
                         </datalist>
                     </div>
