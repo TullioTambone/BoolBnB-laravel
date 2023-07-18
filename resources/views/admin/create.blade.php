@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form create --}}
-                <form id="form-create" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form-create was-validated" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
@@ -42,7 +42,8 @@
                     {{-- rooms --}}
                     <div>
                         <label for="rooms">Stanze *</label>
-                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0">
+                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0" required>
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -52,6 +53,7 @@
                     <div>
                         <label for="bedrooms">Camera da letto *</label>
                         <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -61,6 +63,7 @@
                     <div>
                         <label for="bathrooms">Bagni *</label>
                         <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -70,6 +73,7 @@
                     <div>
                         <label for="square_meters">Metri quadrati *</label>
                         <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -102,7 +106,7 @@
                     {{-- cover --}}
                     <div class="mb-3">
                         <label for="cover" class="form-label">immagine principale dell'appartamento *</label>
-                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
+                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover" required aria-label="file example">
                         {{-- error --}}
                         @error('cover')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -134,6 +138,7 @@
                     <div>
                         <label for="price">Prezzo</label>
                         <input class="form-control"  type="number" id="price" name="price" min="0">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                     </div>
                     
                     {{-- inputs hidden --}}
@@ -141,10 +146,14 @@
                     <input type="hidden" name="latitude" id="latitude" value="">
                     <input type="hidden" name="longitude" id="longitude" value="">
 
-                    <button id="submit" class="btn btn-success" type="submit">Salva</button>
+                    <button id="submit" class="btn btn-success my-3 w-25" type="submit">Salva</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @vite(['resources/js/validation.js'])
 @endsection

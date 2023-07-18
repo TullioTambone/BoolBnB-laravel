@@ -45,6 +45,7 @@
                     <div>
                         <label for="rooms">Stanze *</label>
                         <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -54,6 +55,7 @@
                     <div>
                         <label for="bedrooms">Camera da letto *</label>
                         <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -63,6 +65,7 @@
                     <div>
                         <label for="bathrooms">Bagni *</label>
                         <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -72,6 +75,7 @@
                     <div>
                         <label for="square_meters">Metri Quadrati *</label>
                         <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -80,10 +84,12 @@
                     {{-- address --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}">
+                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
+                        <datalist id="data">                            
+                        </datalist>
                     </div>
 
                     {{-- visibility --}}
@@ -141,16 +147,21 @@
                     <div>
                         <label for="price">Prezzo</label>
                         <input class="form-control"  type="number" id="price" name="price" min="0" value="{{old('price') ?? $singolo_apartment->price }}">
+                        <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                     </div>
                     
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="latitude" id="latitude" value="">
                     <input type="hidden" name="longitude" id="longitude" value="">
 
-                    <button class="btn btn-success" type="submit">Salva</button>
+                    <button id="submit" class="btn btn-success my-3 w-25" type="submit">Salva</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @vite(['resources/js/validation.js'])
 @endsection

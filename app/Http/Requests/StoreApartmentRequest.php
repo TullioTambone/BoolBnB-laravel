@@ -26,10 +26,10 @@ class StoreApartmentRequest extends FormRequest
     {
         return [
             'title' => ['required', Rule::unique('apartments')->ignore($this->apartment)],
-            'rooms' => 'required',
-            'bedrooms' => 'required',
-            'bathrooms' => 'required',
-            'square_meters' => 'required',
+            'rooms' => 'required|integer|min:0',
+            'bedrooms' => 'required|integer|min:0',
+            'bathrooms' => 'required|integer|min:0',
+            'square_meters' => 'required|integer|min:0',
             'address' => 'required',
             'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
             'services' => 'required'
@@ -39,14 +39,21 @@ class StoreApartmentRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.unique' => 'il titolo è gia stato inserito',
             'title.required' => 'Il campo titolo è obbligatorio',
             'rooms.required' => 'Inserire il numero di stanze totali',
+            'rooms.integer' => 'Inserire un numero intero',
+            'rooms.min' => 'Non inserire numeri negativi',
             'bedrooms.required' => 'Inserire il numero di stanze da letto',
+            'bedrooms.integer' => 'Inserire un numero intero',
+            'bedrooms.min' => 'Non inserire numeri negativi',
             'bathrooms.required' => 'Inserire il numero di bagni',
+            'bathrooms.integer' => 'Inserire un numero intero',
+            'bathrooms.min' => 'Non inserire numeri negativi',
             'square_meters.required' => 'Metri quadri richiesti',
+            'square_meters.integer' => 'Inserire un numero intero',
+            'square_meters.min' => 'Non inserire numeri negativi',
             'address.required' => "Inserire l'indirizzo",
-            'services.required' => 'inserisci almeno un campo'
+            'services.required' => 'Inserisci almeno un campo'
         ];
     }
 }
