@@ -27,7 +27,7 @@
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo *</label>
-                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{ old('title') }}">
+                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title" value="{{ old('title') }}" autocomplete="off">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -84,12 +84,12 @@
                          --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address">
+                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" autocomplete="off">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        <datalist id="data">
-                            
+                        <div class="invalid-feedback">Inserisci un indirizzo valido!</div>
+                        <datalist id="data">                           
                             
                         </datalist>
                     </div>

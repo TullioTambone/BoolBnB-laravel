@@ -39,7 +39,7 @@ class StoreApartmentRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Il campo titolo è obbligatorio',
+            'title.required' => 'Il campo Titolo è obbligatorio',
             'rooms.required' => 'Inserire il numero di stanze totali',
             'rooms.integer' => 'Inserire un numero intero',
             'rooms.min' => 'Non inserire numeri negativi',
@@ -52,7 +52,7 @@ class StoreApartmentRequest extends FormRequest
             'square_meters.required' => 'Metri quadri richiesti',
             'square_meters.integer' => 'Inserire un numero intero',
             'square_meters.min' => 'Non inserire numeri negativi',
-            'address.required' => "Inserire l'indirizzo",
+            'address.required' => "Inserire l'Indirizzo",
             'services.required' => 'Inserisci almeno un campo'
         ];
     }
