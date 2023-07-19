@@ -5,13 +5,7 @@ import ttServices from "@tomtom-international/web-sdk-services"
 import { includes } from "lodash";
 
 console.log('ciaone');
-
-// tt.map({
-//     key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
-//     center: [0, 0],
-//     container: "map",
-//     zoom: '2'
-// });
+         
 
 // Ottenimento del riferimento al form
 const form = document.querySelector('#form-create');
@@ -47,6 +41,23 @@ formAddress.addEventListener('keyup', async (e) => {
                         formAddress.setAttribute('class', 'form-control is-invalid');
                     } else {
                         formAddress.setAttribute('class', 'form-control is-valid');
+                        
+                    //    PROVE PER INTEGRAZIONE MAPPA E PUNTATORE MAPPA
+                        
+                        // document.getElementById('mappa').innerHTML = `<div id="map" class="map" style="width=250px; height=250px"></div>`
+
+                        // let center = [elem.position.lng, elem.position.lat]
+                        
+                        
+                        // tt.map({
+                        //     key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
+                        //     center: center,
+                        //     container: "map",
+                        //     zoom: '15',
+                            
+                        // });
+                        // // let marker = new tt.Marker().setLngLat(center).addTo('map');
+                        // let marker = new tt.Marker().setLngLat([elem.position.lat, elem.position.lng]).addTo(map);
                     }
                 })    
     
@@ -55,7 +66,7 @@ formAddress.addEventListener('keyup', async (e) => {
                     // Ottenimento delle coordinate di latitudine e longitudine
                     const latitude = results[0].position.lat;
                     const longitude = results[0].position.lng;
-            
+
                     // Assegna le coordinate ai campi nascosti nel form
                     document.querySelector('#latitude').value = latitude;
                     document.querySelector('#longitude').value = longitude;
