@@ -8,8 +8,10 @@ inputNumber.forEach(elem => {
         
         elem.addEventListener('input', function() {           
             
-            if(elem.value <= 0) {    
+            if(elem.value < 0) {    
                 elem.setAttribute('class', 'form-control is-invalid');
+            }else if(elem.value === ''){
+                elem.setAttribute('class', 'form-control');
             } else {
                 elem.setAttribute('class', 'form-control is-valid');
             }
