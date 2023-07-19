@@ -29,9 +29,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        // assegniamo alla variabile $apartments tutti i record della tabella apartments grazie al metodo statico ( Project::All() )
-        // $apartments = Apartment::All();
-
+        
         $apartments = auth()->user()->apartments;
 
         // if ($apartments->user_id !== auth()->user()->id) {
