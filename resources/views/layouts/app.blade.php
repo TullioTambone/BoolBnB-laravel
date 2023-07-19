@@ -95,6 +95,8 @@
         <main class="">
             @yield('content')
         </main>
+
+        @yield('braintree')
     </div>
 </body>
 

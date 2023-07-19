@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LeadController;
+use App\Http\Controllers\Admin\SubscriptionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ use App\Http\Controllers\Api\LeadController;
 // });
 
 Route::post('/contacts', [LeadController::class, 'store']);
+
+Route::get('/subscription', [SubscriptionController::class, 'process']);

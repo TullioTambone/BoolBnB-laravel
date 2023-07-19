@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin', ApartmentController::class);
 
     Route::resource('/subscription', SubscriptionController::class);
+
+    
 });
 
 require __DIR__.'/auth.php';

@@ -196,8 +196,7 @@ class ApartmentController extends Controller
         ],
         [
             'title.required' => 'Il campo Titolo è obbligatorio'
-        ]
-    );
+        ]);
 
         //se nella richiesta è presente il file cover
         if ($request->hasfile('cover')) {
