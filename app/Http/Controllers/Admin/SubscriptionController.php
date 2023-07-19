@@ -5,9 +5,27 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Subscription;
 use Illuminate\Http\Request;
+use Braintree\Transaction;
 
 class SubscriptionController extends Controller
 {
+
+    public function process(Request $request)
+    {
+        $payload = $request->input('payload', false);
+        $nonce = $payload['nonce'];
+
+        $status = Transaction::sale([
+            'amount' => '10.00',
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => True
+            ]
+        ]);
+
+        return response()->json($status);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +33,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.subscription');
     }
 
     /**
