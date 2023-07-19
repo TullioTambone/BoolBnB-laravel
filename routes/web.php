@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ApartmentController;
+use App\Http\Controllers\Admin\SubscriptionController;
 
 
 /*
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/admin', ApartmentController::class);
+
+    Route::resource('/subscription', SubscriptionController::class);
 });
 
 require __DIR__.'/auth.php';
