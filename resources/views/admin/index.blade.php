@@ -41,18 +41,4 @@
             @endforeach
         </ul>
     </div>
-
-    {{-- braintree --}}
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-6">
-
-                <div id="dropin-container"></div>
-            
-                <button id="submit-button" class="button button--small button--green">Purchase</button>
-            </div>
-        </div>
-    </div>
-
-
 @endsection
