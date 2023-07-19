@@ -7,15 +7,30 @@ use Illuminate\Http\Request;
 use App\Models\Admin\Lead;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewContact;
-
+use Illuminate\Support\Facades\Validator;
 
 
 class LeadController extends Controller
 {
     public function store(Request $request){
         $data = $request->all();
+        
         // validazione
-
+        $validator = Validator::make($data, [
+            'name' => 'required',
+            'email' => 'require',
+            'message' => 'required'
+        ]);
+        
+        /*per validazione non  andata a buon fine*/
+        
+        if($validator->fails()) {
+            return responde()->json([
+            'success'=> false,
+            'errors' => $validator->errors()
+            ]);
+        }
+        
         // salvataggio dei dati nel db
         $new_lead = Lead::create($data);
 
