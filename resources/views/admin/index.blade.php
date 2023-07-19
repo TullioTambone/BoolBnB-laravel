@@ -13,9 +13,11 @@
                         <b class="me-1">
                             {{ $elem->title }}:
                         </b>
-
                         <span>
-                            {{$elem->address}}
+                            {{$elem->address}},
+                        </span>
+                        <span>
+                            {{($elem->visibility) ? 'visibile' : 'non visibile'}}
                         </span>
                     </a>
                 
