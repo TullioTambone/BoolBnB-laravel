@@ -69,6 +69,9 @@
                 <span class="d-block">
                     prezzo: {{ $apartment->price }}&euro;
                 </span>
+                <span class="d-block">
+                    visibilità: {{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}
+                </span>
                 <h5 class="mt-2"> Servizi  </h5>
 
                 @if ($apartment->services)
