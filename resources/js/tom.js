@@ -5,8 +5,10 @@ import ttServices from "@tomtom-international/web-sdk-services"
 import { includes } from "lodash";
 
 console.log('ciaone');
-         
 
+let map;
+let marker = null;
+let point = null;
 // Ottenimento del riferimento al form
 const form = document.querySelector('#form-create');
 console.log(form);
@@ -44,20 +46,27 @@ formAddress.addEventListener('keyup', async (e) => {
                         
                     //    PROVE PER INTEGRAZIONE MAPPA E PUNTATORE MAPPA
                         
-                        // document.getElementById('mappa').innerHTML = `<div id="map" class="map" style="width=250px; height=250px"></div>`
-
-                        // let center = [elem.position.lng, elem.position.lat]
-                        
-                        
-                        // tt.map({
-                        //     key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
-                        //     center: center,
-                        //     container: "map",
-                        //     zoom: '15',
-                            
-                        // });
-                        // // let marker = new tt.Marker().setLngLat(center).addTo('map');
-                        // let marker = new tt.Marker().setLngLat([elem.position.lat, elem.position.lng]).addTo(map);
+                        document.getElementById('mappa').innerHTML = `<div id="map" class="map position-relative" style="width=500px; height=500px;"></div>`;
+                        //document.querySelector('.mapboxgl-marker').classList.add("position-absolute");
+                        point =  [elem.position.lng, elem.position.lat];
+                        if (!map) {
+                            // Inizializza la mappa solo se non è stata già creata
+                            map = tt.map({
+                                key: "74CVsbN34KoIljJqOriAYN2ZMEYU1cwO",
+                                center: point, // Inverti la latitudine e longitudine per la posizione corretta
+                                container: "map",
+                                zoom: 15,
+                            });
+                        }
+        
+                        // Aggiorna la posizione del marker se esiste
+                        if (marker) {
+                            marker.setLngLat([elem.position.lng, elem.position.lat]);
+                        } else {
+                            // Crea il marker solo se non esiste
+                            marker = new tt.Marker().setLngLat([elem.position.lng, elem.position.lat]).addTo(map);
+                        }
+        
                     }
                 })    
     
@@ -72,8 +81,10 @@ formAddress.addEventListener('keyup', async (e) => {
                     document.querySelector('#longitude').value = longitude;
             
                     console.log(latitude,longitude)
+
+                                            
+
                 
-                    
                     // Invia il form
                     form.addEventListener('submit', (e) =>{
                         // e.preventDefault();
