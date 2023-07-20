@@ -31,7 +31,7 @@
 
                         {{-- aggiungo data di nascita --}}
                         <div class="mb-4 row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Compleanno') }}</label>
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Data di Nascita') }}</label>
 
                             <div class="col-md-6">
                                 <input id="birthday" type="date" class="form-control " name="birthday" value="{{ old('birthday') }}" autocomplete="birthday" autofocus>
