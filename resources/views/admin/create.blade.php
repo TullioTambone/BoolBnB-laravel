@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form create --}}
-                <form id="form-create was-validated" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form-create" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
