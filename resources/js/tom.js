@@ -79,12 +79,10 @@ formAddress.addEventListener('keyup', async () => {
                         formAddress.setAttribute('class', 'form-control is-invalid');
 
                         isAddressOk = false;
-                        // console.log(formAddress)
                     } else {
                         formAddress.setAttribute('class', 'form-control is-valid');
                         
                         isAddressOk = true;
-                        console.log(isAddressOk);
                         
                     }
                 })    
@@ -112,8 +110,6 @@ formAddress.addEventListener('keyup', async () => {
 
 console.log(form)
 console.log(checkFeed)
-
-
 
 // Gestore di eventi per il submit del form
 form.addEventListener('submit', function (e) {
