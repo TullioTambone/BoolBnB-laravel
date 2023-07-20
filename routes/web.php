@@ -35,9 +35,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/admin', ApartmentController::class);
 
-    Route::resource('/subscription', SubscriptionController::class);
+    // Route::resource('/subscription', SubscriptionController::class);
 
-    
+    Route::any('/subscription', [SubscriptionController::class, 'token'])->name('token');
 });
 
 require __DIR__.'/auth.php';
