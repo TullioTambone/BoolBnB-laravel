@@ -3,22 +3,33 @@
 @section('content')
 
     {{-- braintree --}}
-    <div class="container my-5">
+    <div class="container my-5 py-12">
         <div class="row justify-content-center">
             <div class="col-6">
 
+                @csrf
                 <div id="dropin-container"></div>
             
-                <button id="submit-button" class="button button--small button--green">Purchase</button>
+                <button id="submit-button" class="button button--small button--green">Submit payment</button>
             </div>
         </div>
     </div>
+
+    {{-- <div class="py-12">
+        @csrf
+        <div id="dropin-container" style="display: flex;justify-content: center;align-items: center;">
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center; color: white">
+            <a id="submit-button" class="btn btn-sm btn-success">
+                Submit payment
+            </a>
+        </div> --}}
 
 
 @endsection
 
 @section('script')
-    @vite(['resources/js/braintree.js'])
+    @vite('resources/js/braintree.js')
     
 @endsection
 
@@ -26,5 +37,7 @@
     {{-- <script src="https://js.braintreegateway.com/web/dropin/1.39.0/js/dropin.js"></script>
     <script src="https://js.braintreegateway.com/web/dropin/1.38.1/js/dropin.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://js.braintreegateway.com/web/dropin/1.8.1/js/dropin.min.js"></script>
+    {{-- <script src="https://js.braintreegateway.com/web/dropin/1.8.1/js/dropin.min.js"></script> --}}
+
+    <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
 @endsection

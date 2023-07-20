@@ -5,26 +5,54 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Subscription;
 use Illuminate\Http\Request;
-use Braintree\Transaction;
+use Braintree\Gateway;
 
 class SubscriptionController extends Controller
 {
 
-    public function process(Request $request)
-    {
-        $payload = $request->input('payload', false);
-        $nonce = $payload['nonce'];
+    public function token(Request $request){
 
-        $status = Transaction::sale([
-            'amount' => '10.00',
-            'paymentMethodNonce' => $nonce,
-            'options' => [
-                'submitForSettlement' => True
-            ]
+        $gateway = new Gateway([
+            'environment' => env('BRAINTREE_ENVIRONMENT'),
+            'merchantId' => env("BRAINTREE_MERCHANT_ID"),
+            'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
+            'privateKey' => env("BRAINTREE_PRIVATE_KEY")
         ]);
 
-        return response()->json($status);
+        if($request->input('nonce') != null){
+            var_dump($request->input('nonce'));
+            $nonceFromTheClient = $request->input('nonce');
+        
+            $gateway->transaction()->sale([
+                'amount' => '10.00',
+                'paymentMethodNonce' => $nonceFromTheClient,
+                'options' => [
+                    'submitForSettlement' => True
+                ]
+            ]);
+            return view ('admin.index');
+        }
+
+        $clientToken = $gateway->clientToken()->generate();
+        return view ('admin.subscription',['token' => $clientToken]);
     }
+    
+
+    // public function process(Request $request)
+    // {
+    //     $payload = $request->input('payload', false);
+    //     $nonce = $payload['nonce'];
+
+    //     $status = Transaction::sale([
+    //         'amount' => '10.00',
+    //         'paymentMethodNonce' => $nonce,
+    //         'options' => [
+    //             'submitForSettlement' => True
+    //         ]
+    //     ]);
+
+    //     return response()->json($status);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -33,7 +61,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        return view('admin.subscription');
+        // return view('admin.subscription');
     }
 
     /**
