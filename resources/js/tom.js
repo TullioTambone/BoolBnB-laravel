@@ -36,22 +36,18 @@ console.log('ciaone');
 
 // form create
 const form = document.querySelector('#form-create');
-
 // chekboxes
 const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-
 // input address
 const formAddress = document.querySelector('#address');
-
+// checkbox-feedback
 const checkFeed = document.getElementById('checkbox-feedback')
-
+// booleans
 let isAddressOk = false;
 let isAnyCheckboxChecked = false;
 
 // Aggiunta di un gestore di eventi al submit del form
 formAddress.addEventListener('keyup', async () => {
-    // e.preventDefault();
-     // Previeni il comportamento di default del submit
 
     // Ottenimento dell'indirizzo dal campo input
     const address = document.querySelector('#address').value;    
@@ -107,9 +103,6 @@ formAddress.addEventListener('keyup', async () => {
         );
     } 
 });
-
-console.log(form)
-console.log(checkFeed)
 
 // Gestore di eventi per il submit del form
 form.addEventListener('submit', function (e) {

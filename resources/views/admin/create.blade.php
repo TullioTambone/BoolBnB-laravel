@@ -27,7 +27,7 @@
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo *</label>
-                        <input class="form-control" @error('title') is-invalid  @enderror type="text" id="title" name="title"  autocomplete="off" value="{{ old('title') }}" required>
+                        <input class="form-control" type="text" id="title" name="title" autocomplete="off" value="{{ old('title') }}" required>
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -36,13 +36,13 @@
                     {{-- description --}}
                     <div>
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control"  name="description" id="description" rows="5"></textarea>
+                        <textarea class="form-control" name="description" id="description" rows="5"></textarea>
                     </div>
 
                     {{-- rooms --}}
                     <div>
                         <label for="rooms">Stanze *</label>
-                        <input class="form-control" @error('rooms') is-invalid  @enderror type="number" id="rooms" name="rooms" min="0" value="{{ old('rooms') }}" required>
+                        <input class="form-control" type="number" id="rooms" name="rooms" min="0" value="{{ old('rooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -52,7 +52,7 @@
                     {{-- bedrooms --}}
                     <div>
                         <label for="bedrooms">Camere da letto *</label>
-                        <input class="form-control" @error('bedrooms') is-invalid  @enderror type="number" id="bedrooms" name="bedrooms" min="0" value="{{ old('bedrooms') }}" required>
+                        <input class="form-control" type="number" id="bedrooms" name="bedrooms" min="0" value="{{ old('bedrooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -62,7 +62,7 @@
                     {{-- bathrooms --}}
                     <div>
                         <label for="bathrooms">Bagni *</label>
-                        <input class="form-control" @error('bathrooms') is-invalid  @enderror type="number" id="bathrooms" name="bathrooms" min="0" value="{{ old('bathrooms') }}" required>
+                        <input class="form-control" type="number" id="bathrooms" name="bathrooms" min="0" value="{{ old('bathrooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -72,7 +72,7 @@
                     {{-- square meters --}}
                     <div>
                         <label for="square_meters">Metri quadrati *</label>
-                        <input class="form-control" @error('square_meters') is-invalid  @enderror type="number" id="square_meters" name="square_meters" min="0" value="{{ old('square_meters') }}" required>
+                        <input class="form-control" type="number" id="square_meters" name="square_meters" min="0" value="{{ old('square_meters') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -84,7 +84,7 @@
                          --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input list="data" class="form-control" @error('address') is-invalid  @enderror type="text" id="address" name="address" autocomplete="off" value="{{ old('address') }}" required>
+                        <input list="data" class="form-control" type="text" id="address" name="address" autocomplete="off" value="{{ old('address') }}" required>
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -106,7 +106,7 @@
                     {{-- cover --}}
                     <div class="mb-3">
                         <label for="cover" class="form-label">Immagine principale dell'appartamento *</label>
-                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover" required aria-label="file example" required>
+                        <input type="file" class="form-control" id="cover" name="cover" required aria-label="file example" required>
                         {{-- error --}}
                         @error('cover')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -116,8 +116,7 @@
                     {{-- per inserire più immagini alla volta --}}
                     <div class="mb-3">
                         <label for="url" class="form-label">Inserire l'album immagini</label>
-                        <input type="file" class="form-control" id="url" name="images[]" multiple>
-                     
+                        <input type="file" class="form-control" id="url" name="images[]" multiple>                     
                     </div>
 
                     {{-- servizi --}}
@@ -138,7 +137,7 @@
                     {{-- prezzo --}}
                     <div>
                         <label for="price">Prezzo</label>
-                        <input class="form-control"  type="number" id="price" name="price" min="0" value="{{ old('price') }}">
+                        <input class="form-control" type="number" id="price" name="price" min="0" value="{{ old('price') }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                     </div>
                     

@@ -29,7 +29,7 @@
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo *</label>
-                        <input required class="form-control"  type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}" autocomplete="off">
+                        <input required class="form-control" type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}" autocomplete="off">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -44,7 +44,7 @@
                     {{-- rooms --}}
                     <div>
                         <label for="rooms">Stanze *</label>
-                        <input required class="form-control"  type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
+                        <input required class="form-control" type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
                     {{-- bedrooms --}}
                     <div>
                         <label for="bedrooms">Camere da letto *</label>
-                        <input required class="form-control"  type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
+                        <input required class="form-control" type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -64,7 +64,7 @@
                     {{-- bathrooms --}}
                     <div>
                         <label for="bathrooms">Bagni *</label>
-                        <input required class="form-control"  type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
+                        <input required class="form-control" type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -74,7 +74,7 @@
                     {{-- square meters --}}
                     <div>
                         <label for="square_meters">Metri Quadrati *</label>
-                        <input required class="form-control"  type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
+                        <input required class="form-control" type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -115,18 +115,32 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
-                        <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $singolo_apartment->cover)}}" alt="">
+                        @if($singolo_apartment->cover)
+                            <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $singolo_apartment->cover)}}" alt="">
+                        @endif
                     </div>
 
                     {{-- send more images togheter --}}
                     <div class="mb-3">
                         <label for="url" class="form-label">Inserire l'album immagini</label>
                         <input type="file" class="form-control" id="url" name="images[]" multiple>
+
+                        @if ($singolo_apartment->images)
+                            <div class="my-3">
+                                @forelse($singolo_apartment->images as $image)
+                                    <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $image->url)}}" alt="">
+                                @empty
+                                    <span>
+                                        no images available
+                                    </span>
+                                @endforelse
+                            </div>
+                        @endif
                     </div>
 
                     {{-- services --}}
                     <div class="mb-3">
-                        <label for="services">Servizi *</label>
+                        <label class="mb-2" for="services">Servizi *</label>
                         <div id="checkbox-feedback" class="invalid-feedback"></div>
                         @foreach ($services as $element)
                         <div>
