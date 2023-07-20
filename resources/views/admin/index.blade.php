@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <h1 class="text-center my-2">I TUOI APPARTAMENTI</h1>
         <ul class="list-unstyled">

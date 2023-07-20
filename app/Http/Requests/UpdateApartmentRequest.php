@@ -25,19 +25,23 @@ class UpdateApartmentRequest extends FormRequest
     {
 
         return [
+            'title' => 'required',
             'rooms' => 'required|integer|min:0',
             'bedrooms' => 'required|integer|min:0',
             'bathrooms' => 'required|integer|min:0',
             'square_meters' => 'required|integer|min:0',
             'address' => 'required',
             'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
-            'services' => 'required'
+            'services' => 'required',
+            'price' => 'nullable',
+            'description' => 'nullable',
         ];
     }
     
     public function messages()
     {
         return [
+            'title.required' => 'Il campo Titolo è obbligatorio',
             'rooms.required' => 'Inserire il numero di stanze totali',
             'rooms.integer' => 'Inserire un numero intero',
             'rooms.min' => 'Non inserire numeri negativi',

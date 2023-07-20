@@ -191,12 +191,12 @@ class ApartmentController extends Controller
         
         $apartment = Apartment::findOrFail($id);
 
-        $request->validate([
-            'title' => 'required|unique:apartments,title,'.$apartment->id,
-        ],
-        [
-            'title.required' => 'Il campo Titolo è obbligatorio'
-        ]);
+        // $request->validate([
+        //     'title' => 'required|unique:apartments,title,'.$apartment->id,
+        // ],
+        // [
+        //     'title.required' => 'Il campo Titolo è obbligatorio'
+        // ]);
 
         //se nella richiesta è presente il file cover
         if ($request->hasfile('cover')) {
