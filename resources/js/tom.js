@@ -79,12 +79,16 @@ formAddress.addEventListener('keyup', async () => {
                         formAddress.setAttribute('class', 'form-control is-invalid');
 
                         isAddressOk = false;
+                        // console.log(formAddress)
                     } else {
                         formAddress.setAttribute('class', 'form-control is-valid');
-
+                        
                         isAddressOk = true;
+                        console.log(isAddressOk);
+                        
                     }
                 })    
+                console.log(isAddressOk);
     
                 // Verifica se ci sono risultati validi
                 if (isAddressOk) {
@@ -112,7 +116,7 @@ console.log(checkFeed)
 
 
 // Gestore di eventi per il submit del form
-form.addEventListener('submit', function () {
+form.addEventListener('submit', function (e) {
 
     // Controlla se almeno un checkbox è stato selezionato
     isAnyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
@@ -132,7 +136,9 @@ form.addEventListener('submit', function () {
     }
 
     if (isAnyCheckboxChecked && isAddressOk) {
-        // Invia il form solo se almeno un checkbox è selezionato e l'indirizzo è valido
+        
         form.submit();
+    } else {
+        e.preventDefault()
     }
 });
