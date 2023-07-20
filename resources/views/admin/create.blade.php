@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form create --}}
-                <form id="form-create" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
@@ -155,5 +155,6 @@
 @endsection
 
 @section('script')
-    @vite(['resources/js/validation.js'])
+    @vite(['resources/js/validation.js']);
+    @vite(['resources/js/tom.js']);
 @endsection

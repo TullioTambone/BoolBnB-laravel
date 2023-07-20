@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form update --}}
-                <form id="form-create" action="{{ route('admin.update',  ['admin' => $singolo_apartment->id]) }}" method="POST" enctype="multipart/form-data">
+                <form id="form" action="{{ route('admin.update',  ['admin' => $singolo_apartment->id]) }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
@@ -131,7 +131,7 @@
                                     <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $image->url)}}" alt="">
                                 @empty
                                     <span>
-                                        no images available
+                                        No images available.
                                     </span>
                                 @endforelse
                             </div>
@@ -175,4 +175,6 @@
 
 @section('script')
     @vite(['resources/js/validation.js'])
+    @vite(['resources/js/tom.js'])
+
 @endsection
