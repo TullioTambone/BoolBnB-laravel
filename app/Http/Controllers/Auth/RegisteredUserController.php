@@ -33,7 +33,17 @@ class RegisteredUserController extends Controller
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        ],
+        [
+            'email.required' => 'Il campo E-mail è richiesto',
+            'email.string' => 'Il campo E-mail non può contenere solo numeri',
+            'email.email' => 'Il formato E-mail deve essere: "BoolBnb@mail.com"',
+            'email.max' => 'Il campo E-mail deve avere massimo 255 caratteri',
+            'email.unique' => 'Il campo E-mail deve essere univoco ed è già presente',
+            'password.required' => 'Il campo Password è richiesto',
+            'password.confirmed' => 'Il campo Password deve essere confermato riempendo il campo Conferma Password',
+        ]
+    );
 
         $user = User::create([
             'email' => $request->email,

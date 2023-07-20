@@ -40,20 +40,21 @@ class StoreApartmentRequest extends FormRequest
     {
         return [
             'title.required' => 'Il campo Titolo è obbligatorio',
-            'rooms.required' => 'Inserire il numero di stanze totali',
+            'title.unique' => 'Questo Titolo è già presente',
+            'rooms.required' => 'Inserire il numero di Stanze totali',
             'rooms.integer' => 'Inserire un numero intero',
             'rooms.min' => 'Non inserire numeri negativi',
-            'bedrooms.required' => 'Inserire il numero di stanze da letto',
+            'bedrooms.required' => 'Inserire il numero di Camere da letto',
             'bedrooms.integer' => 'Inserire un numero intero',
             'bedrooms.min' => 'Non inserire numeri negativi',
-            'bathrooms.required' => 'Inserire il numero di bagni',
+            'bathrooms.required' => 'Inserire il numero di Bagni',
             'bathrooms.integer' => 'Inserire un numero intero',
             'bathrooms.min' => 'Non inserire numeri negativi',
-            'square_meters.required' => 'Metri quadri richiesti',
+            'square_meters.required' => 'Metri Quadri richiesti',
             'square_meters.integer' => 'Inserire un numero intero',
             'square_meters.min' => 'Non inserire numeri negativi',
             'address.required' => "Inserire l'Indirizzo",
-            'services.required' => 'Inserisci almeno un campo'
+            'services.required' => 'Inserisci almeno un campo in Servizi'
         ];
     }
 }

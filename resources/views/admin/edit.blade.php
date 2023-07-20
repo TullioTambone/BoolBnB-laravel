@@ -114,7 +114,7 @@
                     {{-- cover --}}
                     <div class="mb-3">
                         <label for="cover" class="form-label">Immagine principale dell'appartamento *</label>
-                        <input required type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
+                        <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover">
                         {{-- error --}}
                         @error('cover')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -125,7 +125,7 @@
 
                     {{-- send more images togheter --}}
                     <div class="mb-3">
-                        <label for="url" class="form-label">inserire l'album immagini</label>
+                        <label for="url" class="form-label">Inserire l'album immagini</label>
                         <input type="file" class="form-control" id="url" name="images[]" multiple>
                     </div>
 

@@ -55,7 +55,7 @@ class UpdateApartmentRequest extends FormRequest
             'square_meters.integer' => 'Inserire un numero intero',
             'square_meters.min' => 'Non inserire numeri negativi',
             'address.required' => "Inserire l'indirizzo",
-            'services.required' => 'Inserisci almeno un campo'
+            'services.required' => 'Inserisci almeno un campo in Servizi'
         ];
     }
 }

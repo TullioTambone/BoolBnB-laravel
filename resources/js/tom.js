@@ -22,10 +22,10 @@
 //     }
 // importazione tom tom
 
-import tt from "@tomtom-international/web-sdk-maps";
+// import tt from "@tomtom-international/web-sdk-maps";
 
 import ttServices from "@tomtom-international/web-sdk-services"
-import { includes } from "lodash";
+// import { includes } from "lodash";
 
 console.log('ciaone');
 
@@ -43,12 +43,15 @@ const checkboxes = form.querySelectorAll('input[type="checkbox"]');
 // input address
 const formAddress = document.querySelector('#address');
 
+const checkFeed = document.getElementById('checkbox-feedback')
+
 let isAddressOk = false;
 let isAnyCheckboxChecked = false;
 
 // Aggiunta di un gestore di eventi al submit del form
-formAddress.addEventListener('keyup', async (e) => {
-    e.preventDefault(); // Previeni il comportamento di default del submit
+formAddress.addEventListener('keyup', async () => {
+    // e.preventDefault();
+     // Previeni il comportamento di default del submit
 
     // Ottenimento dell'indirizzo dal campo input
     const address = document.querySelector('#address').value;    
@@ -95,54 +98,41 @@ formAddress.addEventListener('keyup', async (e) => {
             
                     console.log(latitude,longitude)
 
-                    // Invia il form
-                    // form.addEventListener('submit', () =>{
-                    //     form.submit();
-                    // })
-                    // form.submit();
                 } else {
                     console.error('Nessun risultato trovato per l\'indirizzo fornito.');
                 }
             }
         );
-    }
+    } 
 });
 
+console.log(form)
+console.log(checkFeed)
 
-const checkFeed = document.getElementById('checkbox-feedback')
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Previeni l'invio del form inizialmente
+
+// Gestore di eventi per il submit del form
+form.addEventListener('submit', function () {
+
+    // Controlla se almeno un checkbox è stato selezionato
+    isAnyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
 
     checkboxes.forEach(checkbox => {
-
-        // se un checkbox is checked diventa true 
-        if (checkbox.checked) {
-            isAnyCheckboxChecked = true;
-            checkbox.setAttribute('class', 'form-check-input is-valid');
-        } else {
-            checkbox.setAttribute('class', 'form-check-input is-invalid');
-        }
-
-        if (!isAnyCheckboxChecked) {
-    
-            // Mostra un messaggio di errore, ad esempio sotto il gruppo di checkbox
-            checkFeed.style.display = 'block';
-            checkFeed.innerHTML = `Seleziona almeno un campo dei Servizi`;
-        } else if(isAnyCheckboxChecked) {
-            isAnyCheckboxChecked = true;
-            checkFeed.style.display = 'none'
-        }
-
-        // checkbox.addEventListener('change', function () {
-        //     if (isAnyCheckboxChecked) {
-        //         checkbox.setAttribute('class', 'form-check-input');
-        //     }
-        // });
+        // Aggiungi le classi di validità o invalidità in base allo stato del checkbox
+        checkbox.setAttribute('class', checkbox.checked ? 'form-check-input is-valid' : 'form-check-input is-invalid');
     });
 
-    if (isAnyCheckboxChecked && isAnyFeedbackChecked) {
+    if (!isAnyCheckboxChecked) {
+        // Mostra il messaggio di errore se nessun checkbox è selezionato
+        checkFeed.style.display = 'block';
+        checkFeed.innerHTML = `Seleziona almeno un campo dei Servizi`;
+    } else {
+        // Nascondi il messaggio di errore se almeno un checkbox è selezionato
+        checkFeed.style.display = 'none';
+    }
+
+    if (isAnyCheckboxChecked && isAddressOk) {
+        // Invia il form solo se almeno un checkbox è selezionato e l'indirizzo è valido
         form.submit();
-            // Invia il form solo se almeno un checkbox è selezionato
     }
 });
