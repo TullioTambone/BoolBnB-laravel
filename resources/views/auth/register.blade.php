@@ -35,7 +35,12 @@
                             <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Data di Nascita') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birthday" type="date" class="form-control " name="birthday" value="{{ old('birthday') }}" autocomplete="birthday" autofocus>
+                                <input id="birthday" type="date" class="form-control  @error('birthday') is-invalid @enderror" min='1923-01-01' max='2006-01-01' name="birthday" value="{{ old('birthday') }}" autocomplete="birthday" autofocus>
+                                @error('birthday')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                         
