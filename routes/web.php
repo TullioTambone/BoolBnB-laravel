@@ -33,7 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('/admin', ApartmentController::class);
+    Route::resource('/dashboard/admin', ApartmentController::class)->parameters([
+        'admin' => 'apartment:slug',
+    ]);
 
     // Route::resource('/subscription', SubscriptionController::class);
 

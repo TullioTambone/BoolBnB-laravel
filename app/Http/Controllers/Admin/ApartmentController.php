@@ -142,10 +142,10 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
 
-        $apartment = Apartment::findOrFail($id);
+        // $apartment = Apartment::findOrFail($id);
 
             // Verifica se l'utente loggato è il proprietario dell'appartamento
         if ($apartment->user_id !== auth()->user()->id) {
