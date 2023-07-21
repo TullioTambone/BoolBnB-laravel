@@ -23,4 +23,4 @@ use App\Http\Controllers\Admin\SubscriptionController;
 
 Route::post('/contacts', [LeadController::class, 'store']);
 
-Route::get('/subscription', [SubscriptionController::class, 'process']);
+// Route::get('/subscription', [SubscriptionController::class, 'token']);

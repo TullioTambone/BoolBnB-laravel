@@ -23,7 +23,7 @@ class SubscriptionController extends Controller
             var_dump($request->input('nonce'));
             $nonceFromTheClient = $request->input('nonce');
         
-            $gateway->transaction()->sale([
+            $result = $gateway->transaction()->sale([
                 'amount' => '10.00',
                 'paymentMethodNonce' => $nonceFromTheClient,
                 'options' => [

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+{{ $token }}
     {{-- braintree --}}
     <div class="container my-5 py-12">
         <div class="row justify-content-center">
@@ -15,21 +15,39 @@
         </div>
     </div>
 
-    {{-- <div class="py-12">
-        @csrf
-        <div id="dropin-container" style="display: flex;justify-content: center;align-items: center;">
-        </div>
-        <div style="display: flex;justify-content: center;align-items: center; color: white">
-            <a id="submit-button" class="btn btn-sm btn-success">
-                Submit payment
-            </a>
-        </div> --}}
+    <script>
+        
+        let button = document.querySelector('#submit-button');
 
+        braintree.dropin.create({
+            authorization: sandbox_{{ $token }} ,
+            container: '#dropin-container'
+        }, function (createErr, instance) {
+            button.addEventListener('click', function () {
+                instance.requestPaymentMethod(function (err,payload){
+                    
+                    axios.post('{{ route("token") }}', {
+                        nonce: payload.nonce
+                    }, {
+                        headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    })
+                    .then(function (response) {
+                        console.log('success', payload.nonce);
+                    })
+                    .catch(function (error) {
+                        console.log('error', payload.nonce);
+                    });
+                });
+            });
+        });
+    </script>
 
 @endsection
 
 @section('script')
-    @vite('resources/js/braintree.js')
+    {{-- @vite('resources/js/braintree.js') --}}
     
 @endsection
 
