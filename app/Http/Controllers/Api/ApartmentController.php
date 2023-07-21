@@ -13,9 +13,10 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $apartment = Apartment::all();
+        
         
 
         return response()->json([
@@ -33,20 +34,20 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment)
     {
         // $Apartments = Apartment::with( 'image', 'service')->get();
-        $apartment = Apartment::with( 'image', 'service')->where('slug', $slug)->first();
+        // $apartment = Apartment::with( 'image', 'service')->where('slug', $slug)->first();
 
-        if($apartment) {
+        // if($apartment) {
 
-            return response()->json([
-                'success' => true,
-                'apartment' => $apartment
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'error' => "Non c'è nessun elemento"
-            ])->setStatusCode(404);
-        }
+        //     return response()->json([
+        //         'success' => true,
+        //         'apartment' => $apartment
+        //     ]);
+        // } else {
+        //     return response()->json([
+        //         'success' => false,
+        //         'error' => "Non c'è nessun elemento"
+        //     ])->setStatusCode(404);
+        // }
     
     }
 
