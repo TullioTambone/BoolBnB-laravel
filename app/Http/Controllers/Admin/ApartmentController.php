@@ -163,15 +163,15 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment  $apartment)
     {
-        $singolo_apartment = Apartment::findOrFail($id);
+        // $singolo_apartment = Apartment::findOrFail($id);
         $services = Service::all();
 
-        if ( $singolo_apartment->user_id !== auth()->user()->id) {
+        if ( $apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
         } else {
-            return view('admin.edit', compact('singolo_apartment', 'services'));
+            return view('admin.edit', compact('apartment', 'services'));
         }
         
     }
@@ -183,13 +183,13 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateApartmentRequest $request, $id)
+    public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
 
         // salvataggio campi form passati dalla validazione di UpdateApartmentRequest
         $form_data = $request->validated();
         
-        $apartment = Apartment::findOrFail($id);
+        // $apartment = Apartment::findOrFail($id);
 
         // $request->validate([
         //     'title' => 'required|unique:apartments,title,'.$apartment->id,
@@ -250,7 +250,7 @@ class ApartmentController extends Controller
     
                     $new_image = new Image();
                     $new_image->url = $path;
-                    $new_image->apartment_id = $id;
+                    $new_image->apartment_id = $apartment->id;
                     $new_image->save();
                 }
             }
@@ -265,9 +265,9 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment  $apartment)
     {
-        $apartment = Apartment::findOrFail($id);
+        // $apartment = Apartment::findOrFail($id);
         
         if($apartment->cover) {
             Storage::delete($apartment->cover);

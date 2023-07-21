@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form update --}}
-                <form id="form" action="{{ route('admin.update',  ['admin' => $singolo_apartment->id]) }}" method="POST" enctype="multipart/form-data">
+                <form id="form" action="{{ route('admin.update',  $apartment) }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
@@ -29,7 +29,7 @@
                     {{-- title --}}
                     <div>
                         <label for="title">Titolo *</label>
-                        <input required class="form-control" type="text" id="title" name="title" value="{{old('title') ?? $singolo_apartment->title }}" autocomplete="off">
+                        <input required class="form-control" type="text" id="title" name="title" value="{{old('title') ?? $apartment->title }}" autocomplete="off">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -38,13 +38,13 @@
                     {{-- description --}}
                     <div>
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control"  name="description" id="description" rows="5" >{{old('description') ?? $singolo_apartment->description }}</textarea>
+                        <textarea class="form-control"  name="description" id="description" rows="5" >{{old('description') ?? $apartment->description }}</textarea>
                     </div>
 
                     {{-- rooms --}}
                     <div>
                         <label for="rooms">Stanze *</label>
-                        <input required class="form-control" type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $singolo_apartment->rooms }}">
+                        <input required class="form-control" type="number" id="rooms" name="rooms" min="0" value="{{old('rooms') ?? $apartment->rooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
                     {{-- bedrooms --}}
                     <div>
                         <label for="bedrooms">Camere da letto *</label>
-                        <input required class="form-control" type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $singolo_apartment->bedrooms }}">
+                        <input required class="form-control" type="number" id="bedrooms" name="bedrooms" min="0" value="{{old('bedrooms') ?? $apartment->bedrooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -64,7 +64,7 @@
                     {{-- bathrooms --}}
                     <div>
                         <label for="bathrooms">Bagni *</label>
-                        <input required class="form-control" type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $singolo_apartment->bathrooms }}">
+                        <input required class="form-control" type="number" id="bathrooms" name="bathrooms" min="0" value="{{old('bathrooms') ?? $apartment->bathrooms }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -74,7 +74,7 @@
                     {{-- square meters --}}
                     <div>
                         <label for="square_meters">Metri Quadrati *</label>
-                        <input required class="form-control" type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $singolo_apartment->square_meters }}">
+                        <input required class="form-control" type="number" id="square_meters" name="square_meters" min="0" value="{{old('square_meters') ?? $apartment->square_meters }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -84,7 +84,7 @@
                     {{-- address --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input required list="data" class="form-control" type="text" id="address" name="address" value="{{old('address') ?? $singolo_apartment->address }}" autocomplete="off">
+                        <input required list="data" class="form-control" type="text" id="address" name="address" value="{{old('address') ?? $apartment->address }}" autocomplete="off">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -96,9 +96,9 @@
                     {{-- visibility --}}
                     <div>
                         <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento? *</label>
-                        <input type="radio" name="visibility" value="1" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
+                        <input type="radio" name="visibility" value="1" {{ old('visibility', $apartment->visibility) == $apartment->visibility ? "checked" : '' }}>
                         <label for="visibility" >Si</label><br>
-                        <input type="radio" name="visibility" value="0" {{ old('visibility', $singolo_apartment->visibility) == $singolo_apartment->visibility ? "checked" : '' }}>
+                        <input type="radio" name="visibility" value="0" {{ old('visibility', $apartment->visibility) == $apartment->visibility ? "checked" : '' }}>
                         <label for="visibility">No</label><br>
 
                         @error('visibility')
@@ -115,8 +115,8 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
-                        @if($singolo_apartment->cover)
-                            <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $singolo_apartment->cover)}}" alt="">
+                        @if($apartment->cover)
+                            <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $apartment->cover)}}" alt="">
                         @endif
                     </div>
 
@@ -125,9 +125,9 @@
                         <label for="url" class="form-label">Inserire l'album immagini</label>
                         <input type="file" class="form-control" id="url" name="images[]" multiple>
 
-                        @if ($singolo_apartment->images)
+                        @if ($apartment->images)
                             <div class="my-3">
-                                @forelse($singolo_apartment->images as $image)
+                                @forelse($apartment->images as $image)
                                     <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $image->url)}}" alt="">
                                 @empty
                                     <span>
@@ -149,7 +149,7 @@
                                 <i class="fa-solid {{ $element->icon }}"></i>
                             </label>
                             
-                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $singolo_apartment->services->contains($element) ? "checked" : '' }}> 
+                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $apartment->services->contains($element) ? "checked" : '' }}> 
                         </div>
                         @endforeach
                     </div>
@@ -157,7 +157,7 @@
                     {{-- price --}}
                     <div>
                         <label for="price">Prezzo</label>
-                        <input class="form-control"  type="number" id="price" name="price" min="0" value="{{old('price') ?? $singolo_apartment->price }}">
+                        <input class="form-control"  type="number" id="price" name="price" min="0" value="{{old('price') ?? $apartment->price }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                     </div>
                     
