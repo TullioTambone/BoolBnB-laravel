@@ -56,33 +56,23 @@ class ApartmentController extends Controller
                     
                     $query->where('bedrooms', '=', $bedrooms);
                 }
-
             }
         }
 
-        //filtro 20km
+        //filtro indirizzo
         if($request->has('address')){
             $address = $request->input('address');
+        
+            $distance = $request->input('distance');
 
-            $latitude = $request->input('latitude');
-            $longitude = $request->input('longitude');
-
-            // Controlla se le coordinate di latitudine e longitudine sono state ricevute
-            if ($latitude && $longitude) {
-                //salvo la variable distance dal front
-                $distance = $request->input('distance');
+            if($distance !== '20'){
+                $data = $request->all('latitude', 'longitude');
+                $latitude = $data['latitude'];
+                $longitude = $data['longitude'];
                 
-                if($distance){
-                    // Costruisci la query per recuperare gli appartamenti filtrati nel raggio di 20 km dalla latitudine e longitudine
-                    $query = Apartment::query();
-                    $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
-
-                }else{
-                    $query = Apartment::query();
-                    $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= 20000", [$longitude, $latitude]);
-                }
+                $query = Apartment::query();
+                $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
             }
-            dd($query->toSql(), $query->getBindings());
             $query->where('address', 'LIKE', '%' . $address . '%');
         }
 
