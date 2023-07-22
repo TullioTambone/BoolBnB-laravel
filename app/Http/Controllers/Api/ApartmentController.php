@@ -17,8 +17,10 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Apartment::with('services');
+        $query = Apartment::with('services', 'images');
         
+		
+
         if ($request->has('services_ids')) {
             $servicesIds = explode(',', $request->services_ids);
             $query->whereHas('services', function ($query) use ($servicesIds) {
@@ -90,23 +92,22 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment)
+    public function show($slug)
     {
-        // $Apartments = Apartment::with( 'image', 'service')->get();
-        // $apartment = Apartment::with( 'image', 'service')->where('slug', $slug)->first();
+        $apartment = Apartment::with('image', 'services')->where('slug', $slug)->first();
 
-        // if($apartment) {
+        if($apartment) {
 
-        //     return response()->json([
-        //         'success' => true,
-        //         'apartment' => $apartment
-        //     ]);
-        // } else {
-        //     return response()->json([
-        //         'success' => false,
-        //         'error' => "Non c'è nessun elemento"
-        //     ])->setStatusCode(404);
-        // }
+            return response()->json([
+                'success' => true,
+                'apartment' => $apartment
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => "Non c'è nessun appartamento"
+            ])->setStatusCode(404);
+        }
     
     }
 
