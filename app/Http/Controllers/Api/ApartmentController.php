@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Apartment;
+use App\Models\Admin\Service;
 use Illuminate\Http\Request;
+
 
 class ApartmentController extends Controller
 {
@@ -15,9 +17,48 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $apartment = Apartment::all();
+        $query = Apartment::with('services');
         
+        if ($request->has('services_ids')) {
+            $servicesIds = explode(',', $request->services_ids);
+            $query->whereHas('services', function ($query) use ($servicesIds) {
+                $query->whereIn('id', $servicesIds);
+            });
+        }
         
+        if($request->has('rooms')){
+            $rooms = $request->input('rooms');
+            // Se il parametro 'rooms' è presente nella richiesta e ha un valore numerico valido
+            if ($rooms && is_numeric($rooms)) {
+                // Aggiungi una clausola WHERE per filtrare gli appartamenti in base al numero di stanze
+                if($rooms >= 5){
+
+                    $query->where('rooms', '>=', $rooms);
+                }else{
+
+                    $query->where('rooms', '=', $rooms);
+                }
+
+            }
+        }
+
+        if($request->has('bedrooms')){
+            $bedrooms = $request->input('bedrooms');
+            // Se il parametro 'bedrooms' è presente nella richiesta e ha un valore numerico valido
+            if ($bedrooms && is_numeric($bedrooms)) {
+                // Aggiungi una clausola WHERE per filtrare gli appartamenti in base al numero di stanze
+                if($bedrooms >= 5){
+
+                    $query->where('bedrooms', '>=', $bedrooms);
+                }else{
+                    
+                    $query->where('bedrooms', '=', $bedrooms);
+                }
+
+            }
+        }
+
+        $apartment = $query->paginate(3);
 
         return response()->json([
             'success' => true,

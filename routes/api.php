@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\Api\ApartmentController;
-
+use App\Http\Controllers\Api\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +26,5 @@ Route::post('/contacts', [LeadController::class, 'store']);
 
 Route::get( '/apartments', [ApartmentController::class, 'index'] );
 
+Route::get( '/services', [ServiceController::class, 'index'] );
 // Route::get('/subscription', [SubscriptionController::class, 'token']);
