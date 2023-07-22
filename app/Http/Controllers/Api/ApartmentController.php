@@ -26,6 +26,7 @@ class ApartmentController extends Controller
             });
         }
         
+        //filtro stanze
         if($request->has('rooms')){
             $rooms = $request->input('rooms');
             // Se il parametro 'rooms' è presente nella richiesta e ha un valore numerico valido
@@ -42,6 +43,7 @@ class ApartmentController extends Controller
             }
         }
 
+        //filtro stanze da letto
         if($request->has('bedrooms')){
             $bedrooms = $request->input('bedrooms');
             // Se il parametro 'bedrooms' è presente nella richiesta e ha un valore numerico valido
@@ -56,6 +58,23 @@ class ApartmentController extends Controller
                 }
 
             }
+        }
+
+        //filtro 20km
+        if($request->has('address')){
+            $address = $request->input('address');
+
+            $latitude = $request->input('latitude');
+            $longitude = $request->input('longitude');
+
+            // Controlla se le coordinate di latitudine e longitudine sono state ricevute
+            if ($latitude && $longitude) {
+                // Costruisci la query per recuperare gli appartamenti filtrati nel raggio di 20 km dalla latitudine e longitudine
+                $query = Apartment::query();
+                $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= 20000", [$longitude, $latitude]);
+
+            }
+            $query->where('address', 'LIKE', '%' . $address . '%');
         }
 
         $apartment = $query->paginate(3);
