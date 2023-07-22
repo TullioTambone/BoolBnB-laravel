@@ -69,11 +69,20 @@ class ApartmentController extends Controller
 
             // Controlla se le coordinate di latitudine e longitudine sono state ricevute
             if ($latitude && $longitude) {
-                // Costruisci la query per recuperare gli appartamenti filtrati nel raggio di 20 km dalla latitudine e longitudine
-                $query = Apartment::query();
-                $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= 20000", [$longitude, $latitude]);
+                //salvo la variable distance dal front
+                $distance = $request->input('distance');
+                
+                if($distance){
+                    // Costruisci la query per recuperare gli appartamenti filtrati nel raggio di 20 km dalla latitudine e longitudine
+                    $query = Apartment::query();
+                    $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
 
+                }else{
+                    $query = Apartment::query();
+                    $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= 20000", [$longitude, $latitude]);
+                }
             }
+            dd($query->toSql(), $query->getBindings());
             $query->where('address', 'LIKE', '%' . $address . '%');
         }
 
