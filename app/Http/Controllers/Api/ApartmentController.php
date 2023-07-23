@@ -61,19 +61,22 @@ class ApartmentController extends Controller
 
         //filtro indirizzo
         if($request->has('address')){
-            $address = $request->input('address');        
+            $address = $request->input('address');       
+            
+
+            // if($latitude && $longitude) {
+            //     
+            // } else {
+                
+            // }
+
+            // di tutti i record che dammi quelli che includono address anche parzialmente  
+            $query->where('address', 'LIKE', '%' . $address . '%');
+        }
+
+        if($request->has('distance') ) {
             $latitude = $request->input('latitude');
             $longitude = $request->input('longitude');
-
-            if($latitude && $longitude) {
-                $distance = $request->input('distance');
-                $query = Apartment::query();
-                $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
-            }
-
-            $query->where('address', 'LIKE', '%' . $address . '%');
-                
-            
         }
 
         $apartment = $query->paginate(3);
