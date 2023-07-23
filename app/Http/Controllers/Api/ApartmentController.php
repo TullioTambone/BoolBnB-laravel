@@ -65,11 +65,13 @@ class ApartmentController extends Controller
             
 
             // if($latitude && $longitude) {
-            //     
+            //     $distance = $request->input('distance');
+            //     $query = Apartment::query();
+            //     $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
             // } else {
                 
             // }
-
+            
             // di tutti i record che dammi quelli che includono address anche parzialmente  
             $query->where('address', 'LIKE', '%' . $address . '%');
         }
