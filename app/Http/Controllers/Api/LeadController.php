@@ -16,20 +16,20 @@ class LeadController extends Controller
         $data = $request->all();
         
         // validazione
-        $validator = Validator::make($data, [
-            'name' => 'required',
-            'email' => 'require',
-            'message' => 'required'
-        ]);
+        // $validator = Validator::make($data, [
+        //     'name' => 'required',
+        //     'email' => 'require',
+        //     'message' => 'required'
+        // ]);
         
         /*per validazione non  andata a buon fine*/
         
-        if($validator->fails()) {
-            return response()->json([
-            'success'=> false,
-            'errors' => $validator->errors()
-            ]);
-        }
+        // if($validator->fails()) {
+        //     return response()->json([
+        //     'success'=> false,
+        //     'errors' => $validator->errors()
+        //     ]);
+        // }
         
         // salvataggio dei dati nel db
         $new_lead = Lead::create($data);

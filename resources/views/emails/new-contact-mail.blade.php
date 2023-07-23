@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-
 <h1>Ciao Admin</h1>
 
 <p>
@@ -11,8 +7,3 @@
     Messaggio: <br>
      {{ $lead->message }}
 </p>
-
-
-
-
-@endsection
