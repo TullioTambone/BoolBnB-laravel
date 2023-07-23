@@ -13,13 +13,9 @@ use App\Models\User;
 class Apartment extends Model
 {
     use HasFactory;
-
-    public static function toSlug($title, $id) {
-        return Str::slug($title . $id, '-');
-    }
-
+    
     protected $table = 'apartments';
-
+    
     protected $fillable = [
         'user_id',
         'title',
@@ -35,19 +31,22 @@ class Apartment extends Model
         'description',
         'cover',
         'price'
-    ];
-
-
+    ];    
+    
+    public static function toSlug($title, $id) {
+        return Str::slug($title . ' ' . $id, '-');
+    }
+    
     //collegamento many to one con tabella Users
     public function user(){
         return $this->belongsTo(User::class);
     }
-
+    
     //collegamento many to many con tabella Services
     public function services() {
         return $this->belongsToMany(Service::class);
     }
-
+    
     //collegamento one to many con tabella Images
     public function images() {
         return $this->hasMany(Image::class);

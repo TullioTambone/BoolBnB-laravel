@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin\service;
+use App\Models\Admin\Service;
 
 class ServiceController extends Controller
 {

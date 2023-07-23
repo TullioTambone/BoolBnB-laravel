@@ -186,6 +186,8 @@ class ApartmentController extends Controller
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
 
+        $apartment->user_id = auth()->user()->id;
+
         // salvataggio campi form passati dalla validazione di UpdateApartmentRequest
         $form_data = $request->validated();
         
@@ -215,7 +217,7 @@ class ApartmentController extends Controller
             }
         }
         
-        $slug = Apartment::toSlug($request->title, $request->id);
+        $slug = Apartment::toSlug($request->title, $apartment->user_id);
         $form_data['slug'] = $slug;
 
         $latitude = $request->input('latitude');

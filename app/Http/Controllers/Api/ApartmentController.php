@@ -17,10 +17,9 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Apartment::with('services', 'images');
-        
+        $query = Apartment::with('services', 'images');        
 		
-
+        // filtro servizi
         if ($request->has('services_ids')) {
             $servicesIds = explode(',', $request->services_ids);
             $query->whereHas('services', function ($query) use ($servicesIds) {
@@ -41,7 +40,6 @@ class ApartmentController extends Controller
 
                     $query->where('rooms', '=', $rooms);
                 }
-
             }
         }
 
@@ -63,8 +61,7 @@ class ApartmentController extends Controller
 
         //filtro indirizzo
         if($request->has('address')){
-            $address = $request->input('address');
-        
+            $address = $request->input('address');        
             $distance = $request->input('distance');
 
             if($distance !== '20'){
@@ -86,15 +83,9 @@ class ApartmentController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Admin\Apartment  $apartment
-     * @return \Illuminate\Http\Response
-     */
     public function show($slug)
     {
-        $apartment = Apartment::with('image', 'services')->where('slug', $slug)->first();
+        $apartment = Apartment::with('images', 'services')->where('slug', $slug)->first();
 
         if($apartment) {
 
