@@ -22,9 +22,15 @@ use App\Http\Controllers\Api\ServiceController;
 //     return $request->user();
 // });
 
+// contacts - Emails
 Route::post('/contacts', [LeadController::class, 'store']);
 
+// apartments
 Route::get( '/apartments', [ApartmentController::class, 'index'] );
 
+// apartments show
+Route::get( '/apartments/{slug}', [ApartmentController::class, 'show'] );
+
+// services
 Route::get( '/services', [ServiceController::class, 'index'] );
 // Route::get('/subscription', [SubscriptionController::class, 'token']);
