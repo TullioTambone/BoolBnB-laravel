@@ -14,7 +14,8 @@ class Lead extends Model
     protected $fillable = [
         'name',
         'email',
-        'message'
+        'message',
+        'apartment_id'
     ];
 
     // collegamento many to one con tabella Apartments
