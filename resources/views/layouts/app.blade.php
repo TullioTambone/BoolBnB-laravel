@@ -20,60 +20,60 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+    @vite(['resources/scss/pages/_nav.scss'])
     @yield('script')
 </head>
 
 <body>
     <div id="app">
 
-
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <h1>BoolBnB</h1>
-                    </div>
-                    {{-- config('app.name', 'Laravel') --}}
-                </a>
-
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex justify-content-between">
+                <div>
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                        <div class="logo_laravel text-white">
+                            <h1>BoolBnB</h1>
+                        </div>
+                        {{-- config('app.name', 'Laravel') --}}
+                    </a>
+                </div>
+    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+    
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:5174/">{{ __('Home') }}</a>
-                        </li>
+                            <a class="nav-link text-white home" href="http://localhost:5174/">{{ __('Home') }}</a>
+                        </li>    
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto ">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrazione') }}</a>
+                            <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrazione') }}</a>
                         </li>
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.index') }}">Appartamenti</a>
+                            <a class="nav-link text-white" href="{{ route('admin.index') }}">Appartamenti</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.create') }}">Pubblica Appartamenti</a>
+                            <a class="nav-link text-white" href="{{ route('admin.create') }}">Pubblica Appartamenti</a>
                         </li>
                         <li class="nav-item dropdown">
                             @if(Auth::user()->name)
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                             @else
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Utente
                                 </a>
                             @endif
@@ -95,6 +95,7 @@
                 </div>
             </div>
         </nav>
+    
 
         <main class="">
             @yield('content')

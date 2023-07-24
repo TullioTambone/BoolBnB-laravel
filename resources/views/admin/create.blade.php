@@ -165,6 +165,6 @@
 @endsection
 
 @section('script')
-    @vite(['resources/js/validation.js']);
-    @vite(['resources/js/tom.js']);
+    @vite(['resources/js/validation.js'])
+    @vite(['resources/js/tom.js'])
 @endsection
