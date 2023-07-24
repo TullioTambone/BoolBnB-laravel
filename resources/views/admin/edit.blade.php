@@ -84,12 +84,12 @@
                     {{-- address --}}
                     <div>
                         <label for="address">Indirizzo *</label>
-                        <input required list="data" class="form-control" type="text" id="address" name="address" value="{{old('address') ?? $apartment->address }}" autocomplete="off">
+                        <input required list="datalistOptions" class="form-control" type="text" id="address" name="address" value="{{old('address') ?? $apartment->address }}" autocomplete="off">
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="invalid-feedback">Inserisci un indirizzo valido!</div>
-                        <datalist id="data">                            
+                        <datalist id="datalistOptions">                            
                         </datalist>
                     </div>
 
