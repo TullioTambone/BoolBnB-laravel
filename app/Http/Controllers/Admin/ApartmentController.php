@@ -145,9 +145,7 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment)
     {
 
-        // $apartment = Apartment::findOrFail($id);
-
-            // Verifica se l'utente loggato è il proprietario dell'appartamento
+        // Verifica se l'utente loggato è il proprietario dell'appartamento
         if ($apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
         } else {

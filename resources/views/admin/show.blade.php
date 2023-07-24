@@ -11,8 +11,7 @@
             @if ($apartment->cover)
                 <div>
                     <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
-                </div>
-                
+                </div>                
             @else
                 <div style="width: 300px; height: 300px">
                     <h3 style="color:lightgray">NON CI SONO IMMAGINI</h3>
@@ -22,27 +21,23 @@
 
                 {{-- per prendere le immagini usiamo la relazione con la tabella images --}}
                 @if($apartment->images)
-                <div class="carousel slide col-12 col-md-8 col-lg-8" id="carouselExampleAutoplaying" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        @foreach($apartment->images as $index => $e)
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img src="{{ asset('storage/'. $e->url) }}" class="d-block w-100" alt="{{$e->id}}">
-                            </div>
-                        @endforeach
+                    <div class="carousel slide col-12 col-md-8 col-lg-8" id="carouselExampleAutoplaying" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach($apartment->images as $index => $e)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('storage/'. $e->url) }}" class="d-block w-100" alt="{{$e->id}}">
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                
-                        {{-- <div class=" p-0">
-                            <img class="img-fluid" src="{{ asset('storage/'. $elem->url) }}" alt="">
-                        </div> --}}
                 @endif
             </div>
         </div>
@@ -77,6 +72,22 @@
                 @if ($apartment->services)
                     @foreach($apartment->services as $elem)
                         <span class="d-block mt-1"> <i class="fa-solid {{ $elem->icon }} me-1 "></i> {{  $elem->name }} </span>
+                    @endforeach
+                @endif
+
+                @if ($apartment->leads)
+
+                    <h2>Messagi Ricevuti</h2>
+                    @foreach($apartment->leads as $elem)
+                        <span class="d-block mt-1"> 
+                            Nome: {{  $elem->name }} 
+                        </span>
+                        <span class="d-block mt-1"> 
+                            Email: {{  $elem->email }} 
+                        </span>
+                        <p class="d-block mt-1"> 
+                            Messaggio: {{  $elem->message }} 
+                        </p>
                     @endforeach
                 @endif
 

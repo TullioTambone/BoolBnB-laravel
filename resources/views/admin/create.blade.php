@@ -89,7 +89,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="invalid-feedback">Inserisci un indirizzo valido!</div>
-                        <datalist id="datalistOptions">                           
+                        <datalist id="datalistOptions">              
                             
                         </datalist>
                     </div>
