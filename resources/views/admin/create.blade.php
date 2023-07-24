@@ -19,14 +19,14 @@
                 @endif
 
                 {{-- form create --}}
-                <form id="form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="mt-4" id="form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf
 
                     {{-- title --}}
-                    <div>
-                        <label for="title">Titolo *</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Titolo *</label>
                         <input class="form-control" type="text" id="title" name="title" autocomplete="off" value="{{ old('title') }}" required>
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -34,14 +34,14 @@
                     </div>
                     
                     {{-- description --}}
-                    <div>
-                        <label for="description">Descrizione</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Descrizione</label>
                         <textarea class="form-control" name="description" id="description" rows="5"></textarea>
                     </div>
 
                     {{-- rooms --}}
-                    <div>
-                        <label for="rooms">Stanze *</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="rooms">Stanze *</label>
                         <input class="form-control" type="number" id="rooms" name="rooms" min="0" value="{{ old('rooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('rooms')
@@ -50,8 +50,8 @@
                     </div>
 
                     {{-- bedrooms --}}
-                    <div>
-                        <label for="bedrooms">Camere da letto *</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="bedrooms">Camere da letto *</label>
                         <input class="form-control" type="number" id="bedrooms" name="bedrooms" min="0" value="{{ old('bedrooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bedrooms')
@@ -60,8 +60,8 @@
                     </div>
 
                     {{-- bathrooms --}}
-                    <div>
-                        <label for="bathrooms">Bagni *</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="bathrooms">Bagni *</label>
                         <input class="form-control" type="number" id="bathrooms" name="bathrooms" min="0" value="{{ old('bathrooms') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('bathrooms')
@@ -70,8 +70,8 @@
                     </div>
 
                     {{-- square meters --}}
-                    <div>
-                        <label for="square_meters">Metri quadrati *</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="square_meters">Metri quadrati *</label>
                         <input class="form-control" type="number" id="square_meters" name="square_meters" min="0" value="{{ old('square_meters') }}" required>
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         @error('square_meters')
@@ -82,25 +82,35 @@
                     {{-- address
                         esempio: Via... civico, 0001.. RM, Regione
                          --}}
-                    <div>
-                        <label for="address">Indirizzo *</label>
-                        <input list="data" class="form-control" type="text" id="address" name="address" autocomplete="off" value="{{ old('address') }}" required>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Indirizzo *</label>
+                        <input list="datalistOptions" class="form-control" type="text" id="address" name="address" autocomplete="off" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo..." required>
                         @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="invalid-feedback">Inserisci un indirizzo valido!</div>
-                        <datalist id="data">                           
+                        <datalist id="datalistOptions">                           
                             
                         </datalist>
                     </div>
 
                     {{-- visibility --}}
-                    <div>
-                        <label class="d-block" for="visibility">Vuoi rendere visibile il tuo appartamento? *</label>
-                        <input type="radio" name="visibility" value="1">
-                        <label for="visibility">Si</label><br>
-                        <input type="radio" name="visibility" value="0" checked>
-                        <label for="visibility">No</label><br>
+                    <div class="mb-3">
+                        <label class="d-block" for="visibility">
+                            Vuoi rendere visibile il tuo appartamento? *
+                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="visibility" id="visibility" value="1">
+                            <label class="form-check-label" for="visibility">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="visibility" id="visibility" value="0" checked>
+                            <label class="form-check-label" for="visibility">
+                                No
+                            </label>
+                        </div>
                     </div>
 
                     {{-- cover --}}
@@ -121,22 +131,22 @@
 
                     {{-- servizi --}}
                     <div class="mb-3">
-                        <label for="services">Servizi *</label>
+                        <label class="form-label" for="services">Servizi *</label>
                         <div id="checkbox-feedback" class="invalid-feedback"></div>
                         @foreach ($services as $element)
-                            <div>
-                                <label for="check-service-{{ $element->id }}" class="form-label">
+                            <div class="form-check">
+                                <label for="check-service-{{ $element->id }}" class="form-check-label">
                                     {{ $element->name }}
                                     <i class="fa-solid {{ $element->icon }}"></i>
                                 </label>
-                                <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
+                                <input class="form-check-input" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
                             </div>
                         @endforeach
                     </div>
 
                     {{-- prezzo --}}
-                    <div>
-                        <label for="price">Prezzo</label>
+                    <div class="mb-3">
+                        <label class="form-label" for="price">Prezzo</label>
                         <input class="form-control" type="number" id="price" name="price" min="0" value="{{ old('price') }}">
                         <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                     </div>

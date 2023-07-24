@@ -110,7 +110,7 @@ function addressCheck(address) {
                 if (results.length)  {   
 
                     for (const elem of results) {
-                        document.getElementById('data').innerHTML += `<option value="${elem.address.freeformAddress}">${elem.address.freeformAddress}</option>`;
+                        document.getElementById('datalistOptions').innerHTML += `<option value="${elem.address.freeformAddress}">${elem.address.freeformAddress}</option>`;
                         
                         // Interrompi il ciclo se trovi una corrispondenza
                         if (elem.address.freeformAddress === address) {
