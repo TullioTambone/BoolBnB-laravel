@@ -18,6 +18,8 @@ class ApartmentController extends Controller
     public function index(Request $request)
     {
         $query = Apartment::with('services', 'images');        
+
+        $rooms = $request->input('rooms');
 		
         // filtro servizi
         if ($request->has('services_ids')) {
@@ -29,7 +31,6 @@ class ApartmentController extends Controller
         
         //filtro stanze
         if($request->has('rooms')){
-            $rooms = $request->input('rooms');
             // Se il parametro 'rooms' è presente nella richiesta e ha un valore numerico valido
             if ($rooms && is_numeric($rooms)) {
                 // Aggiungi una clausola WHERE per filtrare gli appartamenti in base al numero di stanze
