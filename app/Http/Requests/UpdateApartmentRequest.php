@@ -31,7 +31,7 @@ class UpdateApartmentRequest extends FormRequest
             'bathrooms' => 'required|integer|min:0',
             'square_meters' => 'required|integer|min:0',
             'address' => 'required',
-            'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2000',
+            'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'services' => 'required',
             'price' => 'nullable',
             'description' => 'nullable',
@@ -55,7 +55,10 @@ class UpdateApartmentRequest extends FormRequest
             'square_meters.integer' => 'Inserire un numero intero',
             'square_meters.min' => 'Non inserire numeri negativi',
             'address.required' => "Inserire l'indirizzo",
-            'services.required' => 'Inserisci almeno un campo in Servizi'
+            'services.required' => 'Inserisci almeno un campo in Servizi',
+            'cover.image' => 'La cover deve essere un immagine',
+            'cover.mimes' => 'Il formato deve essere: jpeg, png, jpg, gif',
+            'cover.max' => 'Grandezza massima di 2MB'
         ];
     }
 }
