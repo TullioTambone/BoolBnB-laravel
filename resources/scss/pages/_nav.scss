@@ -20,7 +20,9 @@ h1 {
   
     .navbar-collapse {
       flex-grow: 0;
+      
     }
+    
   
     ul {
       margin: 0;
@@ -31,25 +33,30 @@ h1 {
         list-style: none;
         margin: 0 20px;
         transition: 0.5s;
+        padding: 4px;
   
         a {
           display: block;
           position: relative;
           text-decoration: none;
           padding: 5px;
-          font-size: 13px;
+          font-size: 16px;
           font-family: sans-serif;
           color: #fff;
           text-transform: uppercase;
           transition: 0.5s;
+          
+        }
+        .nav-link{
+            color: white;
         }
   
-        &:hover a {
-          transform: scale(1);
-          opacity: 0.2;
-          filter: blur(1px);
-        }
-      }
+    }
+    &:hover a {
+      transform: scale(1);
+      opacity: 0.2;
+      filter: blur(1px);
+    }
   
       li a:hover {
         transform: scale(1.1);
@@ -59,7 +66,7 @@ h1 {
         color: #112c38;
   
         &:before {
-          transition: transform 0.5s;
+          transition: transform 0.6s;
           transform-origin: left;
           transform: scaleX(1);
         }
