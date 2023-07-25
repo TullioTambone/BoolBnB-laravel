@@ -23,7 +23,21 @@ h1 {
       
     }
     
-  
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+        color: white; 
+
+        &:hover{
+            color: #112c38;
+        }
+    }
+
+    nav ul li a:hover{
+        transform: scale(1.1);
+        opacity: 0.9;
+        filter: blur(0);
+        text-decoration: none;
+    }
+
     ul {
       margin: 0;
       padding: 15px;
@@ -45,17 +59,24 @@ h1 {
           color: #fff;
           text-transform: uppercase;
           transition: 0.5s;
+
+          
           
         }
         .nav-link{
             color: white;
         }
-  
+        
     }
+    
     &:hover a {
       transform: scale(1);
       opacity: 0.2;
       filter: blur(1px);
+    }
+
+    &:hover .prova{
+        filter: none;
     }
   
       li a:hover {
@@ -72,6 +93,7 @@ h1 {
         }
       }
     }
+   
   
     li a:before {
       content: '';
@@ -93,5 +115,8 @@ h1 {
       transform-origin: left;
       transform: scaleX(1);
     }
-  }
-  
+
+}
+
+
+
