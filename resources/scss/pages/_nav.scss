@@ -1,0 +1,97 @@
+// Global styles
+h1 {
+    color: #fff;
+    padding-left: 20px;
+    font-family: sans-serif;
+  }
+  
+  .navbar-toggler {
+    background-color: #fff;
+    margin: 15px;
+  }
+  
+  nav {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #112c38;
+  
+    .navbar-collapse {
+      flex-grow: 0;
+      
+    }
+    
+  
+    ul {
+      margin: 0;
+      padding: 15px;
+      display: flex;
+  
+      li {
+        list-style: none;
+        margin: 0 20px;
+        transition: 0.5s;
+        padding: 4px;
+  
+        a {
+          display: block;
+          position: relative;
+          text-decoration: none;
+          padding: 5px;
+          font-size: 16px;
+          font-family: sans-serif;
+          color: #fff;
+          text-transform: uppercase;
+          transition: 0.5s;
+          
+        }
+        .nav-link{
+            color: white;
+        }
+  
+    }
+    &:hover a {
+      transform: scale(1);
+      opacity: 0.2;
+      filter: blur(1px);
+    }
+  
+      li a:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
+        filter: blur(0);
+        text-decoration: none;
+        color: #112c38;
+  
+        &:before {
+          transition: transform 0.6s;
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+  
+    li a:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 7px;
+      background: #fff;
+      transition: 0.5s;
+      transform-origin: right;
+      transform: scaleX(0);
+      z-index: -1;
+    }
+  
+    li a:hover:before {
+      transition: transform 0.5s;
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+  
