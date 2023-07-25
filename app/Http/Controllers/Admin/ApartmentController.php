@@ -14,6 +14,7 @@ use Illuminate\Validation\Rule;
 use App\Models\Admin\Apartment;
 use App\Models\Admin\Image;
 use App\Models\Admin\Service;
+use App\Models\Admin\Subscription;
 
 // requests
 use App\Http\Requests\StoreApartmentRequest;
@@ -37,9 +38,7 @@ class ApartmentController extends Controller
         // } else {
         //    
         // }
-        return view('admin.index', compact('apartments'));
-
-       
+        return view('admin.index', compact('apartments')); 
     }
 
     /**
@@ -54,7 +53,7 @@ class ApartmentController extends Controller
         $services = Service::all();
         $images = Image::all();
      
-        return view('admin.create', compact('services', 'images', ));
+        return view('admin.create', compact('services', 'images'));
 
         
     }
@@ -131,7 +130,8 @@ class ApartmentController extends Controller
                     con la funzione attach() creiamo tanti record quanti sono i collegamenti nella tabella pivot
             */
             $new_apartment->services()->attach($request->services);
-        }
+        } 
+
         // reindirizzamento alla pagina index
         return redirect()->route('admin.index');
     }
@@ -145,14 +145,14 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment)
     {
 
+        $sub = Subscription::all();
+
         // Verifica se l'utente loggato è il proprietario dell'appartamento
         if ($apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
         } else {
-            return view('admin.show', compact('apartment'));
+            return view('admin.show', compact('apartment', 'sub'));
         }
-
-        
     }
 
     /**

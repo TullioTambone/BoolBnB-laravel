@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ApartmentController;
 use App\Http\Controllers\Admin\SubscriptionController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +36,8 @@ Route::middleware('auth')->group(function () {
         'admin' => 'apartment:slug',
     ]);
 
-    // Route::resource('/subscription', SubscriptionController::class);
-
-    Route::any('/subscription', [SubscriptionController::class, 'token'])->name('token');
+    
+    Route::post('/subscription', [SubscriptionController::class, 'token'])->name('subscription');
 });
 
 require __DIR__.'/auth.php';

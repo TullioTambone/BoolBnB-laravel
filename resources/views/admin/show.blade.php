@@ -107,8 +107,51 @@
                         <button class="btn btn-danger" type="submit">Elimina</button>
                     </form>
                 </div>
+
+                
+
+                <div class="mt-4">
+                    <form id="payment-form" action="{{route('subscription')}}" method="POST">
+                                            
+                        {{-- token --}}
+                        @csrf
+                        <!-- Putting the empty container you plan to pass to
+                        'braintree.dropin.create' inside a form will make layout and flow
+                        easier to manage -->
+                        <div class="row">
+                            @foreach($sub as $e)
+
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="subscription_id" id="subscription-{{$e->id}}" value="{{$e->id}}">
+                                    <label class="btn btn-outline-success" for="subscription-{{$e->id}}">
+                                        {{$e->name}}
+                                        {{$e->price}}€
+                                        {{$e->duration}}
+                                    </label>
+
+                                </div>
+          
+                                @endforeach
+                            </div>
+                            <input type="hidden" name="apartment_id" value="{{$apartment->id}}"> 
+
+                        <div id="dropin-container"></div>
+                        <input type="submit" />
+                        <input type="hidden" id="nonce" name="payment_method_nonce" />
+                    </form>                
+                </div>
             </div>
         </div>
     </div> 
 </div> 
+@endsection
+
+
+@section('script')
+@vite(['resources/js/braintree.js'])
+@endsection
+
+@section('braintree')
+<script src="https://js.braintreegateway.com/web/dropin/1.39.0/js/dropin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 @endsection

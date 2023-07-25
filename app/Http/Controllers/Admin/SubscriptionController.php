@@ -1,41 +1,62 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Apartment;
 use App\Models\Admin\Subscription;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
+use Carbon\Carbon;
 
 class SubscriptionController extends Controller
 {
+    public function token(Request $request)
+    {
+        // Ottieni l'appartamento corrispondente all'ID nel campo nascosto 'apartment_id'
+        //$apartment = Apartment::findOrFail($request->input('apartment_id'));
 
-    public function token(Request $request){
+        // Associa l'appartamento alla sottoscrizione usando il metodo attach()
+        //$apartment->subscriptions()->attach($request->input('subscription_id'), [
+        //     'end_subscription' => now()->addHours($request->input('duration')),
+        // ]);
 
+        // Ottieni l'appartamento corrispondente all'ID nel campo nascosto 'apartment_id'
+        $apartment = Apartment::findOrFail($request->input('apartment_id'));
+
+        // Ottieni la sottoscrizione corrispondente all'ID nel campo nascosto 'subscription_id'
+        $subscription = Subscription::where('id', $request->input('subscription_id'))->first();
+
+        if ($subscription) {
+            // Calcola l'ora di fine sottoscrizione aggiungendo la durata della sottoscrizione all'ora corrente
+            $endSubscription = Carbon::now()->addHours($subscription->duration);
+    
+            // Associa l'appartamento alla sottoscrizione usando il metodo attach()
+            $apartment->subscriptions()->attach($subscription, [
+                'end_subscription' => $endSubscription,
+            ]);
+        }
+    
         $gateway = new Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
+            'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env("BRAINTREE_MERCHANT_ID"),
             'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
             'privateKey' => env("BRAINTREE_PRIVATE_KEY")
         ]);
-
-        if($request->input('nonce') != null){
-            var_dump($request->input('nonce'));
-            $nonceFromTheClient = $request->input('nonce');
-        
-            $result = $gateway->transaction()->sale([
-                'amount' => '10.00',
-                'paymentMethodNonce' => $nonceFromTheClient,
-                'options' => [
-                    'submitForSettlement' => True
-                ]
-            ]);
-            return view ('admin.index');
-        }
-
+    
         $clientToken = $gateway->clientToken()->generate();
-        return view ('admin.subscription',['token' => $clientToken]);
+        $nonceFromTheClient = $request->input('nonce');
+        
+        $result = $gateway->transaction()->sale([
+            'amount' => '10.00',
+            'paymentMethodNonce' => $nonceFromTheClient,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+    
+        return redirect()->route('admin.index', compact('clientToken', 'result'));
     }
+    
     
 
     // public function process(Request $request)

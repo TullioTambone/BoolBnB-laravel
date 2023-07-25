@@ -1,68 +1,26 @@
-// let button = document.querySelector('#submit-button');
-
-// braintree.dropin.create({
-//     authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
-//     selector: '#dropin-container'
-
-// }, function (err, instance) {
-//     button.addEventListener('click', function () {
-//         instance.requestPaymentMethod(function (err, payload) {
-//         // Submit payload.nonce to your server
-//         });
-//     })
-// });
-
-let button = document.querySelector('#submit-button');
+const form = document.getElementById('payment-form');
 
 braintree.dropin.create({
-    authorization: 'sandbox_kt9j85dm_8mzh6tykn6rmbdnn',
+    authorization: 'sandbox_hcbkfbtr_h6fcm68ztg8r4hv9',
     container: '#dropin-container'
-}, function (createErr, instance) {
-    button.addEventListener('click', function () {
-        instance.requestPaymentMethod(function (err,payload){
-            
-            axios.post('{{ route("token") }}', {
-                nonce: payload.nonce
-              }, {
-                headers: {
-                  'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                }
-              })
-              .then(function (response) {
-                console.log('success', payload.nonce);
-              })
-              .catch(function (error) {
-                console.log('error', payload.nonce);
-              });
+    }, (error, dropinInstance) => {
+    if (error) console.error(error);
+    
+    
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        dropinInstance.requestPaymentMethod((error, payload) => {
+        if (error) console.error(error);
+
+
+        // Step four: when the user is ready to complete their
+        //   transaction, use the dropinInstance to get a payment
+        //   method nonce for the user's selected payment method, then add
+        //   it a the hidden field before submitting the complete form to
+        //   a server-side integration
+        document.getElementById('nonce').value = payload.nonce;
+        form.submit();
         });
     });
 });
-
-// let button = document.querySelector('#submit-button');
-
-// braintree.dropin.create({
-//     authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
-//     container: '#dropin-container'
-// }, function (createErr, instance) {
-//     button.addEventListener('click', function () {
-
-//         instance.requestPaymentMethod(function (err, payload) {
-//             axios.get("http://127.0.0.1:8000/api/subscription/process", {params: payload})
-//             .then( function (response) {
-
-//                 console.log(response);
-//                 if (response.success) {
-//                 alert('Payment successfull!');
-//                 } else {
-//                 alert('Payment failed');
-//                 }
-//             })
-//             .catch(function (error) {
-//                 // handle error
-//                 console.log(error);
-//             });
-//         });
-//     });
-// });
-
-// 5333 1711 5883 9726
