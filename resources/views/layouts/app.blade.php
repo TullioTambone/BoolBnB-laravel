@@ -45,13 +45,13 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li>
-                            <a class="nav-link home" href="http://localhost:5174/">{{ __('Home') }}</a>
+                            <a class="nav-link home" href="http://localhost:5174/"> <i class="fa-solid fa-house-user"></i> {{ __('Home') }}</a>
                         </li>    
                    
                         <!-- Authentication Links -->
                         @guest
                         <li>
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}"> {{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li>
@@ -60,19 +60,19 @@
                         @endif
                         @else
                         <li>
-                            <a class="nav-link" href="{{ route('admin.index') }}">Appartamenti</a>
+                            <a class="nav-link" href="{{ route('admin.index') }}"> <i class="fa-solid fa-building"></i>  Appartamenti</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ route('admin.create') }}">Pubblica Appartamenti</a>
+                            <a class="nav-link" href="{{ route('admin.create') }}"> <i class="fa-solid fa-building-user"></i> Pubblica Appartamenti</a>
                         </li>
                         <li class="nav-item dropdown">
                             @if(Auth::user()->name)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                  {{ Auth::user()->name }}
                                 </a>
                             @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Utente
+                                    <i class="fa-regular fa-user"></i>  Utente
                                 </a>
                             @endif
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
