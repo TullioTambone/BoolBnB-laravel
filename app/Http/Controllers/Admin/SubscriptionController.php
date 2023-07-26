@@ -12,14 +12,7 @@ class SubscriptionController extends Controller
 {
     public function token(Request $request)
     {
-        // Ottieni l'appartamento corrispondente all'ID nel campo nascosto 'apartment_id'
-        //$apartment = Apartment::findOrFail($request->input('apartment_id'));
-
-        // Associa l'appartamento alla sottoscrizione usando il metodo attach()
-        //$apartment->subscriptions()->attach($request->input('subscription_id'), [
-        //     'end_subscription' => now()->addHours($request->input('duration')),
-        // ]);
-
+        $sub = Subscription::all();
         // Ottieni l'appartamento corrispondente all'ID nel campo nascosto 'apartment_id'
         $apartment = Apartment::findOrFail($request->input('apartment_id'));
 
@@ -35,6 +28,8 @@ class SubscriptionController extends Controller
                 'end_subscription' => $endSubscription,
             ]);
         }
+
+        $nonceFromTheClient = $request->input('payment_method_nonce');
     
         $gateway = new Gateway([
             'environment' => env('BRAINTREE_ENV'),
@@ -42,19 +37,30 @@ class SubscriptionController extends Controller
             'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
             'privateKey' => env("BRAINTREE_PRIVATE_KEY")
         ]);
-    
         $clientToken = $gateway->clientToken()->generate();
-        $nonceFromTheClient = $request->input('nonce');
         
-        $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
+        $results = $gateway->transaction()->sale([
+            'amount' => $subscription->price,
             'paymentMethodNonce' => $nonceFromTheClient,
             'options' => [
                 'submitForSettlement' => true
+            ],
+            "customer" => [
+                "id" => $apartment->user->id,
+                "firstName" => $apartment->user->name,
+                "lastName" => $apartment->user->surname,
+                "company" => 'Boolean',
+                "email" => $apartment->user->email,
+                "website" => null,
+                "phone" => null,
+                "fax" => null
             ]
         ]);
-    
-        return redirect()->route('admin.index', compact('clientToken', 'result'));
+        
+        return view('admin.show', compact('apartment', 'sub', 'results', 'clientToken'));
+        // return redirect()->route('admin.index')->with([
+        //     'results' => $results
+        // ]);
     }
     
     

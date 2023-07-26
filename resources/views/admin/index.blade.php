@@ -2,6 +2,25 @@
 
 @section('content')
     <div class="container">
+        {{-- <div class="container">
+            @foreach ($apartments as $apartment)
+                <h2>Appartamento: {{ $apartment->title }}</h2>
+    
+                @if (isset($results[$apartment->id]) && !$results[$apartment->id]->isEmpty())
+                    <h3>Risultati delle transazioni:</h3>
+                    <ul>
+                        @foreach ($results[$apartment->id] as $transaction)
+                            <li>ID transazione: {{ $transaction->id }}</li>
+                            <!-- Altri dettagli della transazione... -->
+                        @endforeach
+                    </ul>
+                @else
+                    <p>Nessun risultato di transazione per questo appartamento.</p>
+                @endif
+    
+                <!-- Altre informazioni sull'appartamento... -->
+            @endforeach
+        </div> --}}
         
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
@@ -17,7 +36,7 @@
             </a>
         </div>
         @else
-            <h1 class="text-center my-4">I TUOI APPARTAMENTI</h1>
+            <h1 class="text-center text-dark my-4">I TUOI APPARTAMENTI</h1>
 
             <ul class="list-unstyled">
                 @foreach($apartments as $elem)

@@ -115,9 +115,7 @@
                                             
                         {{-- token --}}
                         @csrf
-                        <!-- Putting the empty container you plan to pass to
-                        'braintree.dropin.create' inside a form will make layout and flow
-                        easier to manage -->
+                        
                         <div class="row">
                             @foreach($sub as $e)
 
@@ -140,6 +138,13 @@
                         <input type="hidden" id="nonce" name="payment_method_nonce" />
                     </form>                
                 </div>
+                @if(isset($results))
+                    <!-- Visualizza i risultati come desideri -->
+                    <div>
+                        Risultati del pagamento:
+                        <pre>{{ json_encode($results, JSON_PRETTY_PRINT) }}</pre>
+                    </div>
+                @endif
             </div>
         </div>
     </div> 
@@ -148,7 +153,10 @@
 
 
 @section('script')
-@vite(['resources/js/braintree.js'])
+    <script>
+        let clientToken = "{{ $clientToken }}";
+    </script>
+    @vite(['resources/js/braintree.js'])
 @endsection
 
 @section('braintree')
