@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rule;
+use Braintree\Gateway;
 
 // models
 use App\Models\Admin\Apartment;
@@ -147,11 +148,20 @@ class ApartmentController extends Controller
 
         $sub = Subscription::all();
 
+        $gateway = new Gateway([
+            'environment' => env('BRAINTREE_ENV'),
+            'merchantId' => env("BRAINTREE_MERCHANT_ID"),
+            'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
+            'privateKey' => env("BRAINTREE_PRIVATE_KEY")
+        ]);
+    
+        $clientToken = $gateway->clientToken()->generate();
+
         // Verifica se l'utente loggato è il proprietario dell'appartamento
         if ($apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
         } else {
-            return view('admin.show', compact('apartment', 'sub'));
+            return view('admin.show', compact('apartment', 'sub', 'clientToken'));
         }
     }
 
@@ -161,7 +171,7 @@ class ApartmentController extends Controller
      * @param  \App\Models\Admin\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment  $apartment)
+    public function edit(Apartment $apartment)
     {
         // $singolo_apartment = Apartment::findOrFail($id);
         $services = Service::all();

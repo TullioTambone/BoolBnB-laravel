@@ -115,22 +115,20 @@
                                             
                         {{-- token --}}
                         @csrf
-                        <!-- Putting the empty container you plan to pass to
-                        'braintree.dropin.create' inside a form will make layout and flow
-                        easier to manage -->
+                        
                         <div class="row">
                             @foreach($sub as $e)
 
-                                <div class="col-4">
+                                <div id="checkboxes" class="col-4">
                                     <input type="radio" class="btn-check" name="subscription_id" id="subscription-{{$e->id}}" value="{{$e->id}}">
-                                    <label class="btn btn-outline-success" for="subscription-{{$e->id}}">
+                                    <label class="btn btn-secondary" for="subscription-{{$e->id}}">
                                         {{$e->name}}
                                         {{$e->price}}€
                                         {{$e->duration}}
                                     </label>
-
+                                    <div class="invalid-feedback">Seleziona almeno un'opzione!!</div>
                                 </div>
-          
+                                
                                 @endforeach
                             </div>
                             <input type="hidden" name="apartment_id" value="{{$apartment->id}}"> 
@@ -140,6 +138,13 @@
                         <input type="hidden" id="nonce" name="payment_method_nonce" />
                     </form>                
                 </div>
+                @if(isset($results))
+                    <!-- Visualizza i risultati come desideri -->
+                    <div>
+                        Risultati del pagamento:
+                        <pre>{{ json_encode($results, JSON_PRETTY_PRINT) }}</pre>
+                    </div>
+                @endif
             </div>
         </div>
     </div> 
@@ -148,7 +153,10 @@
 
 
 @section('script')
-@vite(['resources/js/braintree.js'])
+    <script>
+        let clientToken = "{{ $clientToken }}";
+    </script>
+    @vite(['resources/js/braintree.js'])
 @endsection
 
 @section('braintree')
