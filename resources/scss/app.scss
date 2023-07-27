@@ -3,10 +3,12 @@
 @import './partials/_header.scss';
 @import './pages/_admin.scss';
 @import './pages/_nav.scss';
+@import './pages/_register.scss';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
