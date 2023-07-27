@@ -38,11 +38,11 @@
         @else
             <h1 class="text-center text-dark my-4">I TUOI APPARTAMENTI</h1>
 
-            <ul class="list-unstyled">
+            <ol class="">
                 @foreach($apartments as $elem)
                     <li class="my-2">            
                         {{-- show --}}
-                        <div class="mt-3 row justify-content-between">
+                        <div class="mt-3 ms-4 row justify-content-between">
                             <a href="{{route('admin.show', $elem)}}" class="fs-4 nav-link col-12 col-md-6 col-lg-6">
                                 <b class="me-1">
                                     {{ $elem->title }}:
@@ -73,7 +73,7 @@
                         </div>
                     </li>        
                 @endforeach
-            </ul>
+            </ol>
         @endif
     </div>
 @endsection

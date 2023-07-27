@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Apartment;
 use App\Models\Admin\Service;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
@@ -19,8 +19,10 @@ class ApartmentController extends Controller
     {
         $query = Apartment::with('services', 'images');        
 
-        $rooms = $request->input('rooms');
-		
+        $rooms = $request->input('rooms');		
+        $latitude = $request->input('latitude');
+        $longitude = $request->input('longitude');
+
         // filtro servizi
         if ($request->has('services_ids')) {
             $servicesIds = explode(',', $request->services_ids);
@@ -69,21 +71,33 @@ class ApartmentController extends Controller
         }
 
         if($request->has('distance') ) {
-            $latitude = $request->input('latitude');
-            $longitude = $request->input('longitude');
 
             if($latitude && $longitude) {
                 $distance = $request->input('distance');
                 $query->whereRaw("ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?", [$longitude, $latitude, $distance * 1000]);
+                $query->orderByRaw("ST_Distance_Sphere(point(longitude, latitude), point($longitude, $latitude)) ASC");
             } 
+        }        
+
+        // Ottieni i risultati paginati
+        $apartments = $query->paginate(12);
+
+        $apartmentsWithDistance = [];
+
+        foreach ($apartments as $apartment) {
+            $distance = $this->calcolaDistanza($latitude, $longitude, $apartment->latitude, $apartment->longitude);
+            $apartment->distance = $distance;
+            $apartmentsWithDistance[] = $apartment;
         }
-
-        $apartment = $query->paginate(12);
-
+        
         return response()->json([
             'success' => true,
-            'apartment' => $apartment
+            'apartment' => $apartments
         ]);
+
+        // Esempio di query per ottenere gli appartamenti e le relative coordinate geografiche dal database
+        
+
     }
 
     public function show($slug)
@@ -103,6 +117,20 @@ class ApartmentController extends Controller
             ])->setStatusCode(404);
         }
     
+    }
+
+    private function calcolaDistanza($lat1, $lng1, $lat2, $lng2)
+    {
+        // Esempio di calcolo della distanza utilizzando la formula dell'emisfero
+        // Puoi utilizzare il metodo fornito da Laravel per calcolare la distanza se il database supporta i tipi di dati geografici
+        $earthRadius = 6371; // Raggio medio della Terra in km
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLng = deg2rad($lng2 - $lng1);
+        $a = sin($dLat / 2) * sin($dLat / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) * sin($dLng / 2);
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $distanza = $earthRadius * $c;
+
+        return $distanza;
     }
 
 }

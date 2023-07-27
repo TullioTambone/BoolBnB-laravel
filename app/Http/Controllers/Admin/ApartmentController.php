@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rule;
 use Braintree\Gateway;
+use Illuminate\Support\Facades\File;
 
 // models
 use App\Models\Admin\Apartment;
