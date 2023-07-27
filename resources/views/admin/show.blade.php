@@ -10,7 +10,9 @@
             {{-- cover --}}
             @if ($apartment->cover)
                 <div>
-                    <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
+                    {{-- <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}"> --}}
+                    <img class="img-fluid" src="{{$apartment->cover}}" alt="{{ $apartment->title }}">
+
                 </div>                
             @else
                 <div style="width: 300px; height: 300px">

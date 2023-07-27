@@ -2,7 +2,7 @@
 
 return [
     [
-        "user_id" => 8,
+        "user_id" => 1,
         "title" => "Appartamento moderno con vista panoramica",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -18,7 +18,7 @@ return [
         "cover" => "https://conciliumtrento.it/wp-content/uploads/2019/05/IMG_4442_3_4_5_6pmx.jpg"
     ],
     [
-        "user_id" => 20,
+        "user_id" => 1,
         "title" => "Accogliente monolocale nel cuore della città",
         "rooms" => 3,
         "bedrooms" => 2,
@@ -34,7 +34,7 @@ return [
         "cover" => "https://www.ahtorino.com/public/foto/z1ahtorino-hotel-appartamento-deluxe-salotto.jpg"
     ],
     [
-        "user_id" => 46,
+        "user_id" => 1,
         "title" => "Spazioso trilocale con giardino privato",
         "rooms" => 4,
         "bedrooms" => 3,
@@ -50,7 +50,7 @@ return [
         "cover" => "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/31/31/a6/appartamenti-astra.jpg"
     ],
     [
-        "user_id" => 12,
+        "user_id" => 1,
         "title" => "Attico di lusso con terrazza panoramica",
         "rooms" => 4,
         "bedrooms" => 1,
@@ -66,7 +66,7 @@ return [
         "cover" => "https://media-assets.ad-italia.it/photos/626bd6c4a64dbe59d264a2d0/master/w_1600%2Cc_limit/HOME.jpg"
     ],
     [
-        "user_id" => 10,
+        "user_id" => 1,
         "title" => "Monolocale elegante nel centro storico",
         "rooms" => 2,
         "bedrooms" => 1,
@@ -82,7 +82,7 @@ return [
         "cover" => "https://www.garnilagonembia.com/images/_gallery%20divise/04_formula%20appartamento/bilocale/salotto_bilo.jpg"
     ],
     [
-        "user_id" => 11,
+        "user_id" => 1,
         "title" => "Appartamento luminoso e completamente ristrutturato",
         "rooms" => 4,
         "bedrooms" => 1,
@@ -98,7 +98,7 @@ return [
         "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034042807930970/mobile-tv-1.jpg"
     ],
     [
-        "user_id" => 37,
+        "user_id" => 1,
         "title" => "Quadrilocale con piscina e area barbecue",
         "rooms" => 3,
         "bedrooms" => 3,
@@ -114,7 +114,7 @@ return [
         "cover" => "https://www.forma-luxuryliving.com/wp-content/uploads/2023/02/appartamento-ristrutturato.jpg"
     ],
     [
-        "user_id" => 30,
+        "user_id" => 1,
         "title" => "Appartamento al mare con vista mozzafiato",
         "rooms" => 2,
         "bedrooms" => 3,
@@ -130,7 +130,7 @@ return [
         "cover" => "https://www.viagginewyork.it/wp-content/uploads/2018/01/appartamenti-newyork2.jpg"
     ],
     [
-        "user_id" => 39,
+        "user_id" => 1,
         "title" => "Loft moderno con dettagli di design",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -146,7 +146,7 @@ return [
         "cover" => "https://www.john-taylor.it/vendita-appartamento-milano-680x400-80-V1643MI-115894163.jpg?datetime=2023-07-21_1"
     ],
     [
-        "user_id" => 28,
+        "user_id" => 1,
         "title" => "Bilocale con balcone e vista sul parco",
         "rooms" => 1,
         "bedrooms" => 3,
@@ -162,7 +162,7 @@ return [
         "cover" => "https://www.loscudodistabio.ch/media/vb2nooto/studiofdi-034.jpg?width=902&height=601&format=webp&rnd=133094543498600000"
     ],
     [
-        "user_id" => 25,
+        "user_id" => 1,
         "title" => "Appartamento d'epoca con soffitti alti",
         "rooms" => 2,
         "bedrooms" => 2,
@@ -178,7 +178,7 @@ return [
         "cover" => "https://media.lavorincasa.it/post/18/17519/data/spazioso-appartamento-su-due-piani-sovrapposti.jpg"
     ],
     [
-        "user_id" => 38,
+        "user_id" => 1,
         "title" => "Elegante appartamento con caminetto",
         "rooms" => 5,
         "bedrooms" => 2,
@@ -194,7 +194,7 @@ return [
         "cover" => "https://www.berghotel.com/CustomerData/557/files/Images/berghotel/ihr-berghotel/zirbenappartement.jpg"
     ],
     [
-        "user_id" => 7,
+        "user_id" => 1,
         "title" => "Ampio trilocale con spaziosa cucina abitabile",
         "rooms" => 4,
         "bedrooms" => 1,
@@ -210,7 +210,7 @@ return [
         "cover" => "https://www.villaggiodellasalutepiu.it/wp-content/uploads/2020/04/WhatsApp-Image-2020-04-14-at-15.39.52-e1587547340835.jpeg"
     ],
     [
-        "user_id" => 32,
+        "user_id" => 1,
         "title" => "Appartamento di charme in palazzo storico",
         "rooms" => 4,
         "bedrooms" => 1,
@@ -226,7 +226,7 @@ return [
         "cover" => "https://static.suedtirol.com/supercompanies/17731/images/appartamenti-caldogno0525.jpg?size=scg"
     ],
     [
-        "user_id" => 29,
+        "user_id" => 1,
         "title" => "Monolocale con accesso alla piscina condominiale",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -242,7 +242,7 @@ return [
         "cover" => "https://www.apartments-fill.com/bilder/Apartments-Fontana.jpg"
     ],
     [
-        "user_id" => 45,
+        "user_id" => 1,
         "title" => "Appartamento vicino al centro commerciale",
         "rooms" => 4,
         "bedrooms" => 3,
@@ -258,7 +258,7 @@ return [
         "cover" => "https://www.innaosta.com/wp-content/uploads/2023/01/appartamenti-vacanza-turisti-aosta1-600x325.jpg"
     ],
     [
-        "user_id" => 27,
+        "user_id" => 1,
         "title" => "Loft industriale con dettagli in mattoni a vista",
         "rooms" => 2,
         "bedrooms" => 3,
@@ -274,7 +274,7 @@ return [
         "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385449000970/7ea8f483daadcdf157c3be89b0041a64.webp"
     ],
     [
-        "user_id" => 7,
+        "user_id" => 1,
         "title" => "Appartamento panoramico con vista mare",
         "rooms" => 1,
         "bedrooms" => 1,
@@ -290,7 +290,7 @@ return [
         "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385855852554/mobile-tv-1_1.jpg"
     ],
     [
-        "user_id" => 22,
+        "user_id" => 1,
         "title" => "Trilocale arredato con gusto",
         "rooms" => 3,
         "bedrooms" => 1,
@@ -306,7 +306,7 @@ return [
         "cover" => "https://th.bing.com/th/id/R.5ab862e2ad9705577e7b7fba5c6a455b?rik=kvOfAvQx2Pb%2bBA&pid=ImgRaw&r=0"
     ],
     [
-        "user_id" => 11,
+        "user_id" => 1,
         "title" => "Appartamento con camino e terrazzo privato",
         "rooms" => 3,
         "bedrooms" => 2,
@@ -322,7 +322,7 @@ return [
         "cover" => "https://i.pinimg.com/originals/fc/ac/19/fcac194ad03f8af8dfaf702db8db5b0f.jpg"
     ],
     [
-        "user_id" => 43,
+        "user_id" => 1,
         "title" => "Delizioso bilocale in zona tranquilla",
         "rooms" => 2,
         "bedrooms" => 1,
@@ -338,7 +338,7 @@ return [
         "cover" => "https://images1.apartments.com/i2/-6CF2epBzuK8xUsooaIY6WXxrMRcYoM1O_vApH7_1jc/111/trinity-club-apartments-trinity-fl-exterior.jpg"
     ],
     [
-        "user_id" => 11,
+        "user_id" => 1,
         "title" => "Attico con vista sulla città e terrazza privata",
         "rooms" => 1,
         "bedrooms" => 3,
@@ -354,7 +354,7 @@ return [
         "cover" => "https://apartmentgeeks.net/wp-content/uploads/2013/05/Gorgeous-Modern-Apartment-Design.jpg"
     ],
     [
-        "user_id" => 40,
+        "user_id" => 1,
         "title" => "Appartamento ristrutturato in stile moderno",
         "rooms" => 2,
         "bedrooms" => 2,
@@ -370,7 +370,7 @@ return [
         "cover" => "https://gofirstgreen.com/wp-content/uploads/2020/07/landscaping-for-apartment-buildings-properties-cincinnati-northern-kentucky.jpg"
     ],
     [
-        "user_id" => 28,
+        "user_id" => 1,
         "title" => "Ampio quadrilocale con parcheggio interno",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -386,7 +386,7 @@ return [
         "cover" => "https://blog.etinet.it/wp-content/uploads/2016/07/case-dani.jpg"
     ],
     [
-        "user_id" => 47,
+        "user_id" => 1,
         "title" => "Appartamento con giardino e spazio barbecue",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -402,7 +402,7 @@ return [
         "cover" => "http://www.case-in-legno-progettolegno.it/wp-content/uploads/2015/12/Casa-in-legno-a-Fano-0003.jpg"
     ],
     [
-        "user_id" => 17,
+        "user_id" => 1,
         "title" => "Monolocale con cucina a vista",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -418,7 +418,7 @@ return [
         "cover" => "https://cdn.cosedicasa.com/wp-content/uploads/2013/06/check-up-casa.jpg"
     ],
     [
-        "user_id" => 40,
+        "user_id" => 1,
         "title" => "Appartamento luminoso con ampie finestre",
         "rooms" => 1,
         "bedrooms" => 3,
@@ -434,7 +434,7 @@ return [
         "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2019-12/huf_haus_ap.jpg?sv=0tPOY1cT&itok=ooNtzdjh"
     ],
     [
-        "user_id" => 11,
+        "user_id" => 1,
         "title" => "Bilocale con accesso alla piscina condominiale",
         "rooms" => 2,
         "bedrooms" => 1,
@@ -450,7 +450,7 @@ return [
         "cover" => "https://www.caseinlegnonaturale.it/wp-content/uploads/2018/03/Case_in_legno_tronchi_legno_massiccio_legno_lamellare_140mm_-15.jpg"
     ],
     [
-        "user_id" => 23,
+        "user_id" => 1,
         "title" => "Appartamento in zona residenziale e silenziosa",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -466,7 +466,7 @@ return [
         "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-01.jpg"
     ],
     [
-        "user_id" => 43,
+        "user_id" => 1,
         "title" => "Loft con soppalco e design contemporaneo",
         "rooms" => 5,
         "bedrooms" => 3,
@@ -482,7 +482,7 @@ return [
         "cover" => "https://st3.idealista.it/news/archivie/2019-06/modum_610_ebenholz_1.jpg?sv=yRByxtJs"
     ],
     [
-        "user_id" => 31,
+        "user_id" => 1,
         "title" => "Appartamento in palazzo d'epoca con affreschi",
         "rooms" => 5,
         "bedrooms" => 2,
@@ -498,7 +498,7 @@ return [
         "cover" => "https://www.arredamento.it/img/452/progettare-case-belle.asp_Oit_112168.webp"
     ],
     [
-        "user_id" => 20,
+        "user_id" => 1,
         "title" => "Trilocale con terrazzo e vista sulle montagne",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -514,7 +514,7 @@ return [
         "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037403657568256/1d13ba24-41ae-4349-b23d-5215385ff683.jpg"
     ],
     [
-        "user_id" => 13,
+        "user_id" => 1,
         "title" => "Appartamento in residence con servizi inclusi",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -530,7 +530,7 @@ return [
         "cover" => "https://abitare.moondo.info/files/2018/01/Vantaggi-e-svantaggi-delle-case-prefabbricate.jpg"
     ],
     [
-        "user_id" => 18,
+        "user_id" => 1,
         "title" => "Monolocale in zona ben servita dai mezzi pubblici",
         "rooms" => 5,
         "bedrooms" => 1,
@@ -546,7 +546,7 @@ return [
         "cover" => "https://www.avantgardeconstruct.it/wp-content/uploads/2019/08/case-prefabbricate-prezzi-Premium.jpg"
     ],
     [
-        "user_id" => 38,
+        "user_id" => 1,
         "title" => "Appartamento con vista sulla campagna circostante",
         "rooms" => 2,
         "bedrooms" => 3,
@@ -562,7 +562,7 @@ return [
         "cover" => "https://www.costantinilegno.it/wp-content/uploads/2015/11/LACOST-Case-in-legno-umbria.jpg"
     ],
     [
-        "user_id" => 35,
+        "user_id" => 1,
         "title" => "Bilocali completamente arredati e attrezzati",
         "rooms" => 5,
         "bedrooms" => 1,
@@ -578,7 +578,7 @@ return [
         "cover" => "https://pro2-bar-s3-cdn-cf2.myportfolio.com/018c37874d387a698f31dfe0e8634a5f/3716f3106f98b11bc8870ecf_rw_1920.jpg?h=16b52759e189f63d3897d8ada6422dbf"
     ],
     [
-        "user_id" => 22,
+        "user_id" => 1,
         "title" => "Appartamento con cucina spaziosa e moderna",
         "rooms" => 4,
         "bedrooms" => 3,
@@ -594,7 +594,7 @@ return [
         "cover" => "https://media.tio.ch/files/domains/tio.ch/images/4bsi/-case-prefabbricate-in-cemento-cinque-buoni-motivi-per-pensarci-hqc9.jpg?v=1"
     ],
     [
-        "user_id" => 12,
+        "user_id" => 1,
         "title" => "Loft con aria condizionata e ampio spazio living",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -610,7 +610,7 @@ return [
         "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037845661732894/tecnoedil-avezzano-case-in-legno-mobile.jpg"
     ],
     [
-        "user_id" => 48,
+        "user_id" => 1,
         "title" => "Appartamento con garage e parcheggio privato",
         "rooms" => 3,
         "bedrooms" => 2,
@@ -626,7 +626,7 @@ return [
         "cover" => "https://www.casapratica.org/casa/sistemare-casa/case-moderne_NG1.jpg"
     ],
     [
-        "user_id" => 47,
+        "user_id" => 1,
         "title" => "Trilocale con accesso a piscina e palestra",
         "rooms" => 3,
         "bedrooms" => 2,
@@ -642,7 +642,7 @@ return [
         "cover" => "https://www.freedompress.cc/wp-content/uploads/2021/02/casa-singola.jpg"
     ],
     [
-        "user_id" => 6,
+        "user_id" => 1,
         "title" => "Appartamento vicino alle principali attrazioni turistiche",
         "rooms" => 1,
         "bedrooms" => 3,
@@ -658,7 +658,7 @@ return [
         "cover" => "https://i.pinimg.com/originals/11/1b/9e/111b9e824ad69edbce9c28be542cbce7.jpg"
     ],
     [
-        "user_id" => 14,
+        "user_id" => 1,
         "title" => "Bilocale con terrazza e vista sul lago",
         "rooms" => 5,
         "bedrooms" => 3,
@@ -674,7 +674,7 @@ return [
         "cover" => "https://i.pinimg.com/originals/6a/ad/f0/6aadf01d9e9b2df74036c989e896b419.jpg"
     ],
     [
-        "user_id" => 38,
+        "user_id" => 1,
         "title" => "Appartamento in condominio con servizio di portineria",
         "rooms" => 4,
         "bedrooms" => 2,
@@ -690,7 +690,7 @@ return [
         "cover" => "https://www.roadcalls.fr/wp-content/uploads/2017/02/stockholm_belle_ville_europe.jpg"
     ],
     [
-        "user_id" => 28,
+        "user_id" => 1,
         "title" => "Loft con cucina a isola e finiture di lusso",
         "rooms" => 1,
         "bedrooms" => 1,
@@ -706,7 +706,7 @@ return [
         "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2021-06/dsc3853-high.jpg?sv=Omwz7Y4T&itok=Eng97CFq"
     ],
     [
-        "user_id" => 34,
+        "user_id" => 1,
         "title" => "Appartamento con camino e pavimenti in parquet",
         "rooms" => 3,
         "bedrooms" => 3,
@@ -722,7 +722,7 @@ return [
         "cover" => "https://i.pinimg.com/originals/37/1c/9c/371c9cb6f72da156b0058df1fa3365f8.jpg"
     ],
     [
-        "user_id" => 44,
+        "user_id" => 1,
         "title" => "Monolocale con angolo cottura e bagno privato",
         "rooms" => 2,
         "bedrooms" => 1,
@@ -738,7 +738,7 @@ return [
         "cover" => "https://i.pinimg.com/originals/07/2f/c3/072fc3e1eda96c42caca12dae2bcfb2d.jpg"
     ],
     [
-        "user_id" => 46,
+        "user_id" => 1,
         "title" => "Appartamento con vista sul fiume e balcone",
         "rooms" => 3,
         "bedrooms" => 3,
@@ -754,7 +754,7 @@ return [
         "cover" => "https://www.luxgallery.it/wp-content/uploads/2021/04/R40d76d38881db98a4556b16777d48324.jpg"
     ],
     [
-        "user_id" => 32,
+        "user_id" => 1,
         "title" => "Trilocale con spazio esterno e area relax",
         "rooms" => 1,
         "bedrooms" => 2,
@@ -770,7 +770,7 @@ return [
         "cover" => "https://www.piscine-verona.it/wp-content/uploads/2018/07/piscina-di-lusso.jpg"
     ],
     [
-        "user_id" => 14,
+        "user_id" => 1,
         "title" => "Appartamento arredato con mobili di design",
         "rooms" => 3,
         "bedrooms" => 3,
@@ -786,7 +786,7 @@ return [
         "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-14.jpg"
     ],
     [
-        "user_id" => 49,
+        "user_id" => 1,
         "title" => "Loft con soppalco e grandi finestre panoramiche",
         "rooms" => 5,
         "bedrooms" => 3,
