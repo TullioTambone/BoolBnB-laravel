@@ -3,7 +3,7 @@
 return [
     [
         "user_id" => 8,
-        "title" => "Sint sapiente nihil placeat corporis velit neque hic.",
+        "title" => "Appartamento moderno con vista panoramica",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -13,13 +13,13 @@ return [
         "slug" => "voluptatem-eum-id-excepturi-officia-at-et",
         "longitude" => 158.976775,
         "latitude" => 82.028437,
-        "description" => "Voluptatem aliquam vero et cumque aut. Repellendus labore excepturi pariatur dolorem quibusdam autem. Quo qui facilis consequuntur minima tempora. Commodi non ut vel.",
-        "price" => 607814.5936912926,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd66?text=apartments+perspiciatis"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 607814.56,
+        "cover" => "https://conciliumtrento.it/wp-content/uploads/2019/05/IMG_4442_3_4_5_6pmx.jpg"
     ],
     [
         "user_id" => 20,
-        "title" => "Deleniti ipsum repellat ut impedit sunt.",
+        "title" => "Accogliente monolocale nel cuore della città",
         "rooms" => 3,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -29,13 +29,13 @@ return [
         "slug" => "itaque-magni-autem-occaecati-omnis",
         "longitude" => -71.672535,
         "latitude" => -13.343564,
-        "description" => "Corrupti tempora provident modi aut. Non quia aut iste quia. Et eos est sint amet quae suscipit assumenda. Ipsa aut explicabo eius quas sequi distinctio architecto. Repudiandae eligendi tempore aperiam autem vel.",
-        "price" => 58250.28162833782,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0011aa?text=apartments+maxime"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 58250.22,
+        "cover" => "https://www.ahtorino.com/public/foto/z1ahtorino-hotel-appartamento-deluxe-salotto.jpg"
     ],
     [
         "user_id" => 46,
-        "title" => "Voluptates voluptatum ipsa est neque mollitia minima.",
+        "title" => "Spazioso trilocale con giardino privato",
         "rooms" => 4,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -45,13 +45,13 @@ return [
         "slug" => "autem-accusantium-quo-nam-et-repellendus-in",
         "longitude" => -112.468332,
         "latitude" => 52.696017,
-        "description" => "Qui totam quod aperiam quis veritatis sit ullam. Incidunt quidem ut dicta autem. Adipisci nemo ipsum odio iure molestias velit eligendi. Voluptas quos eaque qui qui debitis porro corrupti enim. Eligendi ut expedita qui.",
-        "price" => 292753.3973114348,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ffee?text=apartments+nemo"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 292753.48,
+        "cover" => "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/31/31/a6/appartamenti-astra.jpg"
     ],
     [
         "user_id" => 12,
-        "title" => "Minus rem et nihil similique.",
+        "title" => "Attico di lusso con terrazza panoramica",
         "rooms" => 4,
         "bedrooms" => 1,
         "bathrooms" => 2,
@@ -61,13 +61,13 @@ return [
         "slug" => "occaecati-est-nostrum-non-voluptatem-occaecati",
         "longitude" => 15.949334,
         "latitude" => 13.087353,
-        "description" => "Aut exercitationem molestias nam architecto a aut deserunt. Quae accusantium voluptatem expedita velit et corporis. In voluptatem culpa quo sint dolorum.",
-        "price" => 359005.83127001574,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/005599?text=apartments+soluta"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 359005.84,
+        "cover" => "https://media-assets.ad-italia.it/photos/626bd6c4a64dbe59d264a2d0/master/w_1600%2Cc_limit/HOME.jpg"
     ],
     [
         "user_id" => 10,
-        "title" => "Quae iste ducimus impedit iure.",
+        "title" => "Monolocale elegante nel centro storico",
         "rooms" => 2,
         "bedrooms" => 1,
         "bathrooms" => 2,
@@ -77,13 +77,13 @@ return [
         "slug" => "neque-ut-sed-earum",
         "longitude" => 158.974908,
         "latitude" => 76.402409,
-        "description" => "Aliquam architecto incidunt rem debitis aperiam et excepturi. Aspernatur est et ut est excepturi.",
-        "price" => 338227.37187064596,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/000000?text=apartments+minima"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 338227.36,
+        "cover" => "https://www.garnilagonembia.com/images/_gallery%20divise/04_formula%20appartamento/bilocale/salotto_bilo.jpg"
     ],
     [
         "user_id" => 11,
-        "title" => "Optio exercitationem omnis reiciendis fuga explicabo totam.",
+        "title" => "Appartamento luminoso e completamente ristrutturato",
         "rooms" => 4,
         "bedrooms" => 1,
         "bathrooms" => 2,
@@ -93,13 +93,13 @@ return [
         "slug" => "quo-et-ut-et-molestias-eos-quis-occaecati-error",
         "longitude" => -176.531972,
         "latitude" => -33.107962,
-        "description" => "Similique in natus consequatur nesciunt. Qui autem suscipit qui velit sit voluptatum omnis et. Modi nihil nam quia mollitia. Praesentium numquam quaerat labore illo omnis voluptatem.",
-        "price" => 965248.1961740406,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/003366?text=apartments+illum"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 965248.16,
+        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034042807930970/mobile-tv-1.jpg"
     ],
     [
         "user_id" => 37,
-        "title" => "Cumque itaque alias facere reiciendis officiis vel consequatur dolorum.",
+        "title" => "Quadrilocale con piscina e area barbecue",
         "rooms" => 3,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -109,13 +109,13 @@ return [
         "slug" => "cupiditate-repellendus-quod-vel-dolores-eos",
         "longitude" => 85.578065,
         "latitude" => -64.025144,
-        "description" => "Temporibus magnam esse fuga animi ut quo. Suscipit ut accusantium aut quam mollitia impedit totam. Non sit adipisci quas libero.",
-        "price" => 497010.0304051349,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/000033?text=apartments+aut"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 497010.49,
+        "cover" => "https://www.forma-luxuryliving.com/wp-content/uploads/2023/02/appartamento-ristrutturato.jpg"
     ],
     [
         "user_id" => 30,
-        "title" => "Eum nihil quae tenetur laudantium.",
+        "title" => "Appartamento al mare con vista mozzafiato",
         "rooms" => 2,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -125,13 +125,13 @@ return [
         "slug" => "aut-unde-omnis-maiores-incidunt",
         "longitude" => -128.583175,
         "latitude" => 9.697423,
-        "description" => "Blanditiis qui ea accusamus. Officia non pariatur voluptas rerum earum nulla qui. Incidunt fugiat molestias placeat dolorum est.",
-        "price" => 792747.3182709643,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ddcc?text=apartments+a"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 792747.33,
+        "cover" => "https://www.viagginewyork.it/wp-content/uploads/2018/01/appartamenti-newyork2.jpg"
     ],
     [
         "user_id" => 39,
-        "title" => "Saepe et ullam debitis ea ut velit sint.",
+        "title" => "Loft moderno con dettagli di design",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -141,13 +141,13 @@ return [
         "slug" => "vel-et-qui-impedit-suscipit",
         "longitude" => -114.179802,
         "latitude" => -1.443268,
-        "description" => "Deserunt possimus ut debitis. Molestiae quos blanditiis tempore amet. Rerum vitae aspernatur vel natus ipsum.",
-        "price" => 31676.084367407526,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=apartments+et"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 31676.06,
+        "cover" => "https://www.john-taylor.it/vendita-appartamento-milano-680x400-80-V1643MI-115894163.jpg?datetime=2023-07-21_1"
     ],
     [
         "user_id" => 28,
-        "title" => "Et ut qui blanditiis.",
+        "title" => "Bilocale con balcone e vista sul parco",
         "rooms" => 1,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -157,13 +157,13 @@ return [
         "slug" => "fugiat-nisi-omnis-reprehenderit",
         "longitude" => -101.077928,
         "latitude" => -17.217678,
-        "description" => "Praesentium aut voluptatem vitae similique est. Amet ipsa quae non. Laborum velit molestiae suscipit tempore iure neque et pariatur.",
-        "price" => 663959.821478445,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd66?text=apartments+quis"
+        "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
+        "price" => 663959.88,
+        "cover" => "https://www.loscudodistabio.ch/media/vb2nooto/studiofdi-034.jpg?width=902&height=601&format=webp&rnd=133094543498600000"
     ],
     [
         "user_id" => 25,
-        "title" => "Nihil et repellendus minus architecto molestiae.",
+        "title" => "Appartamento d'epoca con soffitti alti",
         "rooms" => 2,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -173,13 +173,13 @@ return [
         "slug" => "atque-dolorem-consequatur-blanditiis-et-officia",
         "longitude" => 173.379271,
         "latitude" => 32.930768,
-        "description" => "Aut quaerat et hic illum et. Ut facilis dolores nam ratione molestias. Distinctio doloribus accusantium ab non vero maxime. Itaque et molestiae et eos tempora. Eum officia saepe laudantium laborum pariatur consequuntur accusantium.",
-        "price" => 114540.0777154323,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/006655?text=apartments+cumque"
+        "description" => '',
+        "price" => 114540.03,
+        "cover" => "https://media.lavorincasa.it/post/18/17519/data/spazioso-appartamento-su-due-piani-sovrapposti.jpg"
     ],
     [
         "user_id" => 38,
-        "title" => "Architecto voluptatem cumque nostrum tempora.",
+        "title" => "Elegante appartamento con caminetto",
         "rooms" => 5,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -189,13 +189,13 @@ return [
         "slug" => "similique-odit-libero-voluptatem-et",
         "longitude" => 143.744174,
         "latitude" => 22.758526,
-        "description" => "Unde dolor porro deleniti necessitatibus. Voluptatibus necessitatibus dolore libero dolore qui.",
-        "price" => 739914.0545585724,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0000cc?text=apartments+qui"
+        "description" => '',
+        "price" => 739914.05,
+        "cover" => "https://www.berghotel.com/CustomerData/557/files/Images/berghotel/ihr-berghotel/zirbenappartement.jpg"
     ],
     [
         "user_id" => 7,
-        "title" => "Ullam blanditiis est illo qui veritatis dolores.",
+        "title" => "Ampio trilocale con spaziosa cucina abitabile",
         "rooms" => 4,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -205,13 +205,13 @@ return [
         "slug" => "aut-odit-voluptatem-sapiente-aut-necessitatibus",
         "longitude" => -178.380793,
         "latitude" => -68.981599,
-        "description" => "Et voluptatem id est aliquid quo ullam et. Quibusdam praesentium a inventore dolorem ea harum aut explicabo. Ut omnis rem iusto quos dolore.",
-        "price" => 61835.834459325226,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0044cc?text=apartments+dolor"
+        "description" => '',
+        "price" => 61835.84,
+        "cover" => "https://www.villaggiodellasalutepiu.it/wp-content/uploads/2020/04/WhatsApp-Image-2020-04-14-at-15.39.52-e1587547340835.jpeg"
     ],
     [
         "user_id" => 32,
-        "title" => "Sit sequi repellat nihil qui autem sit.",
+        "title" => "Appartamento di charme in palazzo storico",
         "rooms" => 4,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -221,13 +221,13 @@ return [
         "slug" => "cumque-commodi-exercitationem-repudiandae-eaque-commodi",
         "longitude" => 62.508389,
         "latitude" => 4.981184,
-        "description" => "Praesentium atque porro fugiat sapiente voluptatem. Maiores maiores voluptatum vero est autem dolor. Velit qui tempora assumenda repudiandae alias expedita. Repudiandae voluptatem et aliquam vero.",
-        "price" => 83313.8855096483,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0022bb?text=apartments+et"
+        "description" => '',
+        "price" => 83313.88,
+        "cover" => "https://static.suedtirol.com/supercompanies/17731/images/appartamenti-caldogno0525.jpg?size=scg"
     ],
     [
         "user_id" => 29,
-        "title" => "Eveniet ut voluptatem veritatis enim ut.",
+        "title" => "Monolocale con accesso alla piscina condominiale",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -237,13 +237,13 @@ return [
         "slug" => "cum-ipsa-voluptas-deserunt-aut-autem-modi-aspernatur",
         "longitude" => -15.984209,
         "latitude" => -8.196968,
-        "description" => "Autem sed ducimus ut aliquid ullam molestias dolorum magnam. Sint aut maiores numquam. Quas porro aut reiciendis in vitae impedit laudantium. Nihil quibusdam magnam at impedit voluptas sequi.",
-        "price" => 112432.93183969005,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd44?text=apartments+perspiciatis"
+        "description" => '',
+        "price" => 112432.95,
+        "cover" => "https://www.apartments-fill.com/bilder/Apartments-Fontana.jpg"
     ],
     [
         "user_id" => 45,
-        "title" => "Maxime modi omnis maxime et pariatur.",
+        "title" => "Appartamento vicino al centro commerciale",
         "rooms" => 4,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -253,13 +253,13 @@ return [
         "slug" => "molestiae-quam-magni-est-quas-est-esse",
         "longitude" => -61.671147,
         "latitude" => -73.650871,
-        "description" => "Ad velit omnis eum est corrupti. Ullam asperiores in dolores rerum et minima. Adipisci iste ab mollitia dolores voluptatem rerum. Asperiores deleniti corrupti aut ad sunt consectetur. Voluptate molestias placeat fugiat qui.",
-        "price" => 706007.9573541917,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00bbcc?text=apartments+occaecati"
+        "description" => '',
+        "price" => 706007.95,
+        "cover" => "https://www.innaosta.com/wp-content/uploads/2023/01/appartamenti-vacanza-turisti-aosta1-600x325.jpg"
     ],
     [
         "user_id" => 27,
-        "title" => "Et quia labore veniam eum nam nihil.",
+        "title" => "Loft industriale con dettagli in mattoni a vista",
         "rooms" => 2,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -269,13 +269,13 @@ return [
         "slug" => "a-fugiat-eaque-nemo-quos-consequatur-est-et",
         "longitude" => -35.140487,
         "latitude" => 63.226505,
-        "description" => "Repellat laudantium id ad debitis. Aut est odit voluptas iusto itaque. Quos dolor enim in praesentium dolorum suscipit possimus et. Sit ut ducimus eum beatae saepe non.",
-        "price" => 522095.9372316003,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/008811?text=apartments+perspiciatis"
+        "description" => '',
+        "price" => 522095.93,
+        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385449000970/7ea8f483daadcdf157c3be89b0041a64.webp"
     ],
     [
         "user_id" => 7,
-        "title" => "Vero tenetur est nihil odio est.",
+        "title" => "Appartamento panoramico con vista mare",
         "rooms" => 1,
         "bedrooms" => 1,
         "bathrooms" => 2,
@@ -285,13 +285,13 @@ return [
         "slug" => "nihil-qui-inventore-repellat-repellat-repellat-fugit",
         "longitude" => 77.980361,
         "latitude" => -20.548354,
-        "description" => "Nam tempore et ut nulla aut. Magni perferendis hic fugit ullam quia debitis facere. Ad quia enim nulla dicta molestiae. Alias est veniam quo nam nulla. A voluptatem quaerat rerum sit aliquid.",
-        "price" => 710194.3449537244,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/002277?text=apartments+enim"
+        "description" => '',
+        "price" => 710194.34,
+        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385855852554/mobile-tv-1_1.jpg"
     ],
     [
         "user_id" => 22,
-        "title" => "Officiis quos vel quia.",
+        "title" => "Trilocale arredato con gusto",
         "rooms" => 3,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -301,13 +301,13 @@ return [
         "slug" => "cupiditate-quos-libero-et-dolorem-voluptatibus-aperiam",
         "longitude" => -98.633618,
         "latitude" => -31.699372,
-        "description" => "Necessitatibus sed aut voluptatem. Autem sequi eos aliquid pariatur accusamus et possimus. Sequi ut aut animi quod.",
-        "price" => 425507.9836237747,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0011dd?text=apartments+mollitia"
+        "description" => '',
+        "price" => 425507.98,
+        "cover" => "https://th.bing.com/th/id/R.5ab862e2ad9705577e7b7fba5c6a455b?rik=kvOfAvQx2Pb%2bBA&pid=ImgRaw&r=0"
     ],
     [
         "user_id" => 11,
-        "title" => "Animi quod in rerum et velit accusantium laudantium.",
+        "title" => "Appartamento con camino e terrazzo privato",
         "rooms" => 3,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -317,13 +317,13 @@ return [
         "slug" => "voluptate-ea-deleniti-perspiciatis-officiis-sed",
         "longitude" => 129.380139,
         "latitude" => -32.580425,
-        "description" => "Provident voluptate sunt rem distinctio praesentium facere. Earum quia eveniet rerum voluptatem est repellat. Aut occaecati ipsum amet nulla natus et odit. Sit molestiae corporis autem.",
-        "price" => 390292.0614975933,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0044ff?text=apartments+ex"
+        "description" => '',
+        "price" => 390292.06,
+        "cover" => "https://i.pinimg.com/originals/fc/ac/19/fcac194ad03f8af8dfaf702db8db5b0f.jpg"
     ],
     [
         "user_id" => 43,
-        "title" => "Ullam et quo adipisci repellat quo aut autem.",
+        "title" => "Delizioso bilocale in zona tranquilla",
         "rooms" => 2,
         "bedrooms" => 1,
         "bathrooms" => 2,
@@ -333,13 +333,13 @@ return [
         "slug" => "suscipit-sed-molestiae-qui-iure",
         "longitude" => 164.834996,
         "latitude" => -77.665778,
-        "description" => "Iure omnis rerum perspiciatis velit. Molestiae earum consequatur at voluptates quasi. Aspernatur nihil pariatur expedita quam dolore.",
-        "price" => 583756.3561805321,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd11?text=apartments+illum"
+        "description" => '',
+        "price" => 583756.35,
+        "cover" => "https://images1.apartments.com/i2/-6CF2epBzuK8xUsooaIY6WXxrMRcYoM1O_vApH7_1jc/111/trinity-club-apartments-trinity-fl-exterior.jpg"
     ],
     [
         "user_id" => 11,
-        "title" => "Ut modi dolores dolores repudiandae.",
+        "title" => "Attico con vista sulla città e terrazza privata",
         "rooms" => 1,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -349,13 +349,13 @@ return [
         "slug" => "quibusdam-est-reprehenderit-eveniet-minima-qui-nobis-distinctio",
         "longitude" => 29.576808,
         "latitude" => 66.814854,
-        "description" => "Totam sit et non quisquam. Et commodi quos rerum blanditiis praesentium. Iure consectetur vero et nam dolor tenetur.",
-        "price" => 796810.507903253,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0055dd?text=apartments+dolorum"
+        "description" => '',
+        "price" => 796810.50,
+        "cover" => "https://apartmentgeeks.net/wp-content/uploads/2013/05/Gorgeous-Modern-Apartment-Design.jpg"
     ],
     [
         "user_id" => 40,
-        "title" => "Ut eaque optio qui.",
+        "title" => "Appartamento ristrutturato in stile moderno",
         "rooms" => 2,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -365,13 +365,13 @@ return [
         "slug" => "minus-adipisci-hic-dolorem-porro-eos",
         "longitude" => -14.042079,
         "latitude" => -38.918291,
-        "description" => "Et odit velit non quibusdam. Voluptates assumenda nihil omnis praesentium doloremque officia tempora. Ab quos illo et repellat.",
-        "price" => 511062.9608347374,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00bb55?text=apartments+ut"
+        "description" => '',
+        "price" => 511062.96,
+        "cover" => "https://gofirstgreen.com/wp-content/uploads/2020/07/landscaping-for-apartment-buildings-properties-cincinnati-northern-kentucky.jpg"
     ],
     [
         "user_id" => 28,
-        "title" => "Atque fugiat quia sint quas.",
+        "title" => "Ampio quadrilocale con parcheggio interno",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -381,13 +381,13 @@ return [
         "slug" => "nemo-aut-molestiae-enim-beatae-repudiandae",
         "longitude" => 149.298341,
         "latitude" => 51.330823,
-        "description" => "Aut ut in cumque minima quas quia. Maxime corrupti a est atque laudantium doloribus nemo accusantium. Distinctio soluta ut consectetur dolores eius.",
-        "price" => 204187.0827061064,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/001144?text=apartments+atque"
+        "description" => '',
+        "price" => 204187.08,
+        "cover" => "https://blog.etinet.it/wp-content/uploads/2016/07/case-dani.jpg"
     ],
     [
         "user_id" => 47,
-        "title" => "Non omnis sunt itaque inventore.",
+        "title" => "Appartamento con giardino e spazio barbecue",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -397,13 +397,13 @@ return [
         "slug" => "veniam-alias-quia-nam-dolor-ut-molestiae",
         "longitude" => -9.637507,
         "latitude" => -86.660265,
-        "description" => "Impedit libero est architecto totam. Ad officia pariatur sed non inventore. Alias dolorem ex ea ea non minima vero.",
-        "price" => 190660.6629493929,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/007733?text=apartments+et"
+        "description" => '',
+        "price" => 190660.66,
+        "cover" => "http://www.case-in-legno-progettolegno.it/wp-content/uploads/2015/12/Casa-in-legno-a-Fano-0003.jpg"
     ],
     [
         "user_id" => 17,
-        "title" => "Nulla numquam ut tempore saepe qui nihil.",
+        "title" => "Monolocale con cucina a vista",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -413,13 +413,13 @@ return [
         "slug" => "a-quas-placeat-minima-enim",
         "longitude" => -102.179788,
         "latitude" => 21.095864,
-        "description" => "Quidem ex sequi maiores saepe. Optio doloribus ut id qui dolorum.",
-        "price" => 912493.2917312222,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ff44?text=apartments+fugit"
+        "description" => '',
+        "price" => 912493.29,
+        "cover" => "https://cdn.cosedicasa.com/wp-content/uploads/2013/06/check-up-casa.jpg"
     ],
     [
         "user_id" => 40,
-        "title" => "Est voluptatem ea perspiciatis aut occaecati quos non.",
+        "title" => "Appartamento luminoso con ampie finestre",
         "rooms" => 1,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -429,13 +429,13 @@ return [
         "slug" => "recusandae-qui-voluptas-qui-et-hic-quidem-quo-dolorum",
         "longitude" => -102.994619,
         "latitude" => -55.982319,
-        "description" => "Delectus est odit consequatur reiciendis quis ipsa ut omnis. Ipsam omnis incidunt ipsa nam quam. Reiciendis omnis repellendus sed odio sit quos. Et nesciunt possimus libero enim.",
-        "price" => 854229.7954085423,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ccff?text=apartments+veritatis"
+        "description" => '',
+        "price" => 854229.79,
+        "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2019-12/huf_haus_ap.jpg?sv=0tPOY1cT&itok=ooNtzdjh"
     ],
     [
         "user_id" => 11,
-        "title" => "Saepe quia eligendi cum iure odio voluptatem unde.",
+        "title" => "Bilocale con accesso alla piscina condominiale",
         "rooms" => 2,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -445,13 +445,13 @@ return [
         "slug" => "enim-ad-ut-est-eum-perspiciatis-esse-sed-eos",
         "longitude" => 19.152841,
         "latitude" => -56.079223,
-        "description" => "Ex ut molestias perspiciatis. Modi debitis possimus est. Et aut ut maiores molestias. Est enim dolorum qui explicabo inventore maxime. Nesciunt similique quasi voluptatum eum aut.",
-        "price" => 978841.7976809861,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/006622?text=apartments+enim"
+        "description" => '',
+        "price" => 978841.79,
+        "cover" => "https://www.caseinlegnonaturale.it/wp-content/uploads/2018/03/Case_in_legno_tronchi_legno_massiccio_legno_lamellare_140mm_-15.jpg"
     ],
     [
         "user_id" => 23,
-        "title" => "Minus quasi omnis sunt fugiat quia.",
+        "title" => "Appartamento in zona residenziale e silenziosa",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -461,13 +461,13 @@ return [
         "slug" => "sequi-exercitationem-deserunt-eaque-quaerat-voluptatem-porro-voluptatem-voluptatibus",
         "longitude" => -31.852729,
         "latitude" => -85.203581,
-        "description" => "Vero eos est architecto nemo temporibus dolorem odit. Ut qui ex consequuntur. Et dolores nihil dicta nulla. Veniam nobis aspernatur in laudantium illum aliquid molestiae.",
-        "price" => 362318.5384843119,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ff66?text=apartments+sunt"
+        "description" => '',
+        "price" => 362318.53,
+        "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-01.jpg"
     ],
     [
         "user_id" => 43,
-        "title" => "Hic molestias aut occaecati.",
+        "title" => "Loft con soppalco e design contemporaneo",
         "rooms" => 5,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -477,13 +477,13 @@ return [
         "slug" => "qui-eos-iste-iure-architecto",
         "longitude" => 84.650044,
         "latitude" => -17.158031,
-        "description" => "Praesentium distinctio voluptatem sunt est velit. Facere explicabo rerum dolor facere. Commodi vel aut natus numquam in sequi. Culpa incidunt vero dolores sunt.",
-        "price" => 650683.9194990154,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd44?text=apartments+quas"
+        "description" => '',
+        "price" => 650683.91,
+        "cover" => "https://st3.idealista.it/news/archivie/2019-06/modum_610_ebenholz_1.jpg?sv=yRByxtJs"
     ],
     [
         "user_id" => 31,
-        "title" => "A voluptatum nihil rerum debitis.",
+        "title" => "Appartamento in palazzo d'epoca con affreschi",
         "rooms" => 5,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -493,13 +493,13 @@ return [
         "slug" => "eius-dicta-et-reiciendis-qui-in",
         "longitude" => 122.264893,
         "latitude" => 79.570736,
-        "description" => "Pariatur architecto fuga et ex. Blanditiis nobis voluptates accusantium consequatur quo deleniti mollitia illo. Dignissimos soluta nesciunt quia qui fugit tenetur est. Aliquid alias quisquam laborum neque quod iusto nisi.",
-        "price" => 132669.94355370753,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/009988?text=apartments+iure"
+        "description" => '',
+        "price" => 132669.94,
+        "cover" => "https://www.arredamento.it/img/452/progettare-case-belle.asp_Oit_112168.webp"
     ],
     [
         "user_id" => 20,
-        "title" => "Cum est provident eos quia.",
+        "title" => "Trilocale con terrazzo e vista sulle montagne",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -509,13 +509,13 @@ return [
         "slug" => "cupiditate-et-sint-perferendis-sunt",
         "longitude" => -125.63939,
         "latitude" => 61.55705,
-        "description" => "Dignissimos eum culpa officia placeat ut labore. Minus id vitae possimus a id. Laboriosam consequatur et qui possimus quaerat dignissimos. Et fuga ea aut asperiores ipsa ad fugiat. At maxime et enim quam aut sapiente non.",
-        "price" => 104301.06431446088,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00aa44?text=apartments+voluptatem"
+        "description" => '',
+        "price" => 104301.06,
+        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037403657568256/1d13ba24-41ae-4349-b23d-5215385ff683.jpg"
     ],
     [
         "user_id" => 13,
-        "title" => "Aut omnis cumque sequi et consectetur voluptates eligendi.",
+        "title" => "Appartamento in residence con servizi inclusi",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -525,13 +525,13 @@ return [
         "slug" => "eos-enim-aut-et-nihil-debitis-suscipit-eveniet-modi",
         "longitude" => -100.460834,
         "latitude" => -40.772505,
-        "description" => "Est aut incidunt ex est atque. Nihil quas eum quaerat praesentium quasi sit qui. Et quia placeat asperiores impedit officia. Dolorum vel nihil necessitatibus aut dolorem eius.",
-        "price" => 619729.287167885,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0033bb?text=apartments+porro"
+        "description" => '',
+        "price" => 619729.28,
+        "cover" => "https://abitare.moondo.info/files/2018/01/Vantaggi-e-svantaggi-delle-case-prefabbricate.jpg"
     ],
     [
         "user_id" => 18,
-        "title" => "Reiciendis quam aliquid minima commodi sit vero et.",
+        "title" => "Monolocale in zona ben servita dai mezzi pubblici",
         "rooms" => 5,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -541,13 +541,13 @@ return [
         "slug" => "quidem-repellat-explicabo-ipsa-unde-minima-impedit",
         "longitude" => -29.676266,
         "latitude" => -15.822127,
-        "description" => "Sit et voluptas qui nisi sed minima magni. Amet placeat qui atque veritatis voluptatem dolorem. Consectetur reiciendis quia suscipit magni neque perspiciatis. Ratione et dolorem labore odio adipisci consequatur cumque.",
-        "price" => 488712.4579766358,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0055ee?text=apartments+culpa"
+        "description" => '',
+        "price" => 488712.45,
+        "cover" => "https://www.avantgardeconstruct.it/wp-content/uploads/2019/08/case-prefabbricate-prezzi-Premium.jpg"
     ],
     [
         "user_id" => 38,
-        "title" => "Modi officiis quia inventore aut et suscipit.",
+        "title" => "Appartamento con vista sulla campagna circostante",
         "rooms" => 2,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -557,13 +557,13 @@ return [
         "slug" => "fugit-magnam-dolor-reiciendis-qui",
         "longitude" => -161.799773,
         "latitude" => -48.079935,
-        "description" => "Vel quod et tenetur minima. Enim dolor est optio ut qui nemo incidunt. Est aut dolorem fuga. Cumque ad expedita voluptas molestiae sequi est numquam. Sed est veniam consectetur quam mollitia.",
-        "price" => 999449.4838916927,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0033ff?text=apartments+commodi"
+        "description" => '',
+        "price" => 999449.48,
+        "cover" => "https://www.costantinilegno.it/wp-content/uploads/2015/11/LACOST-Case-in-legno-umbria.jpg"
     ],
     [
         "user_id" => 35,
-        "title" => "Quis dolorem aut iste voluptas esse.",
+        "title" => "Bilocali completamente arredati e attrezzati",
         "rooms" => 5,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -573,13 +573,13 @@ return [
         "slug" => "veniam-et-sit-debitis-esse",
         "longitude" => -176.154884,
         "latitude" => 49.037301,
-        "description" => "Ut debitis est et reiciendis. Aut qui quibusdam ut facilis qui. Est voluptatem odio mollitia ut.",
-        "price" => 823267.4716754198,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00cc33?text=apartments+ipsum"
+        "description" => '',
+        "price" => 823267.47,
+        "cover" => "https://pro2-bar-s3-cdn-cf2.myportfolio.com/018c37874d387a698f31dfe0e8634a5f/3716f3106f98b11bc8870ecf_rw_1920.jpg?h=16b52759e189f63d3897d8ada6422dbf"
     ],
     [
         "user_id" => 22,
-        "title" => "Molestias tempore beatae porro quia aut qui.",
+        "title" => "Appartamento con cucina spaziosa e moderna",
         "rooms" => 4,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -589,13 +589,13 @@ return [
         "slug" => "earum-aut-temporibus-odit-et",
         "longitude" => -19.909563,
         "latitude" => -13.795162,
-        "description" => "Vel voluptatem numquam itaque est optio repudiandae non. Quo aut porro rem magnam. Suscipit quaerat at vero quos id quis.",
-        "price" => 645898.7527507817,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=apartments+aut"
+        "description" => '',
+        "price" => 645898.75,
+        "cover" => "https://media.tio.ch/files/domains/tio.ch/images/4bsi/-case-prefabbricate-in-cemento-cinque-buoni-motivi-per-pensarci-hqc9.jpg?v=1"
     ],
     [
         "user_id" => 12,
-        "title" => "Porro ipsum ut voluptatem illo optio corporis doloremque.",
+        "title" => "Loft con aria condizionata e ampio spazio living",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -605,13 +605,13 @@ return [
         "slug" => "et-aut-ipsam-perspiciatis-id",
         "longitude" => 15.861108,
         "latitude" => -23.841515,
-        "description" => "Velit soluta et qui eum. Animi doloremque amet dolorum. Qui unde quia ad eum sint error. Esse qui tempore illo est nulla magnam officiis. Vel quibusdam pariatur molestias sunt magni.",
-        "price" => 268394.0214050906,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/009955?text=apartments+aut"
+        "description" => '',
+        "price" => 268394.02,
+        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037845661732894/tecnoedil-avezzano-case-in-legno-mobile.jpg"
     ],
     [
         "user_id" => 48,
-        "title" => "Mollitia atque reprehenderit consequuntur eum quisquam eveniet deserunt.",
+        "title" => "Appartamento con garage e parcheggio privato",
         "rooms" => 3,
         "bedrooms" => 2,
         "bathrooms" => 1,
@@ -621,13 +621,13 @@ return [
         "slug" => "qui-ipsa-id-omnis-dignissimos",
         "longitude" => 171.679232,
         "latitude" => -33.687831,
-        "description" => "Nesciunt esse eius quidem quidem eligendi dolorum. Rerum aut sunt alias quos quos quia soluta ad.",
-        "price" => 763899.8345816041,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=apartments+eius"
+        "description" => '',
+        "price" => 763899.83,
+        "cover" => "https://www.casapratica.org/casa/sistemare-casa/case-moderne_NG1.jpg"
     ],
     [
         "user_id" => 47,
-        "title" => "Tenetur aut doloremque est sunt aperiam velit.",
+        "title" => "Trilocale con accesso a piscina e palestra",
         "rooms" => 3,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -637,13 +637,13 @@ return [
         "slug" => "consequatur-rerum-aut-omnis-nemo",
         "longitude" => 27.416815,
         "latitude" => -8.729172,
-        "description" => "Deleniti et enim expedita natus dicta nihil omnis. Nobis dolores veritatis laudantium corporis. Maxime et et iste ad consequuntur quos laboriosam. Rem reprehenderit velit dolore quia vel porro libero nemo. Aut veritatis id cumque.",
-        "price" => 511345.99788177107,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00cc55?text=apartments+omnis"
+        "description" => '',
+        "price" => 511345.99,
+        "cover" => "https://www.freedompress.cc/wp-content/uploads/2021/02/casa-singola.jpg"
     ],
     [
         "user_id" => 6,
-        "title" => "Aperiam perspiciatis qui suscipit aut nisi inventore delectus.",
+        "title" => "Appartamento vicino alle principali attrazioni turistiche",
         "rooms" => 1,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -653,13 +653,13 @@ return [
         "slug" => "nostrum-accusantium-iure-minima-et-praesentium-voluptatibus",
         "longitude" => 147.287666,
         "latitude" => -0.72831,
-        "description" => "Et eum magnam architecto dolorem. Quibusdam suscipit dolores laboriosam nihil at. Excepturi magni quo dolor libero. Cumque omnis unde dolorum consequatur non enim in.",
-        "price" => 924085.269488434,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00dd11?text=apartments+consequatur"
+        "description" => '',
+        "price" => 924085.26,
+        "cover" => "https://i.pinimg.com/originals/11/1b/9e/111b9e824ad69edbce9c28be542cbce7.jpg"
     ],
     [
         "user_id" => 14,
-        "title" => "Nihil ut dolorem qui itaque in ut.",
+        "title" => "Bilocale con terrazza e vista sul lago",
         "rooms" => 5,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -669,13 +669,13 @@ return [
         "slug" => "velit-consequatur-laborum-sit-numquam-et-nostrum-aut",
         "longitude" => -40.022229,
         "latitude" => -6.084489,
-        "description" => "Dignissimos maxime accusantium minus sunt dolores ut. Vero excepturi officiis commodi voluptas quia nostrum. Et quasi dolorem dolor magni et molestiae eaque.",
-        "price" => 497408.0775153861,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00aa11?text=apartments+velit"
+        "description" => '',
+        "price" => 497408.07,
+        "cover" => "https://i.pinimg.com/originals/6a/ad/f0/6aadf01d9e9b2df74036c989e896b419.jpg"
     ],
     [
         "user_id" => 38,
-        "title" => "Ducimus animi nam qui architecto nostrum.",
+        "title" => "Appartamento in condominio con servizio di portineria",
         "rooms" => 4,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -685,13 +685,13 @@ return [
         "slug" => "id-quis-excepturi-nostrum-eaque-repudiandae",
         "longitude" => -129.799236,
         "latitude" => -39.22308,
-        "description" => "Repellat voluptates eum temporibus facilis impedit sit. Corporis voluptatibus magni ut. Omnis est laboriosam incidunt blanditiis architecto.",
-        "price" => 277072.0886518583,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0044bb?text=apartments+aliquam"
+        "description" => '',
+        "price" => 277072.08,
+        "cover" => "https://www.roadcalls.fr/wp-content/uploads/2017/02/stockholm_belle_ville_europe.jpg"
     ],
     [
         "user_id" => 28,
-        "title" => "Dolorem sint est sint aut voluptas adipisci.",
+        "title" => "Loft con cucina a isola e finiture di lusso",
         "rooms" => 1,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -701,13 +701,13 @@ return [
         "slug" => "in-est-delectus-culpa-pariatur-officia-nemo-reprehenderit",
         "longitude" => -127.803153,
         "latitude" => -75.014053,
-        "description" => "Nostrum corporis quo quaerat minus. Ipsum dicta at debitis et sit id. Molestias sed sit beatae aut iure accusantium. Nesciunt at nam reprehenderit quos ducimus iure tempora.",
-        "price" => 510611.2537023664,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ffee?text=apartments+laborum"
+        "description" => '',
+        "price" => 510611.25,
+        "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2021-06/dsc3853-high.jpg?sv=Omwz7Y4T&itok=Eng97CFq"
     ],
     [
         "user_id" => 34,
-        "title" => "Ab consequatur velit qui autem.",
+        "title" => "Appartamento con camino e pavimenti in parquet",
         "rooms" => 3,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -717,13 +717,13 @@ return [
         "slug" => "ut-quis-ipsam-blanditiis-fugit-neque",
         "longitude" => 88.29448,
         "latitude" => -85.979675,
-        "description" => "Qui excepturi iusto nulla delectus alias quia. Cumque dolorum in vel sed aperiam. Dolor qui maxime accusamus tempora labore placeat.",
-        "price" => 962564.4357933498,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00bb88?text=apartments+distinctio"
+        "description" => '',
+        "price" => 962564.43,
+        "cover" => "https://i.pinimg.com/originals/37/1c/9c/371c9cb6f72da156b0058df1fa3365f8.jpg"
     ],
     [
         "user_id" => 44,
-        "title" => "Odio quas animi quis velit.",
+        "title" => "Monolocale con angolo cottura e bagno privato",
         "rooms" => 2,
         "bedrooms" => 1,
         "bathrooms" => 1,
@@ -733,13 +733,13 @@ return [
         "slug" => "necessitatibus-rerum-porro-impedit-doloribus-veritatis-earum-laboriosam-ullam",
         "longitude" => 140.747645,
         "latitude" => 53.534841,
-        "description" => "Ut iusto necessitatibus corporis est beatae suscipit consequatur at. Tenetur velit tempora voluptatem nostrum rerum. Eos nostrum facilis quod molestiae.",
-        "price" => 972156.4074662311,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0044cc?text=apartments+reiciendis"
+        "description" => '',
+        "price" => 972156.40,
+        "cover" => "https://i.pinimg.com/originals/07/2f/c3/072fc3e1eda96c42caca12dae2bcfb2d.jpg"
     ],
     [
         "user_id" => 46,
-        "title" => "Tenetur quos amet consequatur fugit itaque nihil possimus.",
+        "title" => "Appartamento con vista sul fiume e balcone",
         "rooms" => 3,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -749,13 +749,13 @@ return [
         "slug" => "nemo-ipsa-exercitationem-fugiat-facilis-ut-numquam-et",
         "longitude" => -47.717734,
         "latitude" => -11.925305,
-        "description" => "Ad cum rerum sed sint vel autem eos et. Est ipsam possimus tempora ipsam qui. Facilis et ipsa placeat.",
-        "price" => 104657.89530177503,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/0022dd?text=apartments+at"
+        "description" => '',
+        "price" => 104657.89,
+        "cover" => "https://www.luxgallery.it/wp-content/uploads/2021/04/R40d76d38881db98a4556b16777d48324.jpg"
     ],
     [
         "user_id" => 32,
-        "title" => "Unde nulla voluptatem non deleniti dolorem sunt dolores quo.",
+        "title" => "Trilocale con spazio esterno e area relax",
         "rooms" => 1,
         "bedrooms" => 2,
         "bathrooms" => 2,
@@ -765,13 +765,13 @@ return [
         "slug" => "vel-reprehenderit-quia-soluta-quisquam",
         "longitude" => 107.143184,
         "latitude" => -65.334232,
-        "description" => "Repellat quam ex accusantium fugit quidem suscipit ab natus. Dolor consequatur est facere architecto. Id velit libero dolorem quaerat nihil ea veniam.",
-        "price" => 175239.83115108675,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=apartments+facere"
+        "description" => '',
+        "price" => 175239.83,
+        "cover" => "https://www.piscine-verona.it/wp-content/uploads/2018/07/piscina-di-lusso.jpg"
     ],
     [
         "user_id" => 14,
-        "title" => "Eligendi sit ea est ut.",
+        "title" => "Appartamento arredato con mobili di design",
         "rooms" => 3,
         "bedrooms" => 3,
         "bathrooms" => 1,
@@ -781,13 +781,13 @@ return [
         "slug" => "praesentium-autem-velit-commodi",
         "longitude" => -79.530826,
         "latitude" => -17.849932,
-        "description" => "Voluptatem reprehenderit eius voluptas qui ut impedit dolores. Perspiciatis assumenda ut beatae modi. Veritatis doloribus qui possimus molestias sit asperiores nam.",
-        "price" => 482841.7971743465,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/00ff88?text=apartments+qui"
+        "description" => '',
+        "price" => 482841.79,
+        "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-14.jpg"
     ],
     [
         "user_id" => 49,
-        "title" => "Dolores ex enim nihil ullam vel.",
+        "title" => "Loft con soppalco e grandi finestre panoramiche",
         "rooms" => 5,
         "bedrooms" => 3,
         "bathrooms" => 2,
@@ -797,8 +797,8 @@ return [
         "slug" => "dicta-pariatur-ut-provident-odit-consequuntur-eius-voluptatem",
         "longitude" => -51.954328,
         "latitude" => 0.244157,
-        "description" => "Rem ipsum aut pariatur voluptatum consectetur unde est dolor. Earum cumque quo harum. Corrupti et sit sit cum et.",
-        "price" => 638576.1816979274,
-        "cover" => "https:\/\/via.placeholder.com\/640x480.png\/004422?text=apartments+nesciunt"
+        "description" => '',
+        "price" => 638576.18,
+        "cover" => "https://blogdilifestyle.it/wp-content/uploads/2017/12/case-di-lusso-1920x1080.jpg"
     ]
 ];

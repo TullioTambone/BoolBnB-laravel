@@ -78,7 +78,7 @@ class ApartmentController extends Controller
             } 
         }
 
-        $apartment = $query->paginate(3);
+        $apartment = $query->paginate(12);
 
         return response()->json([
             'success' => true,

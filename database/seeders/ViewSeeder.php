@@ -56,8 +56,8 @@ class ViewSeeder extends Seeder
         //     'password' => $faker->unique()->password(),
         // ];
 
-        $jsonArray = json_encode($apartments, JSON_PRETTY_PRINT);
-        $phpArray = "<?php\n\nreturn " . $jsonArray . ";";
-        File::put(config_path('apartments.php'), $phpArray);
+        // $jsonArray = json_encode($apartments, JSON_PRETTY_PRINT);
+        // $phpArray = "<?php\n\nreturn " . $jsonArray . ";";
+        // File::put(config_path('apartments.php'), $phpArray);
     }
 }
