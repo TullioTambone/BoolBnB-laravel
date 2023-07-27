@@ -5,26 +5,9 @@
 @endsection
 
 @section('content')
+<div class="box">
+
     <div class="container">
-        {{-- <div class="container">
-            @foreach ($apartments as $apartment)
-                <h2>Appartamento: {{ $apartment->title }}</h2>
-    
-                @if (isset($results[$apartment->id]) && !$results[$apartment->id]->isEmpty())
-                    <h3>Risultati delle transazioni:</h3>
-                    <ul>
-                        @foreach ($results[$apartment->id] as $transaction)
-                            <li>ID transazione: {{ $transaction->id }}</li>
-                            <!-- Altri dettagli della transazione... -->
-                        @endforeach
-                    </ul>
-                @else
-                    <p>Nessun risultato di transazione per questo appartamento.</p>
-                @endif
-    
-                <!-- Altre informazioni sull'appartamento... -->
-            @endforeach
-        </div> --}}
         
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
@@ -91,53 +74,8 @@
                 </div>
               @endforeach  
         </div>
-
-            {{-- <ul class="list-unstyled">
-                @foreach($apartments as $elem)
-                    <li class="my-2">            
-                        
-                        <div class="mt-3 row justify-content-between">
-                            <a href="{{route('admin.show', $elem)}}" class="fs-4 nav-link col-12 col-md-6 col-lg-6">
-                                <b class="me-1">
-                                    {{ $elem->title }}:
-                                </b>
-                                <span>
-                                    {{$elem->address}},
-                                </span>
-                                <span>
-                                    {{($elem->visibility) ? 'visibile' : 'non visibile'}}
-                                </span>
-                            </a>
-                        
-                            <div class="d-flex column-gap-2 col-12 col-md-6 col-lg-6 justify-content-center">
-                                <div>
-                                    
-                                </div>
-                             
-
-
-
-
-                                <div>
-                                    <a href="{{route('admin.edit', $elem)}}" class="btn btn-primary">
-                                        Modifica
-                                    </a>
-                                </div>
-                
-                                
-                                
-                                
-                                <form action="{{ route('admin.destroy', $elem) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Elimina</button>
-                                </form>
-                            </div>
-                        </div>
-                    </li>        
-                @endforeach
-            </ul> --}}
         @endif
     </div>
+</div>
 @endsection
 
