@@ -78,20 +78,20 @@
                         transform: scaleX(1);
                     }
             
+                    &:hover{
+                        color: #ffffff ;
+                        transform: scale(1.1);
+                        opacity: 0.95;
+                        // filter: blur(0);
+                        text-decoration: none;
+    
+                        // &:not(:hover) {
+                        //     filter: blur(1px);
+        
+                        // }
+                    }
                 }
                 
-                &:hover a {
-                    color: #ffffff ;
-                    transform: scale(1.1);
-                    opacity: 0.95;
-                    // filter: blur(0);
-                    text-decoration: none;
-
-                    // &:not(:hover) {
-                    //     filter: blur(1px);
-    
-                    // }
-                }
 
             }            
         }    
