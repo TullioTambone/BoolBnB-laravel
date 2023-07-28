@@ -48,6 +48,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="box-description col-12 col-md-8 col-lg-7 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
@@ -60,6 +61,7 @@
                 <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">
             </div>
         </div>
+        <hr>
         <div class="row mb-5">
             <div class="box-img col-12 col-md-4 col-lg-5 d-flex justify-content-center align-items-center">
                 <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">

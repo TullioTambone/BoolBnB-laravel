@@ -1,17 +1,18 @@
 
-
 #dashboard{
-    
+    .container{
+        .row{
             .box-img{
                 img{
                     width: 300px;
                 }
-                border: 1px solid black;
+                // border: 1px solid black;
             }
             .box-description{
 
             }
-
+        }
+    }
 }
 
 
