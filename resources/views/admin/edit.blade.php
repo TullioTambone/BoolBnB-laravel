@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid mt-5" id="forms">
-    <h2>Modifica il tuo appartmento</h2>
+    <h2>Modifica il tuo appartmento<span id="controllo">* campi obbligatori</span></h2>
     
         <div class="row justify-content-center container"  id="content-form">
             <div class="col-7">
