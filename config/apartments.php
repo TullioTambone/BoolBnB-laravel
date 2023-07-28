@@ -15,7 +15,7 @@ return [
         "latitude" => 44.64949,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 6000,
-        "cover" => "https://i.pinimg.com/originals/b5/f7/e2/b5f7e202f98e5632050d5dbf35fd89a0.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672522_44321178fb_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -31,7 +31,7 @@ return [
         "latitude" => 46.07888,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 5800,
-        "cover" => "https://www.ahtorino.com/public/foto/z1ahtorino-hotel-appartamento-deluxe-salotto.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -47,7 +47,7 @@ return [
         "latitude" => 45.83019,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 29000,
-        "cover" => "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/31/31/a6/appartamenti-astra.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -63,7 +63,7 @@ return [
         "latitude" => 41.43048,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 359000,
-        "cover" => "https://media-assets.ad-italia.it/photos/626bd6c4a64dbe59d264a2d0/master/w_1600%2Cc_limit/HOME.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077654945_b2b4b6457a_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -79,7 +79,7 @@ return [
         "latitude" => 40.07555,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 33800,
-        "cover" => "https://www.garnilagonembia.com/images/_gallery%20divise/04_formula%20appartamento/bilocale/salotto_bilo.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672582_971f6341ae_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -95,7 +95,7 @@ return [
         "latitude" => 44.99401,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 96000,
-        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034042807930970/mobile-tv-1.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077244956_097408140b_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -111,7 +111,7 @@ return [
         "latitude" => 44.01195,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 497000,
-        "cover" => "https://www.forma-luxuryliving.com/wp-content/uploads/2023/02/appartamento-ristrutturato.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077440994_990cb73dd5_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -127,7 +127,7 @@ return [
         "latitude" => 40.87153,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 792747.33,
-        "cover" => "https://www.viagginewyork.it/wp-content/uploads/2018/01/appartamenti-newyork2.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077744428_cfc0219581_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -143,7 +143,7 @@ return [
         "latitude" => 45.97035,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 31600,
-        "cover" => "https://www.john-taylor.it/vendita-appartamento-milano-680x400-80-V1643MI-115894163.jpg?datetime=2023-07-21_1"
+        "cover" => "https://live.staticflickr.com/65535/53076672677_47e63079dd_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -159,7 +159,7 @@ return [
         "latitude" => 41.91124,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 663000,
-        "cover" => "https://www.loscudodistabio.ch/media/vb2nooto/studiofdi-034.jpg?width=902&height=601&format=webp&rnd=133094543498600000"
+        "cover" => "https://live.staticflickr.com/65535/53076672692_33cea285de_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -175,7 +175,7 @@ return [
         "latitude" => 38.07707,
         "description" => '',
         "price" => 114000,
-        "cover" => "https://media.lavorincasa.it/post/18/17519/data/spazioso-appartamento-su-due-piani-sovrapposti.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441089_d0d1ec5dc7_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -191,7 +191,7 @@ return [
         "latitude" => 43.91322,
         "description" => '',
         "price" => 73900,
-        "cover" => "https://www.berghotel.com/CustomerData/557/files/Images/berghotel/ihr-berghotel/zirbenappartement.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077744458_cf94c239bb_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -207,7 +207,7 @@ return [
         "latitude" => 45.43843,
         "description" => '',
         "price" => 61800,
-        "cover" => "https://www.villaggiodellasalutepiu.it/wp-content/uploads/2020/04/WhatsApp-Image-2020-04-14-at-15.39.52-e1587547340835.jpeg"
+        "cover" => "https://live.staticflickr.com/65535/53077655145_170ac4f6c4_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -223,7 +223,7 @@ return [
         "latitude" => 44.48675,
         "description" => '',
         "price" => 83000,
-        "cover" => "https://static.suedtirol.com/supercompanies/17731/images/appartamenti-caldogno0525.jpg?size=scg"
+        "cover" => "https://live.staticflickr.com/65535/53077245066_fc1857c0d4_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -239,7 +239,7 @@ return [
         "latitude" => 45.85972,
         "description" => '',
         "price" => 112432.95,
-        "cover" => "https://www.apartments-fill.com/bilder/Apartments-Fontana.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673232_43c6d122d2_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -255,7 +255,7 @@ return [
         "latitude" => 41.88786,
         "description" => '',
         "price" => 706000,
-        "cover" => "https://www.innaosta.com/wp-content/uploads/2023/01/appartamenti-vacanza-turisti-aosta1-600x325.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441159_230dc495d4_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -271,7 +271,7 @@ return [
         "latitude" => 39.87851,
         "description" => '',
         "price" => 52000,
-        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385449000970/7ea8f483daadcdf157c3be89b0041a64.webp"
+        "cover" => "https://live.staticflickr.com/65535/53077655190_2bc8ca7ca0_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -287,7 +287,7 @@ return [
         "latitude" => 41.17281,
         "description" => '',
         "price" => 71000,
-        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134034385855852554/mobile-tv-1_1.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245096_84889a437c_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -303,7 +303,7 @@ return [
         "latitude" => 40.03553,
         "description" => '',
         "price" => 42000,
-        "cover" => "https://th.bing.com/th/id/R.5ab862e2ad9705577e7b7fba5c6a455b?rik=kvOfAvQx2Pb%2bBA&pid=ImgRaw&r=0"
+        "cover" => "https://live.staticflickr.com/65535/53077441244_077899fadb_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -319,7 +319,7 @@ return [
         "latitude" => 40.6311,
         "description" => '',
         "price" => 39000,
-        "cover" => "https://i.pinimg.com/originals/fc/ac/19/fcac194ad03f8af8dfaf702db8db5b0f.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441464_acc5e15937_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -335,7 +335,7 @@ return [
         "latitude" => 45.60734,
         "description" => '',
         "price" => 58000,
-        "cover" => "https://images1.apartments.com/i2/-6CF2epBzuK8xUsooaIY6WXxrMRcYoM1O_vApH7_1jc/111/trinity-club-apartments-trinity-fl-exterior.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -351,7 +351,7 @@ return [
         "latitude" => 45.29833,
         "description" => '',
         "price" => 79000,
-        "cover" => "https://apartmentgeeks.net/wp-content/uploads/2013/05/Gorgeous-Modern-Apartment-Design.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -367,7 +367,7 @@ return [
         "latitude" => 41.91658,
         "description" => '',
         "price" => 51000,
-        "cover" => "https://gofirstgreen.com/wp-content/uploads/2020/07/landscaping-for-apartment-buildings-properties-cincinnati-northern-kentucky.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673187_36270849b8_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -383,7 +383,7 @@ return [
         "latitude" => 42.58237,
         "description" => '',
         "price" => 20000,
-        "cover" => "https://blog.etinet.it/wp-content/uploads/2016/07/case-dani.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655530_fc80856c48_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -399,7 +399,7 @@ return [
         "latitude" => 41.04567,
         "description" => '',
         "price" => 19000,
-        "cover" => "http://www.case-in-legno-progettolegno.it/wp-content/uploads/2015/12/Casa-in-legno-a-Fano-0003.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441544_322bf153c2_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -415,7 +415,7 @@ return [
         "latitude" => 40.87153,
         "description" => '',
         "price" => 91000,
-        "cover" => "https://cdn.cosedicasa.com/wp-content/uploads/2013/06/check-up-casa.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673272_e2373e4a01_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -431,7 +431,7 @@ return [
         "latitude" => 40.07555,
         "description" => '',
         "price" => 85000,
-        "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2019-12/huf_haus_ap.jpg?sv=0tPOY1cT&itok=ooNtzdjh"
+        "cover" => "https://live.staticflickr.com/65535/53077441594_a78299a66f_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -447,7 +447,7 @@ return [
         "latitude" => 45.23572,
         "description" => '',
         "price" => 97000,
-        "cover" => "https://www.caseinlegnonaturale.it/wp-content/uploads/2018/03/Case_in_legno_tronchi_legno_massiccio_legno_lamellare_140mm_-15.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441604_29f7be428e_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -463,7 +463,7 @@ return [
         "latitude" => 45.52817,
         "description" => '',
         "price" => 36000,
-        "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-01.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673297_9ef174df7f_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -479,7 +479,7 @@ return [
         "latitude" => 41.32231,
         "description" => '',
         "price" => 650683.91,
-        "cover" => "https://st3.idealista.it/news/archivie/2019-06/modum_610_ebenholz_1.jpg?sv=yRByxtJs"
+        "cover" => "https://live.staticflickr.com/65535/53076673347_e55d49620a_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -495,7 +495,7 @@ return [
         "latitude" => 44.15623,
         "description" => '',
         "price" => 130000,
-        "cover" => "https://www.arredamento.it/img/452/progettare-case-belle.asp_Oit_112168.webp"
+        "cover" => "https://live.staticflickr.com/65535/53076673372_03f0c5bb8e_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -511,7 +511,7 @@ return [
         "latitude" => 42.66219,
         "description" => '',
         "price" => 10000,
-        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037403657568256/1d13ba24-41ae-4349-b23d-5215385ff683.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245681_c4e9eb0d3f_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -527,7 +527,7 @@ return [
         "latitude" => 45.38398,
         "description" => '',
         "price" => 61000,
-        "cover" => "https://abitare.moondo.info/files/2018/01/Vantaggi-e-svantaggi-delle-case-prefabbricate.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745253_a8dd14acef_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -543,7 +543,7 @@ return [
         "latitude" => 44.1459,
         "description" => '',
         "price" => 48000,
-        "cover" => "https://www.avantgardeconstruct.it/wp-content/uploads/2019/08/case-prefabbricate-prezzi-Premium.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245821_10ab8b8155_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -559,7 +559,7 @@ return [
         "latitude" => 44.43282,
         "description" => '',
         "price" => 99000,
-        "cover" => "https://www.costantinilegno.it/wp-content/uploads/2015/11/LACOST-Case-in-legno-umbria.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655800_0c70306f19_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -575,7 +575,7 @@ return [
         "latitude" => 43.13327,
         "description" => '',
         "price" => 82000,
-        "cover" => "https://pro2-bar-s3-cdn-cf2.myportfolio.com/018c37874d387a698f31dfe0e8634a5f/3716f3106f98b11bc8870ecf_rw_1920.jpg?h=16b52759e189f63d3897d8ada6422dbf"
+        "cover" => "https://live.staticflickr.com/65535/53077655840_c21ec97673_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -591,7 +591,7 @@ return [
         "latitude" => 43.9917,
         "description" => '',
         "price" => 64500,
-        "cover" => "https://media.tio.ch/files/domains/tio.ch/images/4bsi/-case-prefabbricate-in-cemento-cinque-buoni-motivi-per-pensarci-hqc9.jpg?v=1"
+        "cover" => "https://live.staticflickr.com/65535/53077745323_585025ca94_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -607,7 +607,7 @@ return [
         "latitude" => 41.67509,
         "description" => '',
         "price" => 26000,
-        "cover" => "https://cdn.discordapp.com/attachments/1127889223098314815/1134037845661732894/tecnoedil-avezzano-case-in-legno-mobile.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745338_e31a044a97_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -623,7 +623,7 @@ return [
         "latitude" => 44.1151,
         "description" => '',
         "price" => 763000,
-        "cover" => "https://www.casapratica.org/casa/sistemare-casa/case-moderne_NG1.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245896_366c9e65be_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -639,7 +639,7 @@ return [
         "latitude" => 41.41699,
         "description" => '',
         "price" => 51100,
-        "cover" => "https://www.freedompress.cc/wp-content/uploads/2021/02/casa-singola.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245911_2d7d9aeab1_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -655,7 +655,7 @@ return [
         "latitude" => 45.68804,
         "description" => '',
         "price" => 92400,
-        "cover" => "https://i.pinimg.com/originals/11/1b/9e/111b9e824ad69edbce9c28be542cbce7.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745373_0a8db65184_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -671,7 +671,7 @@ return [
         "latitude" => 44.45685,
         "description" => '',
         "price" => 49000,
-        "cover" => "https://i.pinimg.com/originals/6a/ad/f0/6aadf01d9e9b2df74036c989e896b419.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441899_b68a681fef_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -687,7 +687,7 @@ return [
         "latitude" => 41.05034,
         "description" => '',
         "price" => 27000,
-        "cover" => "https://www.roadcalls.fr/wp-content/uploads/2017/02/stockholm_belle_ville_europe.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655930_5177684394_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -703,7 +703,7 @@ return [
         "latitude" => 42.00374,
         "description" => '',
         "price" => 51000,
-        "cover" => "https://st3.idealista.it/news/archivie/styles/imagen_big_lightbox/public/2021-06/dsc3853-high.jpg?sv=Omwz7Y4T&itok=Eng97CFq"
+        "cover" => "https://live.staticflickr.com/65535/53077655940_4d843d5ce9_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -719,7 +719,7 @@ return [
         "latitude" => 42.41485,
         "description" => '',
         "price" => 96000,
-        "cover" => "https://i.pinimg.com/originals/37/1c/9c/371c9cb6f72da156b0058df1fa3365f8.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745508_a8b2757b5a_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -735,7 +735,7 @@ return [
         "latitude" => 41.32231,
         "description" => '',
         "price" => 97000,
-        "cover" => "https://i.pinimg.com/originals/07/2f/c3/072fc3e1eda96c42caca12dae2bcfb2d.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745473_271a1255c6_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -751,7 +751,7 @@ return [
         "latitude" => 41.06754,
         "description" => '',
         "price" => 10400,
-        "cover" => "https://www.luxgallery.it/wp-content/uploads/2021/04/R40d76d38881db98a4556b16777d48324.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077656025_582cb244de_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -767,7 +767,7 @@ return [
         "latitude" => 45.68978,
         "description" => '',
         "price" => 17500,
-        "cover" => "https://www.piscine-verona.it/wp-content/uploads/2018/07/piscina-di-lusso.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077135516_67459292a2_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -783,7 +783,7 @@ return [
         "latitude" => 42.33442,
         "description" => '',
         "price" => 48200,
-        "cover" => "https://mondodesign.it/wp-content/uploads/2015/01/Case-Legno-Lusso-14.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077330079_a668e0145f_h.jpg"
     ],
     [
         "user_id" => 1,
@@ -799,6 +799,6 @@ return [
         "latitude" => 38.29224,
         "description" => '',
         "price" => 63800,
-        "cover" => "https://blogdilifestyle.it/wp-content/uploads/2017/12/case-di-lusso-1920x1080.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077135481_9d42c3023a_h.jpg"
     ]
 ];
