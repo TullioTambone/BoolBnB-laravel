@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid mt-5" id="forms">
+<div class="container-fluid" id="forms">
     <h2 class="text-center">Crea qui il tuo appartamento<span id="controllo">* campi obbligatori</span></h2>
     
         <div class="row justify-content-center container" id="content-form">

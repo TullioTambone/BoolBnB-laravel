@@ -11,7 +11,7 @@
         
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
-        <div class="d-flex flex-column mt-5 row-gap-3">
+        <div class="d-flex flex-column row-gap-3">
             <h2>
                 Ciao, qui vedrai i tuoi appartamenti.
             </h2>
@@ -24,7 +24,7 @@
         </div>
         @else
         <div class="row">
-            <h1 class="text-center text-dark my-5">I Tuoi Appartamenti</h1>
+            <h1 class="text-center text-dark my-2">I Tuoi Appartamenti</h1>
 
 
             @foreach($apartments as $elem)
