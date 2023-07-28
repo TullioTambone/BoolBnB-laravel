@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -24,7 +25,7 @@ class UserTableSeeder extends Seeder
            $new_apartments->surname = $element['surname'];
            $new_apartments->birthday = $element['birthday'];
            $new_apartments->email = $element['email'];
-           $new_apartments->password = $element['password'];
+           $new_apartments->password = Hash::make($element['password']);
            $new_apartments->save();
        }
     }
