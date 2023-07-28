@@ -46,40 +46,38 @@
 
         <div class="col-12 col-md-6 col-lg-6">
             <h1 class="border-bottom">{{ $apartment->title }}</h1>
+            <p> <i class="fa-solid fa-location-dot"></i> {{ $apartment->address }}</p> 
             <div>
                 <p>{{ $apartment->description }}</p>
                 <span class="d-block">
-                    numero stanza: {{ $apartment->rooms }}
+                  <strong>numero stanze:</strong>{{ $apartment->rooms }}
                 </span>
                 <span class="d-block">
-                    numero stanze letto: {{ $apartment->bedrooms }}
+                   <strong> numero stanze letto:</strong> {{ $apartment->bedrooms }}
                 </span>
                 <span class="d-block">
-                    numero bagni: {{ $apartment->bathrooms }}
+                  <strong>numero bagni: </strong>{{ $apartment->bathrooms }}
                 </span>
                 <span class="d-block">
-                    metri quadri: {{ $apartment->square_meters }}mq
+                  <strong>metri quadri:</strong> {{ $apartment->square_meters }}mq
                 </span>
                 <span class="d-block">
-                   indirizzo: {{ $apartment->address }}
+                  <strong>prezzo:</strong>{{ $apartment->price }}&euro;
                 </span>
                 <span class="d-block">
-                    prezzo: {{ $apartment->price }}&euro;
-                </span>
-                <span class="d-block">
-                    visibilità: {{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}
+                  <strong>visibilità:</strong>{{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}
                 </span>
                 <h5 class="mt-2"> Servizi  </h5>
 
                 @if ($apartment->services)
                     @foreach($apartment->services as $elem)
-                        <span class="d-block mt-1"> <i class="fa-solid {{ $elem->icon }} me-1 "></i> {{  $elem->name }} </span>
+                        <span class="d-inline p-1 card mt-1"> <i class="fa-solid {{ $elem->icon }} me-1 "></i> {{  $elem->name }} </span>
                     @endforeach
                 @endif
 
                 @if ($apartment->leads)
 
-                    <h2>Messagi Ricevuti</h2>
+                    <h2 class="mt-5">Messagi Ricevuti</h2>
                     @foreach($apartment->leads as $elem)
                         <span class="d-block mt-1"> 
                             Nome: {{  $elem->name }} 
