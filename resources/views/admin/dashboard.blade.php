@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('style')
+    @vite(['resources/scss/pages/_dashboard.scss'])
+@endsection
+
 @section('content')
 <div class="container">
     <h2 class="fs-4 text-secondary my-4">
