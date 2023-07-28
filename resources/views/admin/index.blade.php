@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="box mt-5">
+<div class="box">
 
-    <div class="container">
+    <div class="container pt-5">
         
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
@@ -69,9 +69,11 @@
         
                             </div>
                         </div>
-                    </li>        
-                @endforeach
-            </ul>
+                    </div>
+                    
+                </div>
+              @endforeach  
+        </div>
         @endif
     </div>
 </div>
