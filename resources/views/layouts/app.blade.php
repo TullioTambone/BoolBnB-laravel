@@ -34,7 +34,7 @@
         {{-- header --}}
         @include('partials.header')
 
-        <main class="">
+        <main class="mt-5">
             @yield('content')
         </main>
 
