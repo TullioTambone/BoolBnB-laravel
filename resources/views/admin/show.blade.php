@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container mt-4 pt-5">
-
+    
+    <input type="text" hidden value="{{$apartment->latitude}}" id="latitude">
+    <input type="text" hidden value="{{$apartment->longitude}}" id="longitude">
     <div class="row">
         <h1 class="border-bottom">{{ $apartment->title }}</h1>
         <div class="col-12 text-center">
@@ -86,6 +88,22 @@
                             </div>
                         @endif
                     </div>
+                    <div class="d-flex column-gap-1 mt-2">
+
+                        {{-- edit --}}
+                        <a href="{{route('admin.edit', $apartment)}}"
+                            class="btn btn-primary"
+                        >
+                            Modifica
+                        </a>
+        
+                        {{-- delete --}}
+                        <form action="{{ route('admin.destroy', $apartment) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Elimina</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-12 col-md-6">
                     {{-- pagamento in stiky --}}
@@ -120,46 +138,48 @@
                         </form>                
                     </div>
                 </div>
+                <!-- mappa -->
+                </div class="col-12">
+                    <div id='map' class='map mt-5' style="height: 200px;"></div>
+                </div>
             </div>
-            
             
             <div>
             
                 @if ($apartment->leads)
 
-                    <h2 class="mt-5">Messagi Ricevuti</h2>
-                    @foreach($apartment->leads as $elem)
-                        <span class="d-block mt-1"> 
-                            Nome: {{  $elem->name }} 
-                        </span>
-                        <span class="d-block mt-1"> 
-                            Email: {{  $elem->email }} 
-                        </span>
-                        <p class="d-block mt-1"> 
-                            Messaggio: {{  $elem->message }} 
-                        </p>
-                    @endforeach
+                    <h4 class="mt-5">Messagi Ricevuti</h4>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped
+                        table-hover	
+                        table-borderless
+                        align-middle">
+                            <thead class="table-light">
+                                <caption>Messaggi</caption>
+                                <tr class="border-bottom">
+                                    <th>NOME</th>
+                                    <th class=" d-none d-md-block">EMAIL</th>
+                                    <th>MESSAGGIO</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    @foreach($apartment->leads as $elem)
+                                    <tr class="" >
+                                        <td scope="row">{{  $elem->name }} </td>
+                                        <td class=" d-none d-md-block">{{  $elem->email }} </td>
+                                        <td class="guest-message">{{  $elem->message }} </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    
+                                </tfoot>
+                        </table>
+                    </div>
                 @endif
 
-                <div class="d-flex column-gap-1 mt-2">
-
-                    {{-- edit --}}
-                    <a href="{{route('admin.edit', $apartment)}}"
-                        class="btn btn-primary"
-                    >
-                        Modifica
-                    </a>
-    
-                    {{-- delete --}}
-                    <form action="{{ route('admin.destroy', $apartment) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Elimina</button>
-                    </form>
-                </div>
-
                 
-
                 
                 @if(isset($results))
                     <!-- Visualizza i risultati come desideri -->
@@ -172,13 +192,13 @@
         </div>
     </div> 
 </div> 
+<script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
 @endsection
 
 
 @section('script')
     <script>
         let clientToken = "{{ $clientToken }}";
-        
         function changeColor(label){
             //label.SetAttribute('background-color','red');
             let labels = document.querySelectorAll('.labels');
@@ -205,9 +225,21 @@
         }
     </script>
     @vite(['resources/js/braintree.js'])
+    @vite(['resources/js/mapInShow.js'])
 @endsection
 
 @section('braintree')
 <script src="https://js.braintreegateway.com/web/dropin/1.39.0/js/dropin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+@endsection
+
+@section('style')
+<style>
+    .guest-message{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
 @endsection
