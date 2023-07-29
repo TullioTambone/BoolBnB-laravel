@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
 
     
     Route::post('/subscription', [SubscriptionController::class, 'token'])->name('subscription');
+    Route::get('/subscription', [SubscriptionController::class, 'index'])->name('admin.subscription');
+
 });
 
 require __DIR__.'/auth.php';
