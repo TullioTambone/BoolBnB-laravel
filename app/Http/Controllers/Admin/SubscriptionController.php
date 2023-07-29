@@ -57,7 +57,8 @@ class SubscriptionController extends Controller
             ]
         ]);
         
-        return view('admin.show', compact('apartment', 'sub', 'results', 'clientToken'));
+       // return view('admin.subscription', compact('apartment', 'sub', 'results', 'clientToken'));
+        return redirect()->route('admin.subscription')->with(compact('apartment', 'sub', 'results', 'clientToken'));
         // return redirect()->route('admin.index')->with([
         //     'results' => $results
         // ]);
@@ -88,7 +89,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        // return view('admin.subscription');
+        return view('admin.subscription');
     }
 
     /**
