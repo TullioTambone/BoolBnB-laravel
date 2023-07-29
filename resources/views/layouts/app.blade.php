@@ -38,6 +38,9 @@
             @yield('content')
         </main>
 
+        {{-- footer --}}
+        @include('partials.footer')
+
         @yield('braintree')
 
         <script src="https://js.braintreegateway.com/web/3.87.0/js/client.min.js"></script>
