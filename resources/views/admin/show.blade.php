@@ -144,10 +144,9 @@
             
             <div>
             
+                <h4 class="mt-5">Messagi Ricevuti</h4>
+                
                 @if ($apartment->leads)
-
-                    <h4 class="mt-5">Messagi Ricevuti</h4>
-                    
                     <div class="table-responsive">
                         <table class="table table-striped
                         table-hover	
@@ -233,6 +232,10 @@
 
 @section('style')
 <style>
+    #map, #sticky{
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
     #sticky{
         position: -webkit-sticky;
         position: sticky;
