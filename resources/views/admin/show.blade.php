@@ -80,7 +80,7 @@
                         @if ($apartment->services)
                             <div class="row p-2">
                                 @foreach($apartment->services as $elem)
-                                <div class="col-12 col-md-6 d-flex align-items-center border rounded">
+                                <div class="col-12 d-flex align-items-center border rounded">
                                     <i class="fa-solid {{ $elem->icon }} me-1"></i>
                                     <span class="p-1 mt-1">{{  $elem->name }} </span>
                                 </div>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     {{-- pagamento in stiky --}}
-                    <div class="mt-4 card p-3 w-100">
+                    <div class="mt-4 card p-3 w-100" id="sticky">
                         <form id="payment-form" action="{{route('subscription')}}" method="POST">
                             <h2 class="text-center">Sponsorizza l'appartamento</h2>           
                             {{-- token --}}
@@ -138,11 +138,9 @@
                         </form>                
                     </div>
                 </div>
-                <!-- mappa -->
-                </div class="col-12">
-                    <div id='map' class='map mt-5' style="height: 200px;"></div>
-                </div>
             </div>
+            <!-- mappa -->
+            <div id='map' class='map mt-5' style="height: 200px;"></div>
             
             <div>
             
@@ -235,6 +233,11 @@
 
 @section('style')
 <style>
+    #sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 11vh;
+    }
     .media-table{
         display: none;
     }
