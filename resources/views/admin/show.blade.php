@@ -133,7 +133,10 @@
                                 <input type="hidden" name="apartment_id" value="{{$apartment->id}}"> 
     
                             <div id="dropin-container"></div>
-                            <input type="submit" class="btn border w-25"/>
+
+                            <input type="submit" class="btn border w-25" onclick="hideContent(this)"/>
+                            <span id="loading"></span>
+
                             <input type="hidden" id="nonce" name="payment_method_nonce"/>
                         </form>                
                     </div>
@@ -220,6 +223,16 @@
                 label.style.backgroundColor = activePlatinum;
             }
         }
+
+        function hideContent(element){
+            element.style.display = 'none';
+            document.getElementById('loading').innerHTML = `
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+            `;
+
+        }
+
     </script>
     @vite(['resources/js/braintree.js'])
     @vite(['resources/js/mapInShow.js'])

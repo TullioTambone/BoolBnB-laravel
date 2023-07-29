@@ -18,7 +18,6 @@
 <script>
 
     function showRedirectLink() {
-        document.getElementById('redirectLink').removeAttribute('hidden');
         document.getElementById('redirectLink').click();
     }
 
