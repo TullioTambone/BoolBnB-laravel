@@ -159,7 +159,7 @@
                                 <caption>Messaggi</caption>
                                 <tr class="border-bottom">
                                     <th>NOME</th>
-                                    <th class=" d-none d-md-block">EMAIL</th>
+                                    <th class="media-table">EMAIL</th>
                                     <th>MESSAGGIO</th>
                                 </tr>
                                 </thead>
@@ -167,7 +167,7 @@
                                     @foreach($apartment->leads as $elem)
                                     <tr class="" >
                                         <td scope="row">{{  $elem->name }} </td>
-                                        <td class=" d-none d-md-block">{{  $elem->email }} </td>
+                                        <td class="media-table">{{  $elem->email }} </td>
                                         <td class="guest-message">{{  $elem->message }} </td>
                                     </tr>
                                     @endforeach
@@ -235,11 +235,20 @@
 
 @section('style')
 <style>
+    .media-table{
+        display: none;
+    }
     .guest-message{
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+
+    @media screen and (min-width:576px){
+        .media-table{
+            display: table-cell;
+        }
     }
 </style>
 @endsection
