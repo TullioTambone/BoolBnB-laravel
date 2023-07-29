@@ -80,7 +80,7 @@ class ApartmentController extends Controller
         }        
 
         // Ottieni i risultati paginati
-        $apartments = $query->paginate(12);
+        $apartments = $query->paginate(24);
 
         $apartmentsWithDistance = [];
 
