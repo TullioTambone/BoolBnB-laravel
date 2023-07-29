@@ -11,7 +11,11 @@
             @if ($apartment->cover)
                 <div>
                     {{-- <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}"> --}}
-                    <img class="img-fluid" src="{{$apartment->cover}}" alt="{{ $apartment->title }}">
+                    @if(str_contains($apartment->cover, 'apartment_cover_img'))
+                        <img style="border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
+                    @else
+                        <img style="border-radius: 20px" class="img-fluid" src="{{$apartment->cover}}" alt="{{ $apartment->title }}">
+                    @endif
 
                 </div>                
             @else
