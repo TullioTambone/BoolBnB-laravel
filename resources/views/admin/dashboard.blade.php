@@ -5,34 +5,16 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Benvenuto '. $user->name.' questa è la tua Dashboard') }}
-    </h2>
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h1>
-                        {{ __($user->name .' '. $user->surname) }}
-                    </h1>
-                </div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
 
-                    <p>
-                        Benvenuto nella tua Dashboard personale! Questo è il centro di controllo dove puoi gestire tutti gli aspetti dei tuoi servizi su Airbnb. Qui potrai tenere traccia di tutte le informazioni importanti relative ai tuoi appartamenti e offerte.
-                    </p>
-                </div>
-            </div>
-        </div>
+<div>
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
     </div>
+    @endif
 </div>
+
 
 <div id="dashboard">
     <div class="container">
@@ -42,13 +24,40 @@
             </div>
             <div class="box-description col-12 col-md-8 col-lg-7 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
-                    <h3>qui ce qualcosa</h3>
-                    <p>e poi qui qualcos' altro</p>
-                    <span>magari qualcosa anche qua</span>
+                    <h2>{{ __('Benvenuto '. $user->name.' Prenota su BoolBnB: è facile e conveniente!') }} </h2>
+                    <ul>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ asset('img/support.png') }}" alt="">
+                                <div class="info d-flex flex-column justify-content-center">
+                                    <h4>Supporto clienti pronto ad aiutarti</h4>
+                                    <p>Il nostro team di supporto è disponibile 24/7 per assisterti in ogni tua esigenza.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ asset('img/discount.jpeg') }}" alt="">
+                                <div class="info d-flex flex-column justify-content-center">
+                                    <h4>Accedi a sconti immediati</h4>
+                                    <p>Con le tariffe per soli iscritti risparmi in media un 15% su migliaia di hotel.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ asset('img/calendar.png') }}" alt="">
+                                <div class="info d-flex flex-column justify-content-center">
+                                    <h4>Cancellazione gratuita</h4>
+                                    <p>Prenotazione flessibile per gran parte degli hotel*.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <hr>
+       
         <div class="row">
             <div class="box-description col-12 col-md-8 col-lg-7 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
@@ -61,7 +70,7 @@
                 <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">
             </div>
         </div>
-        <hr>
+       
         <div class="row mb-5">
             <div class="box-img col-12 col-md-4 col-lg-5 d-flex justify-content-center align-items-center">
                 <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">
