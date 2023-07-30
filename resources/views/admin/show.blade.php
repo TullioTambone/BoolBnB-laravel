@@ -195,13 +195,35 @@
                                 </div>
                             @endif
                         @endif
-                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare la sponsorizzazione?`)">
+                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModal(); return false;">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
                             <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
-                            <button type="submit" class="btn btn-danger">Elimina</button>
+                            <button type="submit" class="btn btn-danger mb-4">Annulla</button>
                         </form>
+
+                        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmModalLabel">Conferma eliminazione</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sei sicuro di voler cancellare l'abbonamento?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                        <form action="{{ route('admin.destroy', $apartment) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Elimina</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
