@@ -134,7 +134,7 @@
     
                             <div id="dropin-container"></div>
 
-                            <input type="submit" class="btn border w-25" onclick="hideContent(this)"/>
+                            <input type="submit" class="btn border w-25" id="submit-payment"/>
                             <span id="loading"></span>
 
                             <input type="hidden" id="nonce" name="payment_method_nonce"/>
@@ -142,11 +142,12 @@
                     </div>
                 </div>
             </div>
+
             <!-- mappa -->
             <div id='map' class='map mt-5' style="height: 200px;"></div>
-            
-            <div>
-            
+
+            {{-- messages --}}
+            <div>            
                 <h4 class="mt-5">Messagi Ricevuti</h4>
                 
                 @if ($apartment->leads)
@@ -202,7 +203,7 @@
         function changeColor(label){
             //label.SetAttribute('background-color','red');
             let labels = document.querySelectorAll('.labels');
-            let activeBrown = 'sandybrown'; // Puoi personalizzare il colore come desideri
+            let activeBrown = 'sandybrown';
             let activeGold = 'gold';
             let activePlatinum = 'rgb(229, 228, 226)';
 
@@ -222,15 +223,6 @@
             } else if(label === labels[2]){
                 label.style.backgroundColor = activePlatinum;
             }
-        }
-
-        function hideContent(element){
-            element.style.display = 'none';
-            document.getElementById('loading').innerHTML = `
-                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                <span role="status">Loading...</span>
-            `;
-
         }
 
     </script>

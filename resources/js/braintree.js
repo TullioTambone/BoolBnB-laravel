@@ -1,7 +1,4 @@
 const form = document.getElementById('payment-form');
-// 'sandbox_kt9j85dm_8mzh6tykn6rmbdnn'
-
-// console.log(clientToken)
 
 braintree.dropin.create({
         authorization: clientToken,
@@ -21,25 +18,41 @@ braintree.dropin.create({
                     elem.setAttribute('class', 'btn-check is-valid');
                     break; 
         
-                } else {
-                    isChecked = false;
-                    elem.setAttribute('class', 'btn-check is-invalid');
-                }
+                } 
             }
         
             if (isChecked) {  
                 dropinInstance.requestPaymentMethod().then((payload) => {
-                    // Step four: when the user is ready to complete their
-                    //   transaction, use the dropinInstance to get a payment
-                    //   method nonce for the user's selected payment method, then add
-                    //   it a the hidden field before submitting the complete form to
-                    //   a server-side integration
+                                        
                     document.getElementById('nonce').value = payload.nonce;
-                    form.submit();
+                    hideContent(form);
                 }).catch((error) => { throw error; });
+            } else {
+                // Nessun pulsante selezionato, quindi aggiungi la classe is-invalid a tutti i pulsanti
+                radioButtons.forEach(elem => elem.setAttribute('class', 'btn-check is-invalid'));
+                return;
             }
         });
     }).catch((error) => {
         // handle errors
     }
 )
+
+function hideContent(form){
+            
+    // creo un nuovo oggetto per copiare tutte le chiavi valore
+    const formData = new FormData(form);
+    const submit = document.getElementById('submit-payment');
+
+    if (formData.get('subscription_id') === null && formData.get('subscription_id') === null) {
+        alert('Seleziona almeno un\'opzione di sponsorizzazione prima di procedere.');
+        return;
+    }
+
+    submit.style.display = 'none';
+    document.getElementById('loading').innerHTML = `
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Loading...</span>
+    `;
+    form.submit();
+}
