@@ -29,49 +29,28 @@
 
             @foreach($apartments as $elem)
             
+            <a href="{{route('admin.show', $elem)}}">
                 <div class="card mb-4 col-12 col-md-12 col-lg-12">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex flex-column justify-content-center">
-                            <a href="{{route('admin.show', $elem)}}">
                                 @if(str_contains($elem->cover, 'apartment_cover_img'))
                                     <img class="img-fluid" src="{{ asset('storage/'. $elem->cover) }}" alt="{{ $elem->title }}">
                                 @else
                                     <img class="img-fluid" src="{{$elem->cover}}" alt="{{ $elem->title }}">
                                 @endif
-                            </a>
-                        </div>
-                        <div class="col-md-8 mb-2">
-                            <div class="card-body">
-                                <a href="{{route('admin.show', $elem)}}">
-                                    <h4 class="card-title">{{ $elem->title }}</h4>
-                                </a>
-                                <p class="card-text description">{{$elem->description}}</p>
-                                <p class="card-text">
-                                    <small class="text-body-secondary">{{$elem->address}}</small>
-                                </p>
                             </div>
-
-
-                            <div class="row justify-content-around mb-3">
-                                <div class="col-6 col-md-6 col-lg-6 text-center">
-                                    <a href="{{route('admin.edit', $elem)}}" class="btn btn-primary">
-                                        Modifica
-                                    </a>
+                            <div class="col-md-8 mb-2">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $elem->title }}</h4>
+                                    <p class="card-text description">{{$elem->description}}</p>
+                                    <p class="card-text">
+                                        <small class="text-body-secondary">{{$elem->address}}</small>
+                                    </p>
                                 </div>
-        
-                                <div class="col-6 col-md-6 col-lg-6 text-center">
-                                    <form action="{{ route('admin.destroy', $elem) }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare l'appartamento?`)" >
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Elimina</button>
-                                    </form>
-                                </div>
-        
                             </div>
                         </div>
                     </div>
-                    
-                </div>
+                </a>
               @endforeach  
         </div>
         @endif
