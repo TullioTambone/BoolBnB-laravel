@@ -32,7 +32,7 @@ return [
         "latitude" => 46.07888,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 5800,
-        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg",
+        "cover" => "https://live.staticflickr.com/65535/53077743998_6a3cfcf049_h.jpg",
         "vote" => 4
     ],
     [
