@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('square_meters');
             $table->string('address');
             $table->boolean('visibility');
-            $table->integer('vote');
+            $table->integer('vote')->nullable();
             $table->string('slug')->unique();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();

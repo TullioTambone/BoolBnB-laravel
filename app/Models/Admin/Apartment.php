@@ -30,7 +30,8 @@ class Apartment extends Model
         'latitude',
         'description',
         'cover',
-        'price'
+        'price',
+        'vote'
     ];    
     
     public static function toSlug($title, $id) {

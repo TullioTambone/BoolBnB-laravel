@@ -17,7 +17,7 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Apartment::with('services', 'images');        
+        $query = Apartment::with('services', 'images', 'subscriptions');        
 
         $rooms = $request->input('rooms');		
         $latitude = $request->input('latitude');

@@ -1,5 +1,6 @@
 import ttServices from "@tomtom-international/web-sdk-services"
 
+
 // form create
 const form = document.querySelector('#form');
 // chekboxes
@@ -52,6 +53,7 @@ form.addEventListener('submit', function (e) {
 
     if (isAnyCheckboxChecked && isAddressOk) {
         
+    
         form.submit();
     } else {
         e.preventDefault()
@@ -105,7 +107,10 @@ function addressCheck(address) {
                     // Assegna le coordinate ai campi nascosti nel form
                     document.querySelector('#latitude').value = latitude;
                     document.querySelector('#longitude').value = longitude;
-            
+                    
+                    //creo numero random
+                    document.getElementById('vote').value = Math.floor(Math.random() * (5 - 3) + 3);
+
                     console.log(latitude,longitude)
 
                 } else {

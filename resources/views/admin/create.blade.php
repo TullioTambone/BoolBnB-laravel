@@ -23,7 +23,7 @@
                     {{-- token --}}
                     @csrf
                     <div class="row">
-
+                        <input type="hidden" value="" name="vote" id="vote">
                         {{-- title --}}
                         <div class="mb-3 col-12 col-md-6">
                             <label class="form-label" for="title"> <strong>Titolo *</strong></label>
