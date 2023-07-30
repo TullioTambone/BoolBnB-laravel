@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     
     Route::post('/subscription', [SubscriptionController::class, 'token'])->name('subscription');
     Route::get('/subscription', [SubscriptionController::class, 'index'])->name('admin.subscription');
+    Route::delete('/subscription', [SubscriptionController::class, 'destroy'])->name('admin.subscription.destroy');
 
 });
 

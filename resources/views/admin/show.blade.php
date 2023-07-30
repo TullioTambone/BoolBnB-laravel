@@ -139,6 +139,7 @@
                             <span id="loading"></span>
 
                             <input type="hidden" id="nonce" name="payment_method_nonce"/>
+
                         </form>                
                     </div>
                 </div>
@@ -172,7 +173,13 @@
                                 </div>
                             @endif
                         @endif
-
+                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onclick="return confirm(`Sicuro di voler eliminare la sponsorizzazione?`)">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
+                            <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
+                            <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
                     </div>
                 </div>
             </div>

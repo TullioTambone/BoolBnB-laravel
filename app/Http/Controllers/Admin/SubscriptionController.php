@@ -153,8 +153,20 @@ class SubscriptionController extends Controller
      * @param  \App\Models\Admin\Subscription  $subscription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subscription $subscription)
+    public function destroy(Request $request)
     {
-        //
+        $apartmentId = $request->input('apartment_id');
+        $subscriptionId = $request->input('subscription_id');
+    
+        // Trova l'appartamento e l'abbonamento tramite gli ID
+        $apartment = Apartment::find($apartmentId);
+        $subscription = Subscription::find($subscriptionId);
+    
+        // Rimuovi la relazione tra l'appartamento e l'abbonamento
+        if ($apartment && $subscription) {
+            $apartment->subscriptions()->detach($subscriptionId);
+        }
+    
+        return redirect()->route('admin.index');
     }
 }
