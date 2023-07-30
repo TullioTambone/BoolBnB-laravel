@@ -157,7 +157,6 @@ class ApartmentController extends Controller
         ]);
     
         $clientToken = $gateway->clientToken()->generate();
-
         // Verifica se l'utente loggato è il proprietario dell'appartamento
         if ($apartment->user_id !== auth()->user()->id) {
             abort(403, "Non hai il permesso di visualizzare questo appartamento.");
