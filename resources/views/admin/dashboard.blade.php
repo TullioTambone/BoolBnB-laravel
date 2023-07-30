@@ -15,39 +15,41 @@
     @endif
 </div>
 
-
+{{-- dashboard --}}
 <div id="dashboard">
-    <div class="container">
-
+    <div class="container pt-5">
         <div class="row">
+
+            {{-- description --}}
             <div class="box-description col-12 col-md-8 col-lg-6 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
-                    <h2 class="text-center">Esplora le case vacanza</h2>
                     <div class="info d-flex justify-content-center align-items-center">
-                        <div class="w-75 text-center">
-                            <p>Naviga tra le nostre incantevoli opzioni di case vacanza disponibili in destinazioni
-                                mozzafiato in tutto il mondo. Dalle rilassanti spiagge tropicali ai pittoreschi rifugi
-                                di montagna, troverai sicuramente la casa perfetta per il tuo prossimo soggiorno
-                                indimenticabile.</p>
+                        <div class="w-75">
+                            <h2>Esplora le case vacanza</h2>
+                            <p>
+                                Naviga tra le nostre incantevoli opzioni di case vacanza disponibili in destinazioni mozzafiato in tutto il mondo. Dalle rilassanti spiagge tropicali ai pittoreschi rifugi di montagna, troverai sicuramente la casa perfetta per il tuo prossimo soggiorno indimenticabile.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+            {{-- img --}}
             <div class="box-img col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center">
                 <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">
             </div>
         </div>
 
-
+        {{-- benvenuto --}}
         <div class="row mb-5">
             <div class="box-img col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center">
-                <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="">
+                <img src="{{ asset('img/Boolbnb-logo.png') }}" alt="logo boolb&b">
             </div>
             <div class="box-description col-12 col-md-8 col-lg-6 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
-                    <h2 class="text-center">
-                        {{ __('Benvenuto '. $user->name.' Prenota su BoolBnB: è facile e conveniente!') }} </h2>
-                    <ul>
+                    <h2>
+                        {{ __('Benvenuto '. $user->name.' Prenota su BoolBnB: è facile e conveniente!') }}
+                    </h2>
+                    <ul class="p-0">
                         <li>
                             <div class="d-flex align-items-center single-cont">
                                 <img src="{{ asset('img/support.png') }}" alt="">
@@ -85,32 +87,36 @@
         <div class="row">
             <div class="box-description col-12 col-md-8 col-lg-6 d-flex justify-content-center align-items-center">
                 <div class="d-flex flex-column">
-                    <h2 class="text-center">Invia una richiesta personalizzata</h2>
-                    <ul>
-                        <li>
-                            <div class="d-flex align-items-center single-cont">
-                                <img src="{{ asset('img/contact.png') }}" alt="">
-                                <div class="info d-flex flex-column justify-content-center">
-                                    <h4>Contatta l'Host</h4>
-                                    <p>Una volta trovata la casa che cattura il tuo cuore, non esitare a contattare
-                                        l'host.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex align-items-center single-cont">
-                                <img src="{{ asset('img/custom.png') }}" alt="">
-                                <div class="info d-flex flex-column justify-content-center">
-                                    <h4>Personalizza la tua esperienza</h4>
-                                    <p>L'host sarà lieto di aiutarti a personalizzare il tuo soggiorno secondo le tue
-                                        preferenze. Che si tratti di suggerimenti su attrazioni locali, consigli sui
-                                        ristoranti o servizi aggiuntivi, siamo qui per rendere la tua vacanza unica e
-                                        indimenticabile.</p>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="info d-flex justify-content-center align-items-center">
+                        <div class="w-75">
+                            <h2>Invia una richiesta personalizzata</h2>
+                            <ul class="p-0">
+                                <li>
+                                    <div class="d-flex align-items-center single-cont">
+                                        <img src="{{ asset('img/contact.png') }}" alt="">
+                                        <div class="info d-flex flex-column justify-content-center">
+                                            <h4>Contatta l'Host</h4>
+                                            <p>Una volta trovata la casa che cattura il tuo cuore, non esitare a contattare
+                                                l'host.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center single-cont">
+                                        <img src="{{ asset('img/custom.png') }}" alt="">
+                                        <div class="info d-flex flex-column justify-content-center">
+                                            <h4>Personalizza la tua esperienza</h4>
+                                            <p>L'host sarà lieto di aiutarti a personalizzare il tuo soggiorno secondo le tue
+                                                preferenze. Che si tratti di suggerimenti su attrazioni locali, consigli sui
+                                                ristoranti o servizi aggiuntivi, siamo qui per rendere la tua vacanza unica e
+                                                indimenticabile.</p>
+                                        </div>
+                                    </div>
+                                </li>
 
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="box-img col-12 col-md-4 col-lg-6 d-flex justify-content-center align-items-center">

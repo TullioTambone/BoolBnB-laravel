@@ -36,7 +36,9 @@
                         {{-- description --}}
                         <div class="mb-3 col-12 col-md-6">
                             <label class="form-label" for="description"> <strong>Descrizione</strong></label>
-                            <textarea class="form-control" name="description" id="description" rows="1"></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="1">
+                                {{old('description')}}
+                            </textarea>
                         </div>
     
                         {{-- rooms --}}

@@ -39,7 +39,7 @@
                         {{-- description --}}
                         <div class="mb-3 col-12">
                             <label for="description"><strong>Descrizione</strong> </label>
-                            <textarea class="form-control"  name="description" id="description" rows="5" >{{old('description') ?? $apartment->description }}</textarea>
+                            <textarea class="form-control"  name="description" id="description" rows="5">{{old('description') ?? $apartment->description }}</textarea>
                         </div>
     
                         {{-- rooms --}}
