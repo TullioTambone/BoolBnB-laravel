@@ -28,10 +28,13 @@ class ViewSeeder extends Seeder
         $users = [];
         $userIdCounter = 1;
 
-        for ($i = 0; $i < 50; $i++) {
+        $images = config('images');
+        $totalImages = count($images);
 
+        for ($i = 0; $i < 50; $i++) {
+            $imageIndex = $i % $totalImages; 
+            $price = round(rand(100000, 5000000) / 1000) * 1000;
             $apartments[] = [
-                // 'id' => $userIdCounter++,
                 'user_id' => $faker->numberBetween(1, 50),
                 'title' => $faker->sentence(),
                 'rooms' => $faker->numberBetween(1, 5),
@@ -40,12 +43,13 @@ class ViewSeeder extends Seeder
                 'square_meters' => $faker->numberBetween(50, 200),
                 'address' => $faker->unique()->address(),
                 'visibility' => $faker->numberBetween(0, 1),
+                'vote' => $faker->numberBetween(3, 5),
                 'slug' => $faker->unique()->slug(),
                 'longitude' => $faker->longitude(),
                 'latitude' => $faker->latitude(), 
                 'description' => $faker->paragraph(),
-                'price' => $faker->randomFloat(2000, 10000, 1000000),
-                'cover' => $faker->imageUrl(640, 480, 'apartments', true),
+                'price' => $price,
+                'cover' => $images[$imageIndex],
             ];
         }
         // $users[] = [
@@ -56,8 +60,8 @@ class ViewSeeder extends Seeder
         //     'password' => $faker->unique()->password(),
         // ];
 
-        // $jsonArray = json_encode($apartments, JSON_PRETTY_PRINT);
-        // $phpArray = "<?php\n\nreturn " . $jsonArray . ";";
-        // File::put(config_path('apartments.php'), $phpArray);
+        $jsonArray = json_encode($apartments, JSON_PRETTY_PRINT);
+        $phpArray = "<?php\n\nreturn " . $jsonArray . ";";
+        File::put(config_path('apart.php'), $phpArray);
     }
 }
