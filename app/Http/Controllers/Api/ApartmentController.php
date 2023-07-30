@@ -80,7 +80,9 @@ class ApartmentController extends Controller
         }        
 
         // Ottieni i risultati paginati
+        $apartmentsAll = $query->get();
         $apartments = $query->paginate(24);
+
 
         $apartmentsWithDistance = [];
 
@@ -92,7 +94,9 @@ class ApartmentController extends Controller
         
         return response()->json([
             'success' => true,
-            'apartment' => $apartments
+            'apartment' => $apartments,
+            'apartmentAll' => $apartmentsAll
+
         ]);
 
         // Esempio di query per ottenere gli appartamenti e le relative coordinate geografiche dal database

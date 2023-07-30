@@ -173,7 +173,7 @@
                         {{-- price --}}
                         <div class="mb-3 col-12">
                             <label for="price"><strong>Prezzo</strong></label>
-                            <input class="form-control"  type="number" id="price" name="price" min="0" max="100000000" value="{{old('price') ?? $apartment->price }}">
+                            <input class="form-control"  type="number" id="price" name="price" min="0" max= "999999" value="{{old('price') ?? $apartment->price }}">
                             <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         </div>
                         
