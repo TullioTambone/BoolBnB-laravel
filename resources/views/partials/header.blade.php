@@ -1,5 +1,5 @@
 <!-- nav -->
-<nav class="navbar navbar-expand-lg py-1 z-3">
+<nav class="navbar navbar-expand-md py-1 z-3">
     <div class="container">
 
         <!-- logo -->

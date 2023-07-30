@@ -97,3 +97,25 @@
         }    
     }
 }
+
+
+@media screen and (max-width: 767.98px) {
+    
+    .navbar-collapse{
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        height: 180px;
+        border-radius: 20px;
+        animation:altezza 0.5s;
+    }
+    
+    
+    
+    @keyframes altezza{
+        from{
+            height: 0px;
+        }
+        to{
+            height: 180px;
+        }
+    }
+}

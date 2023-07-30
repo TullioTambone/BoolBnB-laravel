@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4 pt-5">
+<div class="container mt-4 pt-5 show">
     
     <input type="text" hidden value="{{$apartment->latitude}}" id="latitude">
     <input type="text" hidden value="{{$apartment->longitude}}" id="longitude">
@@ -105,6 +105,7 @@
                         </form>
                     </div>
                 </div>
+            @if ($apartment->subscriptions->isEmpty())
                 <div class="col-12 col-md-6">
                     {{-- pagamento in stiky --}}
                     <div class="mt-4 card p-3 w-100" id="sticky">
@@ -142,7 +143,41 @@
                     </div>
                 </div>
             </div>
+            @else
+            <div class="col-12 col-md-6">
+                <div class="card card__one">
+                    <div class="card__text">
+                        @if ($apartment->subscriptions->isNotEmpty())
+                            @php
+                                $lastSubscription = $apartment->subscriptions->last();
+                                $originalData = $lastSubscription->getOriginal();
+                            @endphp
 
+                            {{-- Verifica se il campo "pivot_subscription_id" dell'oggetto "original" è presente --}}
+                            @if (isset($originalData['pivot_subscription_id']))
+                                <h3>€{{ $lastSubscription->price }}</h3>
+                                <span>{{ $lastSubscription->duration }}h</span>
+                                <span>{{ strtoupper($lastSubscription->name) }}</span>
+                                <hr>
+                                <p class="card__title"></p>
+                                <div>
+                                    <ul class="features">
+                                        <li>
+                                            <span class="icon">
+                                                <i class="fa-solid fa-check"></i>
+                                            </span>
+                                            <span><strong>{{ $lastSubscription->duration }}h</strong> ore di visibilità</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+            @endif
+               {{-- @dd($apartment->subscriptions) --}}
             <!-- mappa -->
             <div id='map' class='map mt-5' style="height: 200px;"></div>
 
@@ -181,7 +216,7 @@
                 @endif
 
                 
-                
+             
                 @if(isset($results))
                     <!-- Visualizza i risultati come desideri -->
                     <div>
@@ -236,6 +271,7 @@
 @endsection
 
 @section('style')
+
 <style>
     #map, #sticky{
         border-radius: 20px;
@@ -255,6 +291,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+    
 
     @media screen and (min-width:576px){
         .media-table{
