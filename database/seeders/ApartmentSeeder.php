@@ -29,6 +29,7 @@ class ApartmentSeeder extends Seeder
            $new_apartments->square_meters = $element['square_meters'];
            $new_apartments->address = $element['address'];
            $new_apartments->visibility = $element['visibility'];
+           $new_apartments->vote = $element['vote'];
            $new_apartments->slug = $element['slug'];
            $new_apartments->longitude = $element['longitude'];
            $new_apartments->latitude = $element['latitude'];

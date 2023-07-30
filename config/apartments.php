@@ -15,7 +15,8 @@ return [
         "latitude" => 44.64949,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 6000,
-        "cover" => "https://live.staticflickr.com/65535/53076672522_44321178fb_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672522_44321178fb_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -31,7 +32,8 @@ return [
         "latitude" => 46.07888,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 5800,
-        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -47,7 +49,8 @@ return [
         "latitude" => 45.83019,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 29000,
-        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672552_ebf0acfffb_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -63,7 +66,8 @@ return [
         "latitude" => 41.43048,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 359000,
-        "cover" => "https://live.staticflickr.com/65535/53077654945_b2b4b6457a_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077654945_b2b4b6457a_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -79,7 +83,8 @@ return [
         "latitude" => 40.07555,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 33800,
-        "cover" => "https://live.staticflickr.com/65535/53076672582_971f6341ae_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672582_971f6341ae_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -95,7 +100,8 @@ return [
         "latitude" => 44.99401,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 96000,
-        "cover" => "https://live.staticflickr.com/65535/53077244956_097408140b_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077244956_097408140b_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -111,7 +117,8 @@ return [
         "latitude" => 44.01195,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 497000,
-        "cover" => "https://live.staticflickr.com/65535/53077440994_990cb73dd5_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077440994_990cb73dd5_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -127,7 +134,8 @@ return [
         "latitude" => 40.87153,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 792747.33,
-        "cover" => "https://live.staticflickr.com/65535/53077744428_cfc0219581_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077744428_cfc0219581_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -143,7 +151,8 @@ return [
         "latitude" => 45.97035,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 31600,
-        "cover" => "https://live.staticflickr.com/65535/53076672677_47e63079dd_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672677_47e63079dd_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -159,7 +168,8 @@ return [
         "latitude" => 41.91124,
         "description" => 'Accogliente appartamento bilocale con vista panoramica sulla città. Luminoso e spazioso, questo appartamento offre un soggiorno confortevole con una cucina moderna e attrezzata. La camera da letto è dotata di ampi armadi a muro per un facile stoccaggio. Il bagno è completo di doccia e vasca da bagno. Goditi la vista mozzafiato dalla terrazza privata, perfetta per rilassarsi o intrattenere gli amici. Situato in una zona tranquilla e ben servita, questo appartamento è vicino a negozi, ristoranti e mezzi di trasporto pubblico.',
         "price" => 663000,
-        "cover" => "https://live.staticflickr.com/65535/53076672692_33cea285de_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076672692_33cea285de_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -175,7 +185,8 @@ return [
         "latitude" => 38.07707,
         "description" => '',
         "price" => 114000,
-        "cover" => "https://live.staticflickr.com/65535/53077441089_d0d1ec5dc7_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441089_d0d1ec5dc7_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -191,7 +202,8 @@ return [
         "latitude" => 43.91322,
         "description" => '',
         "price" => 73900,
-        "cover" => "https://live.staticflickr.com/65535/53077744458_cf94c239bb_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077744458_cf94c239bb_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -207,7 +219,8 @@ return [
         "latitude" => 45.43843,
         "description" => '',
         "price" => 61800,
-        "cover" => "https://live.staticflickr.com/65535/53077655145_170ac4f6c4_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655145_170ac4f6c4_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -223,7 +236,8 @@ return [
         "latitude" => 44.48675,
         "description" => '',
         "price" => 83000,
-        "cover" => "https://live.staticflickr.com/65535/53077245066_fc1857c0d4_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245066_fc1857c0d4_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -239,7 +253,8 @@ return [
         "latitude" => 45.85972,
         "description" => '',
         "price" => 112432.95,
-        "cover" => "https://live.staticflickr.com/65535/53076673232_43c6d122d2_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673232_43c6d122d2_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -255,7 +270,8 @@ return [
         "latitude" => 41.88786,
         "description" => '',
         "price" => 706000,
-        "cover" => "https://live.staticflickr.com/65535/53077441159_230dc495d4_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441159_230dc495d4_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -271,7 +287,8 @@ return [
         "latitude" => 39.87851,
         "description" => '',
         "price" => 52000,
-        "cover" => "https://live.staticflickr.com/65535/53077655190_2bc8ca7ca0_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655190_2bc8ca7ca0_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -287,7 +304,8 @@ return [
         "latitude" => 41.17281,
         "description" => '',
         "price" => 71000,
-        "cover" => "https://live.staticflickr.com/65535/53077245096_84889a437c_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245096_84889a437c_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -303,7 +321,8 @@ return [
         "latitude" => 40.03553,
         "description" => '',
         "price" => 42000,
-        "cover" => "https://live.staticflickr.com/65535/53077441244_077899fadb_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441244_077899fadb_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -319,7 +338,8 @@ return [
         "latitude" => 40.6311,
         "description" => '',
         "price" => 39000,
-        "cover" => "https://live.staticflickr.com/65535/53077441464_acc5e15937_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441464_acc5e15937_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -335,7 +355,8 @@ return [
         "latitude" => 45.60734,
         "description" => '',
         "price" => 58000,
-        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -351,7 +372,8 @@ return [
         "latitude" => 45.29833,
         "description" => '',
         "price" => 79000,
-        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673122_0443448876_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -367,7 +389,8 @@ return [
         "latitude" => 41.91658,
         "description" => '',
         "price" => 51000,
-        "cover" => "https://live.staticflickr.com/65535/53076673187_36270849b8_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673187_36270849b8_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -383,7 +406,8 @@ return [
         "latitude" => 42.58237,
         "description" => '',
         "price" => 20000,
-        "cover" => "https://live.staticflickr.com/65535/53077655530_fc80856c48_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655530_fc80856c48_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -399,7 +423,8 @@ return [
         "latitude" => 41.04567,
         "description" => '',
         "price" => 19000,
-        "cover" => "https://live.staticflickr.com/65535/53077441544_322bf153c2_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441544_322bf153c2_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -415,7 +440,8 @@ return [
         "latitude" => 40.87153,
         "description" => '',
         "price" => 91000,
-        "cover" => "https://live.staticflickr.com/65535/53076673272_e2373e4a01_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673272_e2373e4a01_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -431,7 +457,8 @@ return [
         "latitude" => 40.07555,
         "description" => '',
         "price" => 85000,
-        "cover" => "https://live.staticflickr.com/65535/53077441594_a78299a66f_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441594_a78299a66f_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -447,7 +474,8 @@ return [
         "latitude" => 45.23572,
         "description" => '',
         "price" => 97000,
-        "cover" => "https://live.staticflickr.com/65535/53077441604_29f7be428e_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441604_29f7be428e_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -463,7 +491,8 @@ return [
         "latitude" => 45.52817,
         "description" => '',
         "price" => 36000,
-        "cover" => "https://live.staticflickr.com/65535/53076673297_9ef174df7f_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673297_9ef174df7f_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -479,7 +508,8 @@ return [
         "latitude" => 41.32231,
         "description" => '',
         "price" => 650683.91,
-        "cover" => "https://live.staticflickr.com/65535/53076673347_e55d49620a_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673347_e55d49620a_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -495,7 +525,8 @@ return [
         "latitude" => 44.15623,
         "description" => '',
         "price" => 130000,
-        "cover" => "https://live.staticflickr.com/65535/53076673372_03f0c5bb8e_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53076673372_03f0c5bb8e_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -511,7 +542,8 @@ return [
         "latitude" => 42.66219,
         "description" => '',
         "price" => 10000,
-        "cover" => "https://live.staticflickr.com/65535/53077245681_c4e9eb0d3f_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245681_c4e9eb0d3f_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -527,7 +559,8 @@ return [
         "latitude" => 45.38398,
         "description" => '',
         "price" => 61000,
-        "cover" => "https://live.staticflickr.com/65535/53077745253_a8dd14acef_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745253_a8dd14acef_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -543,7 +576,8 @@ return [
         "latitude" => 44.1459,
         "description" => '',
         "price" => 48000,
-        "cover" => "https://live.staticflickr.com/65535/53077245821_10ab8b8155_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245821_10ab8b8155_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -559,7 +593,8 @@ return [
         "latitude" => 44.43282,
         "description" => '',
         "price" => 99000,
-        "cover" => "https://live.staticflickr.com/65535/53077655800_0c70306f19_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655800_0c70306f19_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -575,7 +610,8 @@ return [
         "latitude" => 43.13327,
         "description" => '',
         "price" => 82000,
-        "cover" => "https://live.staticflickr.com/65535/53077655840_c21ec97673_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655840_c21ec97673_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -591,7 +627,8 @@ return [
         "latitude" => 43.9917,
         "description" => '',
         "price" => 64500,
-        "cover" => "https://live.staticflickr.com/65535/53077745323_585025ca94_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745323_585025ca94_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -607,7 +644,8 @@ return [
         "latitude" => 41.67509,
         "description" => '',
         "price" => 26000,
-        "cover" => "https://live.staticflickr.com/65535/53077745338_e31a044a97_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745338_e31a044a97_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -623,7 +661,8 @@ return [
         "latitude" => 44.1151,
         "description" => '',
         "price" => 763000,
-        "cover" => "https://live.staticflickr.com/65535/53077245896_366c9e65be_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245896_366c9e65be_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -639,7 +678,8 @@ return [
         "latitude" => 41.41699,
         "description" => '',
         "price" => 51100,
-        "cover" => "https://live.staticflickr.com/65535/53077245911_2d7d9aeab1_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077245911_2d7d9aeab1_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -655,7 +695,8 @@ return [
         "latitude" => 45.68804,
         "description" => '',
         "price" => 92400,
-        "cover" => "https://live.staticflickr.com/65535/53077745373_0a8db65184_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745373_0a8db65184_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -671,7 +712,8 @@ return [
         "latitude" => 44.45685,
         "description" => '',
         "price" => 49000,
-        "cover" => "https://live.staticflickr.com/65535/53077441899_b68a681fef_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077441899_b68a681fef_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -687,7 +729,8 @@ return [
         "latitude" => 41.05034,
         "description" => '',
         "price" => 27000,
-        "cover" => "https://live.staticflickr.com/65535/53077655930_5177684394_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655930_5177684394_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -703,7 +746,8 @@ return [
         "latitude" => 42.00374,
         "description" => '',
         "price" => 51000,
-        "cover" => "https://live.staticflickr.com/65535/53077655940_4d843d5ce9_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077655940_4d843d5ce9_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -719,7 +763,8 @@ return [
         "latitude" => 42.41485,
         "description" => '',
         "price" => 96000,
-        "cover" => "https://live.staticflickr.com/65535/53077745508_a8b2757b5a_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745508_a8b2757b5a_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -735,7 +780,8 @@ return [
         "latitude" => 41.32231,
         "description" => '',
         "price" => 97000,
-        "cover" => "https://live.staticflickr.com/65535/53077745473_271a1255c6_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077745473_271a1255c6_h.jpg",
+        "vote" => 5
     ],
     [
         "user_id" => 1,
@@ -751,7 +797,8 @@ return [
         "latitude" => 41.06754,
         "description" => '',
         "price" => 10400,
-        "cover" => "https://live.staticflickr.com/65535/53077656025_582cb244de_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077656025_582cb244de_h.jpg",
+        "vote" => 4
     ],
     [
         "user_id" => 1,
@@ -767,7 +814,8 @@ return [
         "latitude" => 45.68978,
         "description" => '',
         "price" => 17500,
-        "cover" => "https://live.staticflickr.com/65535/53077135516_67459292a2_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077135516_67459292a2_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -783,7 +831,8 @@ return [
         "latitude" => 42.33442,
         "description" => '',
         "price" => 48200,
-        "cover" => "https://live.staticflickr.com/65535/53077330079_a668e0145f_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077330079_a668e0145f_h.jpg",
+        "vote" => 3
     ],
     [
         "user_id" => 1,
@@ -799,6 +848,7 @@ return [
         "latitude" => 38.29224,
         "description" => '',
         "price" => 63800,
-        "cover" => "https://live.staticflickr.com/65535/53077135481_9d42c3023a_h.jpg"
+        "cover" => "https://live.staticflickr.com/65535/53077135481_9d42c3023a_h.jpg",
+        "vote" => 3
     ]
 ];
