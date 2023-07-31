@@ -7,18 +7,18 @@
 @section('content')
 <div class="box">
 
-    <div class="container pt-5">
+    <div class="container py-5">
         
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
-        <div class="d-flex flex-column row-gap-3">
+        <div style="height: 70vh" class="d-flex flex-column row-gap-3 my-5 py-5">
             <h2>
                 Ciao, qui vedrai i tuoi appartamenti.
             </h2>
             <h4>
                 Inizia ad aggiungere degli appartamenti da mettere in vendita!
             </h4>
-            <a class="btn btn-primary w-25" href="{{ route('admin.create') }}">
+            <a class="btn btn-primary col-12 col-md-5 col-lg-3" href="{{ route('admin.create') }}">
                 Crea il tuo primo appartamento!
             </a>
         </div>

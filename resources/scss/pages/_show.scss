@@ -1,52 +1,59 @@
 .show{
-    .card {
-        border-radius: 15px;
-        box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.6);
-        overflow: hidden;
-        width: 250px;
-        text-align: center;
-        margin: 0 30px;
-            &:hover {
-            box-shadow: 5px 5px 20px -7px rgba(0,0,0,0.5);
-            }
-            .card__text{
-            h3{
-                padding-top: 40px;
-                font-size: 40px;
-            }
-            span{
-                display: block;
-            }
-            hr{
-                margin: 10px auto;
-                width: 25%;
-                border: 2px solid blue;
-            }
-            .features {
-                display: flex;
-                flex-direction: column;
-                li {
+    #sub-form-sub{
+        .card {
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.6);
+            overflow: hidden;
+            width: 250px;
+            text-align: center;
+            margin: 0 30px;
+                &:hover {
+                box-shadow: 5px 5px 20px -7px rgba(0,0,0,0.5);
+                }
+                .card__text{
+                h3{
+                    padding-top: 40px;
+                    font-size: 40px;
+                }
+                span{
+                    display: block;
+                }
+                hr{
+                    margin: 10px auto;
+                    width: 25%;
+                    border: 2px solid blue;
+                }
+                .features {
                     display: flex;
-                    align-items: center;
-                    gap: .5rem;
-                }
-                
-                .icon {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 20px;
-                    height: 20px;
-                    svg {
-                        width: 14px;
-                        height: 14px;
+                    flex-direction: column;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
                     }
-                }
-                
-                & + * {
-                    margin-top: 1.25rem;
+                    
+                    .icon {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 20px;
+                        height: 20px;
+                        svg {
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
+                    
+                    & + * {
+                        margin-top: 1.25rem;
+                    }
                 }
             }
         }
     }
+}
+
+#sticky{
+    position: sticky;
+    top: 12vh;
 }

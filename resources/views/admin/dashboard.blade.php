@@ -33,13 +33,23 @@
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            @for ($i = 0; $i < 10; $i++)
+                            @if ($apartments->isNotEmpty())
+                            @foreach ($apartments as $e)
                                 <tr class="" >
-                                    <td class="my-1"><a href="{{route('admin.show', $apartments[$i])}}" style="color:black; text-decoration: none;">{{$apartments[$i]->title}}</a></td>
-                                    <td class="my-1">{{$apartments[$i]->address}}</td>
-                                    <td class="my-1">{{$apartments[$i]->price}}</td>
+                                    <td class="my-1"><a href="{{route('admin.show', $e)}}" style="color:black; text-decoration: none;">{{$e->title}}</a></td>
+                                    <td class="my-1">{{$e->address}}</td>
+                                    <td class="my-1">{{$e->price}}</td>
                                 </tr>
-                            @endfor
+                            @endforeach
+                                
+                            @else
+                                <tr>
+                                    <td>
+                                    Non ci sono appartamenti 
+                                    </td>
+                                </tr>  
+                            @endif
+                            
                         </tbody>
                 </table>
             </div>

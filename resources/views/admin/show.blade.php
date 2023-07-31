@@ -85,10 +85,9 @@
                         @if ($apartment->services)
                             <div class="row p-2">
                                 @foreach($apartment->services as $elem)
-                                <div class="col-12 d-flex align-items-center border rounded">
-                                    <i class="fa-solid {{ $elem->icon }} me-1"></i>
-                                    <span class="p-1 mt-1">{{  $elem->name }} </span>
-                                </div>
+                                    <span class="p-1 mt-1 card d-inline"> 
+                                        <i class="fa-solid {{$elem->icon}} me-1"></i> {{  $elem->name }} 
+                                    </span>
                                 @endforeach
                             </div>
                         @endif
@@ -133,7 +132,8 @@
                     </div>
                 </div>
             @if ($apartment->subscriptions->isEmpty())
-                <div class="col-12 col-md-6">
+                
+                <div class="col-12 col-md-6" id="sub-form-sub">
                     {{-- pagamento in stiky --}}
                     <div class="mt-4 card p-3 w-100" id="sticky">
                         <form id="payment-form" action="{{route('subscription')}}" method="POST">
