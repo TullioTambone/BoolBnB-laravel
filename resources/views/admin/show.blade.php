@@ -33,7 +33,12 @@
                                 <div class="carousel-inner">
                                     @foreach($apartment->images as $index => $e)
                                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                            <img src="{{ asset('storage/'. $e->url) }}" class="d-block w-100" alt="{{$e->id}}">
+
+                                            @if(str_contains($e->url, 'images'))
+                                                <img style="border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $e->url) }}" alt="{{ $apartment->title }}">
+                                            @else
+                                                <img style="border-radius: 20px" class="img-fluid" src="{{$e->url}}" alt="{{ $apartment->title }}">
+                                            @endif
                                         </div>
                                     @endforeach
                                 </div>
@@ -58,15 +63,15 @@
                 <div class="col-12 col-md-6">
                     {{-- tutto il resto da riordinare --}}
                     <p class="mt-3"> <i class="fa-solid fa-location-dot"></i> {{ $apartment->address }}</p>
-                    <span>{{ $apartment->rooms }} stanze <strong>&#183;</strong> </span>
-                    <span>{{ $apartment->bedrooms }} stanze da letto <strong>&#183;</strong></span>
-                    <span>{{ $apartment->bathrooms }} bagno <strong>&#183;</strong> </span>
+                    <span>{{ $apartment->rooms }} Stanze <strong>&#183;</strong> </span>
+                    <span>{{ $apartment->bedrooms }} Stanze da letto <strong>&#183;</strong></span>
+                    <span>{{ $apartment->bathrooms }} Bagni <strong>&#183;</strong> </span>
                     <span>{{ $apartment->square_meters }}mq</span>
                     <span class="d-block mt-1">
-                        <strong>prezzo: </strong> {{ $apartment->price }}&euro;
+                        <strong>Prezzo: </strong> {{ $apartment->price }}&euro;
                     </span>
                     <span class="d-block mt-1">
-                        <strong>visibilità: </strong> {{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}
+                        <strong>Visibilità: </strong> {{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}
                     </span>
                     <div class="mt-3">
                         <span class="d-block"><strong>Descrizione</strong></span>
