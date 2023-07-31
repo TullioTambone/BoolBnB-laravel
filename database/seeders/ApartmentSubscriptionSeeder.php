@@ -17,25 +17,29 @@ class ApartmentSubscriptionSeeder extends Seeder
      */
     public function run()
     {
-        // Recupera tutti gli appartamenti
-        $apartments = Apartment::all();
-        
-        // Seleziona casualmente un appartamento tra tutti gli appartamenti disponibili
-        $randomApartment = $apartments->random();
 
-        // Verifica se l'appartamento selezionato casualmente esiste
-        if ($randomApartment) {
+        // Recupera tutti gli appartamenti e ottieni solo gli ID
+        $apartmentIds = Apartment::pluck('id')->all();
+
+        // Mescola casualmente gli ID degli appartamenti
+        shuffle($apartmentIds);
+
+        // Prendi i primi 100 ID degli appartamenti mescolati
+        $selectedApartmentIds = array_slice($apartmentIds, 0, 100);
+
+        // Recupera gli appartamenti corrispondenti agli ID selezionati
+        $selectedApartments = Apartment::whereIn('id', $selectedApartmentIds)->get();
+
+        // Per ogni appartamento selezionato
+        foreach ($selectedApartments as $apartment) {
             $subscription = Subscription::inRandomOrder()->first();
 
             if ($subscription) {
                 // Calcola l'ora di fine sottoscrizione aggiungendo la duration della sottoscrizione alla data corrente
                 $endSubscription = Carbon::now()->addHours($subscription->duration);
 
-                // Calcola la somma della duration della sottoscrizione con la data corrente
-                $result = $endSubscription->addHours($subscription->duration)->format('Y-m-d H:i:s');
-
                 // Associa l'appartamento alla sottoscrizione usando il metodo attach() con la colonna 'result'
-                $randomApartment->subscriptions()->attach($subscription, [
+                $apartment->subscriptions()->attach($subscription, [
                     'end_subscription' => $endSubscription
                 ]);
             }
