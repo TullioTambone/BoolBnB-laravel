@@ -195,7 +195,7 @@
                                 </div>
                             @endif
                         @endif
-                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModal(); return false;">
+                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModalSub(); return false;">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
@@ -203,7 +203,7 @@
                             <button type="submit" class="btn btn-danger mb-4">Annulla</button>
                         </form>
 
-                        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -215,9 +215,11 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                                        <form action="{{ route('admin.destroy', $apartment) }}" method="POST">
+                                        <form action="{{ route('admin.subscription.destroy') }}" method="POST">
                                             @csrf
                                             @method('DELETE')
+                                            <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
+                                            <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
                                             <button type="submit" class="btn btn-danger">Elimina</button>
                                         </form>
                                     </div>
@@ -316,7 +318,11 @@
             const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
             confirmModal.show();
         }
-
+        function showConfirmModalSub(){
+            event.preventDefault();
+            const confirmModal = new bootstrap.Modal(document.getElementById('confirmModalSub'));
+            confirmModal.show();
+        }
     </script>
     @vite(['resources/js/braintree.js'])
     @vite(['resources/js/mapInShow.js'])
