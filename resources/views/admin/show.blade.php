@@ -336,7 +336,6 @@
     }
     #sticky{
         position: -webkit-sticky;
-        position: sticky;
         top: 11vh;
     }
     .media-table{
