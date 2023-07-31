@@ -240,7 +240,7 @@
             <div id='map' class='map mt-5' style="height: 200px;"></div>
 
             {{-- messages --}}
-            <div>            
+            <div class="my-4">            
                 <h4 class="mt-5">Messagi Ricevuti</h4>
                 
                 @if ($apartment->leads)
@@ -250,7 +250,7 @@
                         table-borderless
                         align-middle">
                             <thead class="table-light">
-                                <caption>Messaggi</caption>
+                                
                                 <tr class="border-bottom">
                                     <th>NOME</th>
                                     <th class="media-table">EMAIL</th>
