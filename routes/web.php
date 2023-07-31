@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ApartmentController;
 use App\Http\Controllers\Admin\SubscriptionController;
-
+use App\Models\Admin\Apartment;
+use App\Models\Admin\Subscription;
+use App\Models\Admin\Lead;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +24,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $user = auth()->user();
+    $apartments = Apartment::where('user_id', $user->id)->get();
 
-
-    return view('admin.dashboard', compact('user'));
+    // Ora possiamo ottenere le sottoscrizioni associate a ciascun appartamento con i dati della pivot
+    foreach ($apartments as $apartment) {
+        $apartment->subscriptions = $apartment->subscriptions()->get();
+        $apartment->leads = Lead::where('apartment_id', $apartment->id)->get();
+    }
+    return view('admin.dashboard', compact('user','apartments'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

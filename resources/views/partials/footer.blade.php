@@ -1,6 +1,6 @@
 
 <footer>
-    <div class="container border-top px-0 pb-3">
+    <div class="container px-0 pb-3">
         <div class="p-3">
             <img class="logo-img" src="{{ asset('img/Boolbnb-logo-transparente.png') }}" alt="Boolbnb logo">
         </div>

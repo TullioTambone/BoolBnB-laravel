@@ -65,6 +65,6 @@ class Apartment extends Model
 
     //collegamento many to many con tabella Subscriptions
     public function subscriptions() {
-        return $this->belongsToMany(Subscription::class);
+        return $this->belongsToMany(Subscription::class)->withPivot('end_subscription');;
     }
 }
