@@ -21,7 +21,7 @@
 
                 <!-- home -->
                 <li>
-                    <a class="nav-link home px-0" href="http://localhost:5174/">
+                    <a class="nav-link home" href="http://localhost:5174/">
                         <i class="fa-solid fa-house-user me-2"></i>                            
                         <span>
                             {{ __('Home') }}
@@ -46,7 +46,7 @@
                     @endif
                 @else
                     <li>
-                        <a class="nav-link px-0" href="{{ route('admin.index') }}">
+                        <a class="nav-link" href="{{ route('admin.index') }}">
                             <i class="fa-solid fa-building me-2"></i>
                             <span>
                                 {{ __('Appartamenti') }}
@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link px-0" href="{{ route('admin.create') }}"> <i class="fa-solid fa-building-user me-2"></i>
+                        <a class="nav-link" href="{{ route('admin.create') }}"> <i class="fa-solid fa-building-user me-2"></i>
                             <span>
                                 {{ __('Pubblica') }}
                             </span>
