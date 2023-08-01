@@ -171,7 +171,7 @@
                 
                 @else
                     <div class="col-12 col-md-6 sub">
-                        <div class="card card__one">
+                        <div class="card card__one m-auto mt-4">
                             <div class="card__text">
                                 @if ($apartment->subscriptions->isNotEmpty())
                                     @php
