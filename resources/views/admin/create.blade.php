@@ -20,7 +20,7 @@
                 @endif
 
                 {{-- form create --}}
-                <form class="mt-4" id="form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="mt-4 create" id="form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf

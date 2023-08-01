@@ -19,7 +19,7 @@
                 @endif
 
                 {{-- form update --}}
-                <form id="form" action="{{ route('admin.update',  $apartment) }}" method="POST" enctype="multipart/form-data">
+                <form class="edit" id="form" action="{{ route('admin.update',  $apartment) }}" method="POST" enctype="multipart/form-data">
                     
                     {{-- token --}}
                     @csrf

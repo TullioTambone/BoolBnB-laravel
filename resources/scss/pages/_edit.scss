@@ -1,0 +1,21 @@
+#forms {
+    #content-form {
+        .edit {
+            button#submit {
+                background-color: #C6AB7C;
+                color: white;
+                border: 3px solid transparent;
+            
+                &:hover {
+                    border: 3px solid #ffffff;
+                    color: #ffffff;
+                }
+            
+                &:active {
+                    border: 3px solid #ffffff ;
+                    color: #ffff ;
+                }
+            }
+        }
+    }
+}
