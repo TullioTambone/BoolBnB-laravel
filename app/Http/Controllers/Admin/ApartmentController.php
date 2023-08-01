@@ -135,7 +135,7 @@ class ApartmentController extends Controller
         } 
 
         // reindirizzamento alla pagina index
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('success', 'Creazione completata con successo!');;
     }
 
     /**
@@ -273,7 +273,7 @@ class ApartmentController extends Controller
             }
         }
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('success', 'Modifica completata con successo!');;
     }
 
     /**
