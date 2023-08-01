@@ -8,7 +8,6 @@
     background: #ffffff;
     position: fixed;
     top: 0;
-    left: 0;
     transition: 0.2s;
     
     .container {
@@ -30,9 +29,9 @@
             margin: 15px;
         }
     
-        .navbar-collapse {
-            flex-grow: 0;
-        }
+        // .navbar-collapse {
+        //     flex-grow: 0;
+        // }
     
         ul {
             margin: 0;
@@ -81,13 +80,7 @@
                         color: #ffffff ;
                         transform: scale(1.1);
                         opacity: 0.95;
-                        // filter: blur(0);
                         text-decoration: none;
-    
-                        // &:not(:hover) {
-                        //     filter: blur(1px);
-        
-                        // }
                     }
                 }
                 
@@ -102,7 +95,7 @@
     
     .navbar-collapse{
         background-color: rgba($color: #ffffff, $alpha: 0.95);
-        height: 180px;
+        // height: 180px;
         border-radius: 20px;
         animation:altezza 0.5s;
 

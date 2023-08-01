@@ -24,8 +24,7 @@
         </div>
         @else
         <div class="row">
-            <h1 class="text-center text-dark my-2">I Tuoi Appartamenti</h1>
-
+            <h1 class="text-center text-dark my-5">I Tuoi Appartamenti</h1>
 
             @foreach($apartments as $elem)
             
