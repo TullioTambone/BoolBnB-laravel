@@ -1,5 +1,5 @@
 <!-- nav -->
-<nav class="navbar navbar-expand-md py-1 z-3">
+<nav class="navbar navbar-expand-lg py-1 z-3">
     <div class="container">
 
         <!-- logo -->
@@ -20,8 +20,8 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
 
                 <!-- home -->
-                <li>
-                    <a class="nav-link home px-0" href="http://localhost:5174/">
+                <li class="nav-item">
+                    <a class="nav-link home" href="http://localhost:5174/">
                         <i class="fa-solid fa-house-user me-2"></i>                            
                         <span>
                             {{ __('Home') }}
@@ -32,7 +32,7 @@
                 <!-- Authentication Links -->
                 @guest
                     <!-- login -->
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}"> {{ __('Login') }}</a>
                     </li>
 
@@ -45,16 +45,16 @@
                         </li>
                     @endif
                 @else
-                    <li>
-                        <a class="nav-link px-0" href="{{ route('admin.index') }}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.index') }}">
                             <i class="fa-solid fa-building me-2"></i>
                             <span>
                                 {{ __('Appartamenti') }}
                             </span>                                
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link px-0" href="{{ route('admin.create') }}"> <i class="fa-solid fa-building-user me-2"></i>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.create') }}"> <i class="fa-solid fa-building-user me-2"></i>
                             <span>
                                 {{ __('Pubblica') }}
                             </span>
