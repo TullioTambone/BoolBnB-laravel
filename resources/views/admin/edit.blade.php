@@ -136,9 +136,14 @@
                             <input type="file" class="form-control" id="url" name="images[]" multiple>
     
                             @if ($apartment->images)
-                                <div class="my-3">
+                                <div class="my-3 d-flex flex-wrap">
                                     @forelse($apartment->images as $image)
-                                        <img class="mt-1" style="width: 100px" src="{{asset('storage/' . $image->url)}}" alt="">
+
+                                        @if(str_contains($apartment->cover, 'images'))
+                                            <img class="w-25" src="{{ asset('storage/'. $image->url) }}" alt="{{ $apartment->title }}">
+                                        @else
+                                            <img class="w-25" src="{{$image->url}}" alt="{{ $apartment->title }}">
+                                        @endif
                                     @empty
                                         <span>
                                             Non ci sono immagini

@@ -36,13 +36,13 @@ class ApartmentController extends Controller
             // Se il parametro 'rooms' è presente nella richiesta e ha un valore numerico valido
             if ($rooms && is_numeric($rooms)) {
                 // Aggiungi una clausola WHERE per filtrare gli appartamenti in base al numero di stanze
-                if($rooms >= 5){
+                $query->where('rooms', '>=', $rooms);
+                // if($rooms >= 5){
 
-                    $query->where('rooms', '>=', $rooms);
-                }else{
+                // }else{
 
-                    $query->where('rooms', '=', $rooms);
-                }
+                //     $query->where('rooms', '=', $rooms);
+                // }
             }
         }
 
@@ -52,13 +52,13 @@ class ApartmentController extends Controller
             // Se il parametro 'bedrooms' è presente nella richiesta e ha un valore numerico valido
             if ($bedrooms && is_numeric($bedrooms)) {
                 // Aggiungi una clausola WHERE per filtrare gli appartamenti in base al numero di stanze
-                if($bedrooms >= 5){
+                $query->where('bedrooms', '>=', $bedrooms);
+                // if($bedrooms >= 5){
 
-                    $query->where('bedrooms', '>=', $bedrooms);
-                }else{
+                // }else{
                     
-                    $query->where('bedrooms', '=', $bedrooms);
-                }
+                //     $query->where('bedrooms', '=', $bedrooms);
+                // }
             }
         }
 
