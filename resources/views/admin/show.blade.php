@@ -7,7 +7,7 @@
     <input type="hidden"  value="{{$apartment->longitude}}" id="longitude">
 
     <div class="row">
-        <h1 class="border-bottom">{{ $apartment->title }}</h1>
+        <h2 class="border-bottom pb-2 mb-3">{{ $apartment->title }}</h2>
         <div class="col-12 text-center">
             <div class="row">
                 {{-- cover --}}

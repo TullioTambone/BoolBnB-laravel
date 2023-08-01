@@ -7,7 +7,7 @@
     </h2>
     
         <div class="row justify-content-center container" id="content-form">
-            <div class="col-7">
+            <div class="col-12 col-lg-7">
                 {{-- errors list --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -137,14 +137,14 @@
                         <div class="mb-3 col-12">
                             <label class="form-label" for="services"> <strong>Servizi *</strong></label>
                             <div id="checkbox-feedback" class="invalid-feedback"></div>
-                            <div class="row">
+                            <div class="row ps-2">
                                 @foreach ($services as $element)
-                                    <div class="form-check col-12 col-md-4">
+                                    <div class="form-check col-12 col-md-6 ps-0">
                                         <label for="check-service-{{ $element->id }}" class="form-check-label">
                                             <i class="mx-2 fa-solid {{ $element->icon }}"></i>
                                             {{ $element->name }}
                                         </label>
-                                        <input class="form-check-input" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
+                                        <input class="form-check-input ps-0 ms-0" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
                                     </div>
                                 @endforeach
                             </div>

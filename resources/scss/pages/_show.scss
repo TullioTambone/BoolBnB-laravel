@@ -5,21 +5,21 @@
 
             .buttons {
                 a {
-                    border: 2px solid #C6AB7C;
+                    border: 3px solid #C6AB7C;
                     color: #000;
                     background-color: #ffffff;
 
                     &:hover {
                         background-color: rgba(0, 0, 255, 0.803);
                         color: #ffffff;
-                        border: 2px solid #ffffff;
+                        border: 3px solid #ffffff;
                     }
                 }
 
                 form {
                     button {
                         border-color: transparent !important;
-                        border-width: 2px;
+                        border-width: 3px;
                     }
                 }
             }
@@ -76,23 +76,37 @@
                             }
                         
                             .btn-danger {
+                                border: 3px solid #ffffff;
                                 background-color: #dc3545;
                                 color: #ffffff;
+
+                                &:hover {
+                                    border: 3px solid #ffffff;
+                                    color: #ffffff;
+                                    background-color: #f54052ee;
+                                }
+
+                                &:active {
+                                    border: 3px solid #ffffff !important;
+                                    color: #ffff !important;
+                                    background-color: #f54052ee;
+
+                                }
                             }
                         
                             .btn-secondary {
                                 background-color: #C6AB7C;
                                 color: white;
-                                border: 3px solid transparent;
+                                border: 3px solid #ffffff;
                             
                                 &:hover {
-                                    border: 3px solid #ffffff;
-                                    color: #ffffff;
+                                    border: 3px solid #C6AB7C;
+                                    color: #C6AB7C;
+                                    background-color: #ffffff;
                                 }
                             
                                 &:active {
-                                    border: 3px solid #ffffff !important;
-                                    color: #ffff !important;
+                                    color: #C6AB7C !important;
                                 }
                             }
                         }
