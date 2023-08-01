@@ -31,14 +31,14 @@
                         {{-- per prendere le immagini usiamo la relazione con la tabella images --}}
                         @if($apartment->images)
                             <div class="carousel slide col-12 col-md-8 col-lg-8" id="carouselExampleAutoplaying" data-bs-ride="carousel">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner w-100">
                                     @foreach($apartment->images as $index => $e)
                                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
 
                                             @if(str_contains($e->url, 'images'))
-                                                <img style="border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $e->url) }}" alt="{{ $apartment->title }}">
+                                                <img style="border-radius: 20px" class=" bas" src="{{ asset('storage/'. $e->url) }}" alt="{{ $apartment->title }}">
                                             @else
-                                                <img style="border-radius: 20px" class="img-fluid" src="{{$e->url}}" alt="{{ $apartment->title }}">
+                                                <img style="border-radius: 20px" class=" bas" src="{{$e->url}}" alt="{{ $apartment->title }}">
                                             @endif
                                         </div>
                                     @endforeach
@@ -133,10 +133,9 @@
 
                 @if ($apartment->subscriptions->isEmpty())
                     
-                    <div class="col-12 col-md-6 sub">
-
+                    <div class="col-12 col-md-6">
                         {{-- payment form --}}
-                        <div class="mt-4 card p-3 w-100">                        
+                        <div class="mt-4 card p-3 w-100 sub">                        
                             <form id="payment-form" action="{{route('subscription')}}" method="POST">
                                 <h2 class="text-center">Sponsorizza l'appartamento</h2>           
                                 {{-- token --}}
@@ -237,10 +236,10 @@
             </div>
             {{-- @dd($apartment->subscriptions) --}}
             <!-- mappa -->
-            <div id='map' class='map mt-5' style="height: 200px;"></div>
+            <div id='map' class='map mt-5 mb-5' style="height: 200px;"></div>
 
             {{-- messages --}}
-            <div class="my-4">            
+            {{-- <div class="my-4">            
                 <h4 class="mt-5">Messagi Ricevuti</h4>
                 
                 @if ($apartment->leads)
@@ -276,7 +275,7 @@
                         <pre>{{ json_encode($results, JSON_PRETTY_PRINT) }}</pre>
                     </div>
                 @endif
-            </div>
+            </div> --}}
         </div>
     </div> 
 </div> 
@@ -352,6 +351,11 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+    .bas {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
     
 
     @media screen and (min-width:576px){
@@ -359,5 +363,23 @@
             display: table-cell;
         }
     }
+    @media screen and (max-width: 428px) {
+        .bas {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .bas {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .sub {
+            margin-right: 100px;
+        }
+    }
+
 </style>
 @endsection
