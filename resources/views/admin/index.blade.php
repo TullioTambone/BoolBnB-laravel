@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('style')
-    @vite(['resources/scss/pages/_index.scss'])
+@vite(['resources/scss/pages/_index.scss'])
 @endsection
 
 @section('content')
 <div class="box">
 
     <div class="container py-5">
-        
+
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
             <div style="height: 70vh" class="d-flex flex-column row-gap-3 my-5 py-5">
@@ -56,4 +56,3 @@
     </div>
 </div>
 @endsection
-
