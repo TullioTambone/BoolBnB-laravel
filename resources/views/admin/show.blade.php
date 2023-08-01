@@ -199,35 +199,29 @@
                                         </div>
                                     @endif
                                 @endif
-                                <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModalSub(); return false;">
+                                <form action="{{ route('admin.subscription.destroy') }}" onclick="showConfirmModal2();" method="POST" id="my-sub-form">
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
                                     <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
                                     <button type="submit" class="btn btn-danger mb-4">Annulla</button>
+
                                 </form>
-                                
                                 {{-- confirm modal subscription --}}
-                                <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabelSub" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                
+                                <div id="my-modal">
+                                    <div id="confirm-modal" class="modal">
                                         <div class="modal-content">
-                                            
-                                            <div class="modal-body">
-                                                Sei sicuro di voler cancellare l'abbonamento?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                                                <form action="{{ route('admin.subscription.destroy') }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
-                                                    <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
-                                                    <button type="submit" class="btn btn-danger">Elimina</button>
-                                                </form>
+                                            <h2>Conferma l'operazione</h2>
+                                            <p>Sei sicuro di voler annullare la sottoscrizione?</p>
+                                            <div class="modal-buttons">
+                                                <button id="confirm-yes" class="btn btn-danger">Sì</button>
+                                                <button id="confirm-no" class="btn btn-secondary">No</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -236,45 +230,6 @@
             {{-- @dd($apartment->subscriptions) --}}
             <!-- mappa -->
             <div id='map' class='map mt-5 mb-5' style="height: 200px;"></div>
-
-            {{-- messages --}}
-            {{-- <div class="my-4">            
-                <h4 class="mt-5">Messagi Ricevuti</h4>
-                
-                @if ($apartment->leads)
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover table-borderless align-middle">
-                            <thead class="table-light">
-                                
-                                <tr class="border-bottom">
-                                    <th>NOME</th>
-                                    <th class="media-table">EMAIL</th>
-                                    <th>MESSAGGIO</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider">
-                                @foreach($apartment->leads as $elem)
-                                    <tr class="" >
-                                        <td scope="row">{{  $elem->name }} </td>
-                                        <td class="media-table">{{  $elem->email }} </td>
-                                        <td class="guest-message">{{  $elem->message }} </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                            <tfoot>                                
-                            </tfoot>
-                        </table>
-                    </div>
-                @endif                
-             
-                @if(isset($results))
-                    <!-- Visualizza i risultati come desideri -->
-                    <div>
-                        Risultati del pagamento:
-                        <pre>{{ json_encode($results, JSON_PRETTY_PRINT) }}</pre>
-                    </div>
-                @endif
-            </div> --}}
         </div>
     </div> 
 </div> 
@@ -315,10 +270,24 @@
             const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
             confirmModal.show();
         }
-        function showConfirmModalSub(){
+            // Funzione per aprire il secondo modal
+        function showConfirmModal2() {
             event.preventDefault();
-            const confirmModal = new bootstrap.Modal(document.getElementById('confirmModalSub'));
-            confirmModal.show();
+            var modal = document.getElementById("confirm-modal");
+            modal.style.display = "block";
+
+            var confirmYes = document.getElementById("confirm-yes");
+            confirmYes.onclick = function () {
+                modal.style.display = "none";
+                // Esegui l'azione di conferma (eliminazione sottoscrizione)
+                // Qui puoi aggiungere codice per inviare il form utilizzando AJAX o il metodo nativo del form.
+                document.querySelector("#my-sub-form").submit();
+            };
+
+            var confirmNo = document.getElementById("confirm-no");
+            confirmNo.onclick = function () {
+                modal.style.display = "none";
+            };
         }
     </script>
     @vite(['resources/js/braintree.js'])
