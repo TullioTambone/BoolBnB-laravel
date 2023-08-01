@@ -119,7 +119,9 @@
                                     @enderror
                                 </div>
                                 <div class="col-6">
+
                                     @if($apartment->cover)
+
                                         @if(str_contains($apartment->cover, 'apartment_cover_img'))
                                         <img style="width: 250px; aspect-ration: 1; border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
                                         @else
@@ -139,7 +141,7 @@
                                 <div class="my-3 d-flex flex-wrap">
                                     @forelse($apartment->images as $image)
 
-                                        @if(str_contains($apartment->cover, 'images'))
+                                        @if(str_contains($image->url, 'images'))
                                             <img class="w-25" src="{{ asset('storage/'. $image->url) }}" alt="{{ $apartment->title }}">
                                         @else
                                             <img class="w-25" src="{{$image->url}}" alt="{{ $apartment->title }}">

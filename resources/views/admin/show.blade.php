@@ -3,8 +3,8 @@
 @section('content')
 <div class="container mt-4 pt-5 show">
     
-    <input type="text" hidden value="{{$apartment->latitude}}" id="latitude">
-    <input type="text" hidden value="{{$apartment->longitude}}" id="longitude">
+    <input type="hidden" value="{{$apartment->latitude}}" id="latitude">
+    <input type="hidden"  value="{{$apartment->longitude}}" id="longitude">
 
     <div class="row">
         <h1 class="border-bottom">{{ $apartment->title }}</h1>
@@ -106,6 +106,7 @@
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Elimina</button>
                         </form>
+
                         <!-- Modal di conferma per l'eliminazione -->
                         <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -206,14 +207,12 @@
                                     <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
                                     <button type="submit" class="btn btn-danger mb-4">Annulla</button>
                                 </form>
-
-                                <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                
+                                {{-- confirm modal subscription --}}
+                                <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabelSub" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="confirmModalLabel">Conferma eliminazione</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
+                                            
                                             <div class="modal-body">
                                                 Sei sicuro di voler cancellare l'abbonamento?
                                             </div>
