@@ -8,7 +8,11 @@
 <div class="box">
 
     <div class="container py-5">
-
+        @if(session('success'))
+            <div id="confirmation-message" class="alert alert-warning text-center">
+                {{ session('success') }}
+            </div>
+        @endif
         {{-- se non hai degli appartamenti --}}
         @if($apartments->isEmpty())
             <div style="height: 70vh" class="d-flex flex-column row-gap-3 my-5 py-5">

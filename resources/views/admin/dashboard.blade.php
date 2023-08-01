@@ -41,7 +41,7 @@
                             @foreach ($apartments->take(10)  as $e)
                                 <tr class="" >
                                     <td class="my-1">
-                                        <a href="{{route('admin.show', $e)}}" style="color:black; text-decoration: none;">
+                                        <a id="overlink" href="{{route('admin.show', $e)}}">
                                             {{$e->title}}
                                         </a>
                                     </td>
@@ -154,4 +154,9 @@
 
 @section('script')
     @vite(['resources/js/dashboard.js'])
+@endsection
+
+@section('style')
+@vite(['resources/scss/_dashboard.scss'])
+
 @endsection
