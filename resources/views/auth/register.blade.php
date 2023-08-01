@@ -6,7 +6,10 @@
         <div class="row justify-content-center" id="content-form">
             <div class="col-md-8">
                 <div class="">
-                    <h3 class="mb-5">{{ __('Registrati') }}</h3>
+                    <h3 class="mb-5">
+                        {{ __('Registrati') }}
+                        <span id="controllo">* campi obbligatori</span>
+                    </h3>
     
                     <div class="card-body" >
     
