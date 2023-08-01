@@ -2,15 +2,11 @@
     .row {
 
         #sub-form-sub{
-            // .col-12 {
-            //     #services {
-    
-            //     }
-            // }
+
             .buttons {
                 a {
                     border: 2px solid #C6AB7C;
-                    color: rgba(0, 0, 255, 0.803);
+                    color: #000;
                     background-color: #ffffff;
 
                     &:hover {
@@ -28,6 +24,7 @@
                 }
             }
             .sub {
+                
 
                 .card {
                     border-radius: 15px;
