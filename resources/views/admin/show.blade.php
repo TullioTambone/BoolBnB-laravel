@@ -36,9 +36,9 @@
                                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
 
                                             @if(str_contains($e->url, 'images'))
-                                                <img style="border-radius: 20px" class=" bas" src="{{ asset('storage/'. $e->url) }}" alt="{{ $apartment->title }}">
+                                                <img style="border-radius: 20px; width: 100%" class=" bas" src="{{ asset('storage/'. $e->url) }}" alt="{{ $apartment->title }}">
                                             @else
-                                                <img style="border-radius: 20px" class=" bas" src="{{$e->url}}" alt="{{ $apartment->title }}">
+                                                <img style="border-radius: 20px; width: 100%" class=" bas" src="{{$e->url}}" alt="{{ $apartment->title }}">
                                             @endif
                                         </div>
                                     @endforeach
