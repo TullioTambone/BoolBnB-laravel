@@ -1,0 +1,18 @@
+.container-fluid{
+    .container{
+        .table-responsive{
+            tr{
+                td{
+                    #overlink{
+                        
+                        text-decoration: none;
+                        color: black;
+                        &:hover{
+                            color: rgb(221, 191, 21);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
