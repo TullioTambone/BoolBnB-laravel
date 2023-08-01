@@ -18,7 +18,7 @@
             <h4>
                 Inizia ad aggiungere degli appartamenti da mettere in vendita!
             </h4>
-            <a class="btn btn-primary col-12 col-md-5 col-lg-3" href="{{ route('admin.create') }}">
+            <a class="btn col-12 col-md-5 col-lg-3" href="{{ route('admin.create') }}">
                 Crea il tuo primo appartamento!
             </a>
         </div>

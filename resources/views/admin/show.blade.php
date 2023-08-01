@@ -5,6 +5,7 @@
     
     <input type="text" hidden value="{{$apartment->latitude}}" id="latitude">
     <input type="text" hidden value="{{$apartment->longitude}}" id="longitude">
+
     <div class="row">
         <h1 class="border-bottom">{{ $apartment->title }}</h1>
         <div class="col-12 text-center">
@@ -12,7 +13,7 @@
                 {{-- cover --}}
                 @if ($apartment->cover)
                     <div class="col-12 col-md-6">
-                        {{-- <img class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}"> --}}
+                        
                         @if(str_contains($apartment->cover, 'apartment_cover_img'))
                             <img style="border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
                         @else
@@ -59,7 +60,7 @@
 
         <div class="col-12">
             {{-- dividere la col-12 in 2 sez col-6 --}}
-            <div class="row">
+            <div class="row" id="sub-form-sub">
                 <div class="col-12 col-md-6">
                     {{-- tutto il resto da riordinare --}}
                     <p class="mt-3"> <i class="fa-solid fa-location-dot"></i> {{ $apartment->address }}</p>
@@ -79,11 +80,11 @@
                             {{$apartment->description}}
                         </p>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3" id="services">
                         <span class="mt-2"><strong>Servizi</strong></span>
 
                         @if ($apartment->services)
-                            <div class="row p-2">
+                            <div class="d-flex flex-wrap gap-2">
                                 @foreach($apartment->services as $elem)
                                     <span class="p-1 mt-1 card d-inline"> 
                                         <i class="fa-solid {{$elem->icon}} me-1"></i> {{  $elem->name }} 
@@ -92,12 +93,10 @@
                             </div>
                         @endif
                     </div>
-                    <div class="d-flex column-gap-1 mt-2">
+                    <div class="d-flex column-gap-1 mt-4 buttons">
 
                         {{-- edit --}}
-                        <a href="{{route('admin.edit', $apartment)}}"
-                            class="btn btn-primary"
-                        >
+                        <a href="{{route('admin.edit', $apartment)}}" class="btn me-2">
                             Modifica
                         </a>
                         
@@ -131,111 +130,112 @@
                         </div>
                     </div>
                 </div>
-            @if ($apartment->subscriptions->isEmpty())
-                
-                <div class="col-12 col-md-6" id="sub-form-sub">
-                    {{-- pagamento in stiky --}}
-                    <div class="mt-4 card p-3 w-100" id="sticky">
-                        <form id="payment-form" action="{{route('subscription')}}" method="POST">
-                            <h2 class="text-center">Sponsorizza l'appartamento</h2>           
-                            {{-- token --}}
-                            @csrf
-                            <div class="row">
-                                
-                                @foreach($sub as $e)
-    
-                                    <div id="checkboxes" class="col-12 col-lg-4">
-                                        <input type="radio" class="btn-check" name="subscription_id" id="subscription-{{$e->id}}" value="{{$e->id}}">
-                                        <label class="labels border btn w-100" for="subscription-{{$e->id}}" onclick="changeColor(this)">
-                                            <span class="d-block">
-                                                {{strtoupper($e->name)}}
-                                            </span>
-                                            <span class="d-block">{{$e->price}}€</span>
-                                            <span class="d-block">{{$e->duration}}h</span>
-                                        </label>
-                                        <div class="invalid-feedback">Seleziona almeno un'opzione!!</div>
-                                    </div>
+
+                @if ($apartment->subscriptions->isEmpty())
+                    
+                    <div class="col-12 col-md-6 sub">
+
+                        {{-- payment form --}}
+                        <div class="mt-4 card p-3 w-100">                        
+                            <form id="payment-form" action="{{route('subscription')}}" method="POST">
+                                <h2 class="text-center">Sponsorizza l'appartamento</h2>           
+                                {{-- token --}}
+                                @csrf
+                                <div class="row">
                                     
-                                @endforeach
+                                    @foreach($sub as $e)
+        
+                                        <div id="checkboxes" class="col-12 col-lg-4">
+                                            <input type="radio" class="btn-check" name="subscription_id" id="subscription-{{$e->id}}" value="{{$e->id}}">
+                                            <label class="labels border btn w-100" for="subscription-{{$e->id}}" onclick="changeColor(this)">
+                                                <span class="d-block">
+                                                    {{strtoupper($e->name)}}
+                                                </span>
+                                                <span class="d-block">{{$e->price}}€</span>
+                                                <span class="d-block">{{$e->duration}}h</span>
+                                            </label>
+                                            <div class="invalid-feedback">Seleziona almeno un'opzione!!</div>
+                                        </div>                                    
+                                    @endforeach
                                 </div>
                                 <input type="hidden" name="apartment_id" value="{{$apartment->id}}"> 
-    
-                            <div id="dropin-container"></div>
+        
+                                <div id="dropin-container"></div>
 
-                            <input type="submit" class="btn border w-25" id="submit-payment"/>
-                            <span id="loading"></span>
+                                <input type="submit" class="btn border w-25" id="submit-payment"/>
+                                <span id="loading"></span>
 
-                            <input type="hidden" id="nonce" name="payment_method_nonce"/>
-
-                        </form>                
+                                <input type="hidden" id="nonce" name="payment_method_nonce"/>
+                            </form>                
+                        </div>
                     </div>
-                </div>
-            </div>
-            @else
-            <div class="col-12 col-md-6">
-                <div class="card card__one">
-                    <div class="card__text">
-                        @if ($apartment->subscriptions->isNotEmpty())
-                            @php
-                                $lastSubscription = $apartment->subscriptions->last();
-                                $originalData = $lastSubscription->getOriginal();
-                            @endphp
+                
+                @else
+                    <div class="col-12 col-md-6 sub">
+                        <div class="card card__one">
+                            <div class="card__text">
+                                @if ($apartment->subscriptions->isNotEmpty())
+                                    @php
+                                        $lastSubscription = $apartment->subscriptions->last();
+                                        $originalData = $lastSubscription->getOriginal();
+                                    @endphp
 
-                            {{-- Verifica se il campo "pivot_subscription_id" dell'oggetto "original" è presente --}}
-                            @if (isset($originalData['pivot_subscription_id']))
-                                <h3>€{{ $lastSubscription->price }}</h3>
-                                <span>{{ $lastSubscription->duration }}h</span>
-                                <span>{{ strtoupper($lastSubscription->name) }}</span>
-                                <hr>
-                                <p class="card__title"></p>
-                                <div>
-                                    <ul class="features">
-                                        <li>
-                                            <span class="icon">
-                                                <i class="fa-solid fa-check"></i>
-                                            </span>
-                                            <span><strong>{{ $lastSubscription->duration }}h</strong> ore di visibilità</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            @endif
-                        @endif
-                        <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModalSub(); return false;">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
-                            <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
-                            <button type="submit" class="btn btn-danger mb-4">Annulla</button>
-                        </form>
+                                    {{-- Verifica se il campo "pivot_subscription_id" dell'oggetto "original" è presente --}}
+                                    @if (isset($originalData['pivot_subscription_id']))
+                                        <h3>€{{ $lastSubscription->price }}</h3>
+                                        <span>{{ $lastSubscription->duration }}h</span>
+                                        <span>{{ strtoupper($lastSubscription->name) }}</span>
+                                        <hr>
+                                        <p class="card__title"></p>
+                                        <div>
+                                            <ul class="features">
+                                                <li>
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </span>
+                                                    <span><strong>{{ $lastSubscription->duration }}h</strong> ore di visibilità</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    @endif
+                                @endif
+                                <form action="{{ route('admin.subscription.destroy') }}" method="POST" onsubmit="showConfirmModalSub(); return false;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
+                                    <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
+                                    <button type="submit" class="btn btn-danger mb-4">Annulla</button>
+                                </form>
 
-                        <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="confirmModalLabel">Conferma eliminazione</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Sei sicuro di voler cancellare l'abbonamento?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                                        <form action="{{ route('admin.subscription.destroy') }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
-                                            <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
-                                            <button type="submit" class="btn btn-danger">Elimina</button>
-                                        </form>
+                                <div class="modal fade" id="confirmModalSub" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmModalLabel">Conferma eliminazione</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Sei sicuro di voler cancellare l'abbonamento?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                                <form action="{{ route('admin.subscription.destroy') }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
+                                                    <input type="hidden" name="subscription_id" value="{{ $originalData['pivot_subscription_id'] }}">
+                                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
-            @endif
-               {{-- @dd($apartment->subscriptions) --}}
+            {{-- @dd($apartment->subscriptions) --}}
             <!-- mappa -->
             <div id='map' class='map mt-5' style="height: 200px;"></div>
 
@@ -245,10 +245,7 @@
                 
                 @if ($apartment->leads)
                     <div class="table-responsive">
-                        <table class="table table-striped
-                        table-hover	
-                        table-borderless
-                        align-middle">
+                        <table class="table table-striped table-hover table-borderless align-middle">
                             <thead class="table-light">
                                 
                                 <tr class="border-bottom">
@@ -256,24 +253,21 @@
                                     <th class="media-table">EMAIL</th>
                                     <th>MESSAGGIO</th>
                                 </tr>
-                                </thead>
-                                <tbody class="table-group-divider">
-                                    @foreach($apartment->leads as $elem)
+                            </thead>
+                            <tbody class="table-group-divider">
+                                @foreach($apartment->leads as $elem)
                                     <tr class="" >
                                         <td scope="row">{{  $elem->name }} </td>
                                         <td class="media-table">{{  $elem->email }} </td>
                                         <td class="guest-message">{{  $elem->message }} </td>
                                     </tr>
-                                    @endforeach
-                                </tbody>
-                                <tfoot>
-                                    
-                                </tfoot>
+                                @endforeach
+                            </tbody>
+                            <tfoot>                                
+                            </tfoot>
                         </table>
                     </div>
-                @endif
-
-                
+                @endif                
              
                 @if(isset($results))
                     <!-- Visualizza i risultati come desideri -->
