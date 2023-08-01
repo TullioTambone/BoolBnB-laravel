@@ -16,7 +16,7 @@
         </button>
 
         <!-- links -->
-        <div class="collapse navbar-collapse" id="navbarText">
+        <div class="navbar-collapse d-none myshown justify-content-end" id="navbarText">
             <ul class="navbar-nav mb-2 mb-lg-0">
 
                 <!-- home -->
@@ -34,7 +34,7 @@
                     <!-- login -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}"> {{ __('Login') }}</a>
-                    </li>
+                    </li> 
 
                     <!-- register -->
                     @if (Route::has('register'))
