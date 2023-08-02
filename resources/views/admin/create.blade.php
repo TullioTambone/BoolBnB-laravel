@@ -27,7 +27,7 @@
                     <div class="row">
                         <input type="hidden" value="" name="vote" id="vote">
                         {{-- title --}}
-                        <div class="mb-3 col-12 col-md-6">
+                        <div class="mb-3 col-12">
                             <label class="form-label" for="title"> <strong>Titolo *</strong></label>
                             <input class="form-control" type="text" id="title" name="title" autocomplete="off" value="{{ old('title') }}" required>
                             @error('title')
@@ -36,9 +36,9 @@
                         </div>
                         
                         {{-- description --}}
-                        <div class="mb-3 col-12 col-md-6">
+                        <div class="mb-3 col-12">
                             <label class="form-label" for="description"> <strong>Descrizione</strong></label>
-                            <textarea class="form-control" name="description" id="description" rows="1">{{old('description')}}</textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3">{{old('description')}}</textarea>
                         </div>
     
                         {{-- rooms --}}
