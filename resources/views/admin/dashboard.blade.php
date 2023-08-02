@@ -29,7 +29,7 @@
                         <tr class="border-bottom">
                             <th>Titolo <span style="font-size: 10px; color:gray;">*clicca il titolo per accedere all'appartamento</span></th>
                             <th>Indirizzo</th>
-                            <th>Prezzo &euro;</th>
+                            <th>Prezzo/notte</th>
                         </tr>
                     </thead>
 
@@ -90,6 +90,30 @@
                     <tbody class="table-group-divider">
 
                         {{-- subscriptions --}}
+                        {{-- @if ($apartments->isNotEmpty())
+                            @php $shownSubscriptions = 0; @endphp
+                            @foreach($apartments as $apartment)
+                                @foreach($apartment->subscriptions as $subscription)
+                                    @if ($shownSubscriptions >= 10)
+                                        @php break; @endphp
+                                    @endif
+                                    <tr class="">
+                                        <td class="my-1">{{$apartment->title}}</td>
+                                        <td class="my-1">{{$subscription->name}}</td>
+                                        <td class="my-1"> {{ $subscription->pivot->end_subscription }}</td>
+                                    </tr>
+                                    @php $shownSubscriptions++; @endphp
+                                @endforeach
+                            @endforeach
+                        @else --}}
+                        {{-- no apartments --}}
+                            {{-- <tr>
+                                <td colspan="3">
+                                    Non ci sono appartamenti sponsorizzati
+                                </td>
+                            </tr>  
+                        @endif
+                         --}}
                         @if ($apartments->isNotEmpty())
                             @php $shownSubscriptions = 0; @endphp
                             @foreach($apartments as $apartment)
@@ -105,6 +129,22 @@
                                     @php $shownSubscriptions++; @endphp
                                 @endforeach
                             @endforeach
+
+                            @if ($shownSubscriptions === 0)
+                                {{-- no sponsored apartments --}}
+                                <tr>
+                                    <td colspan="3">
+                                        Non ci sono appartamenti sponsorizzati
+                                    </td>
+                                </tr>
+                            @endif
+                        @else
+                            {{-- no apartments --}}
+                            <tr>
+                                <td colspan="3">
+                                    Non ci sono appartamenti
+                                </td>
+                            </tr>
                         @endif
                     </tbody>
                 </table>
@@ -125,15 +165,15 @@
                         {{-- t-titles --}}
                         <tr class="border-bottom">
                             <th>Appartamento</th>
-                            <th>nome</th>
-                            <th>email</th>
-                            <th>messaggio</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Messaggio</th>
                         </tr>
                     </thead>
 
                     {{-- t-body --}}
                     <tbody class="table-group-divider">
-                        @foreach($apartments as $apartment)
+                        {{-- @foreach($apartments as $apartment)
                             @foreach($apartment->leads as $lead)
                                 <tr>
                                     <td>{{ $apartment->title }}</td>
@@ -142,7 +182,40 @@
                                     <td>{{ $lead->message }}</td>
                                 </tr>
                             @endforeach
-                        @endforeach
+                        @endforeach --}}
+
+                        @if ($apartments->isNotEmpty())
+                            @php $shownMessages = 0; @endphp
+                            @foreach($apartments as $apartment)
+                                @foreach($apartment->leads as $lead)
+                                    @if ($shownMessages >= 10)
+                                        @php break; @endphp
+                                    @endif
+                                    <tr>
+                                        <td>{{ $apartment->title }}</td>
+                                        <td>{{ $lead->name }}</td>
+                                        <td>{{ $lead->email }}</td>
+                                        <td>{{ $lead->message }}</td>
+                                    </tr>
+                                    @php $shownMessages++; @endphp
+                                @endforeach
+                            @endforeach
+                            @if ($shownMessages === 0)
+                                {{-- no messages --}}
+                                <tr>
+                                    <td colspan="4">
+                                        Non ci sono messaggi
+                                    </td>
+                                </tr>
+                            @endif
+                        @else
+                            {{-- no apartments --}}
+                            <tr>
+                                <td colspan="3">
+                                    Non ci sono appartamenti
+                                </td>
+                            </tr>
+                        @endif   
                     </tbody>
                 </table>
             </div>

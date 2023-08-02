@@ -7,7 +7,7 @@
     </h2>
     
         <div class="row justify-content-center container" id="content-form">
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-9 col-xl-7">
                 {{-- errors list --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -38,9 +38,7 @@
                         {{-- description --}}
                         <div class="mb-3 col-12 col-md-6">
                             <label class="form-label" for="description"> <strong>Descrizione</strong></label>
-                            <textarea class="form-control" name="description" id="description" rows="1">
-                                {{old('description')}}
-                            </textarea>
+                            <textarea class="form-control" name="description" id="description" rows="1">{{old('description')}}</textarea>
                         </div>
     
                         {{-- rooms --}}
@@ -140,11 +138,13 @@
                             <div class="row ps-2">
                                 @foreach ($services as $element)
                                     <div class="form-check col-12 col-md-6 ps-0">
-                                        <label for="check-service-{{ $element->id }}" class="form-check-label">
-                                            <i class="mx-2 fa-solid {{ $element->icon }}"></i>
-                                            {{ $element->name }}
-                                        </label>
-                                        <input class="form-check-input ps-0 ms-0" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
+                                        <div class="d-flex">
+                                            <input class="form-check-input ps-0 ms-0" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}"  {{ in_array( $element->id, old( 'services', []) ) ? 'checked' : ''}} >
+                                            <label for="check-service-{{ $element->id }}" class="form-check-label">
+                                                <i class="mx-2 fa-solid {{ $element->icon }}"></i>
+                                                {{ $element->name }}
+                                            </label>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -152,7 +152,7 @@
     
                         {{-- prezzo --}}
                         <div class="mb-3 col-12">
-                            <label class="form-label" for="price"> <strong>Prezzo &euro;</strong></label>
+                            <label class="form-label" for="price"> <strong>Prezzo &euro;/notte</strong></label>
                             <input class="form-control" type="number" id="price" name="price" min="0" max= "999999" value="{{ old('price') }}">
                             <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         </div>

@@ -69,7 +69,7 @@
                     <span>{{ $apartment->bathrooms }} Bagni <strong>&#183;</strong> </span>
                     <span>{{ $apartment->square_meters }}mq</span>
                     <span class="d-block mt-1">
-                        <strong>Prezzo: </strong> {{ $apartment->price }}&euro;
+                        <strong>Prezzo: </strong> {{ $apartment->price }}&euro;/notte
                     </span>
                     <span class="d-block mt-1">
                         <strong>Visibilità: </strong> {{ ($apartment->visibility) ? 'visibile' : 'non visibile' }}

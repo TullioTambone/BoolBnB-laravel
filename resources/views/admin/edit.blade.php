@@ -5,7 +5,7 @@
     <h2>Modifica il tuo appartmento<span id="controllo">* campi obbligatori</span></h2>
     
         <div class="row justify-content-center container"  id="content-form">
-            <div class="col-7">
+            <div class="col-12 col-lg-9 col-xl-7">
 
                 {{-- errors list --}}
                 @if ($errors->any())
@@ -159,13 +159,13 @@
                         <div class="mb-3 col-12">
                             <label class="form-label" for="services"><strong>Servizi *</strong></label>
                             <div id="checkbox-feedback" class="invalid-feedback"></div>
-                            <div class="row p-0">
+                            <div class="row ps-2">
                                 @foreach ($services as $element)
-                                    <div class="col-12 col-md-4 p-0">
+                                    <div class="form-check col-12 col-md-6 ps-0">
                                         <div class="d-flex">
-                                            <input type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $apartment->services->contains($element) ? "checked" : '' }}>
+                                            <input class="form-check-input ps-0 ms-0" type="checkbox" name="services[]" id="check-service-{{ $element->id }}" value="{{ $element->id }}" {{ $apartment->services->contains($element) ? "checked" : '' }}>
     
-                                            <label for="check-service-{{ $element->id }}" class="form-label mt-1">
+                                            <label for="check-service-{{ $element->id }}" class="form-check-label">
                                                 <i class="mx-2 fa-solid {{ $element->icon }}"></i>
                                                 <span>
                                                     {{ $element->name }}
@@ -179,7 +179,7 @@
     
                         {{-- price --}}
                         <div class="mb-3 col-12">
-                            <label for="price"><strong>Prezzo</strong></label>
+                            <label for="price"><strong>Prezzo &euro;/notte</strong></label>
                             <input class="form-control"  type="number" id="price" name="price" min="0" max= "999999" value="{{old('price') ?? $apartment->price }}">
                             <div class="invalid-feedback">Non puoi inserire un numero negativo!</div>
                         </div>

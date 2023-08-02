@@ -52,9 +52,9 @@ input.forEach(elem => {
         elem.addEventListener('change', function() {
 
             if(!elem.checked ) {
-                elem.setAttribute('class', 'form-check-input is-invalid');
+                elem.setAttribute('class', 'form-check-input ps-0 ms-0 is-invalid');
             } else {
-                elem.setAttribute('class', 'form-check-input is-valid');
+                elem.setAttribute('class', 'form-check-input ps-0 ms-0 is-valid');
             }
 
         } )

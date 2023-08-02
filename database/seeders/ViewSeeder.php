@@ -40,7 +40,7 @@ class ViewSeeder extends Seeder
             $imageIndex = $i % $totalImages; 
             $titleIndex = $i % $totalTitles;
             $descriptionIndex = $i % $totalDescription;
-            $price = round(rand(100000, 500000) / 1000) * 1000;
+            $price = round(rand(100, 500));
             $user_id = $faker->numberBetween(1, 50);
             $title = $titles[$titleIndex];
 
