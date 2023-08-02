@@ -85,11 +85,18 @@ class ApartmentController extends Controller
 
 
         $apartmentsWithDistance = [];
+        $apartmentsAllWithDistance = [];
 
         foreach ($apartments as $apartment) {
             $distance = $this->calcolaDistanza($latitude, $longitude, $apartment->latitude, $apartment->longitude);
             $apartment->distance = $distance;
             $apartmentsWithDistance[] = $apartment;
+        }
+
+        foreach ($apartmentsAll as $apartmentAl) {
+            $distance = $this->calcolaDistanza($latitude, $longitude, $apartmentAl->latitude, $apartmentAl->longitude);
+            $apartmentAl->distance = $distance;
+            $apartmentsAllWithDistance[] = $apartmentAl;
         }
         
         return response()->json([
