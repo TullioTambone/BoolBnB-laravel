@@ -97,9 +97,9 @@
                         {{-- visibility --}}
                         <div class="mb-3 col-12">
                             <label class="d-block" for="visibility"><strong>Vuoi rendere visibile il tuo appartamento? *</strong></label>
-                            <input type="radio" name="visibility" value="1" {{ old('visibility', $apartment->visibility) == $apartment->visibility ? "checked" : '' }}>
+                            <input type="radio" name="visibility" value="1" {{ old('visibility', $apartment->visibility) === 1 ? "checked" : '' }}>
                             <label for="visibility" >Si</label><br>
-                            <input type="radio" name="visibility" value="0" {{ old('visibility', $apartment->visibility) == $apartment->visibility ? "checked" : '' }}>
+                            <input type="radio" name="visibility" value="0" {{ old('visibility', $apartment->visibility) === 0 ? "checked" : '' }}>
                             <label for="visibility">No</label><br>
     
                             @error('visibility')
@@ -201,8 +201,4 @@
     @vite(['resources/js/validation.js'])
     @vite(['resources/js/tom.js'])
 
-@endsection
-
-@section('style')
-    @vite(['resources/scss/pages/_create.scss'])
 @endsection

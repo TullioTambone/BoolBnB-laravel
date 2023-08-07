@@ -1,6 +1,5 @@
 import ttServices from "@tomtom-international/web-sdk-services"
 
-
 // form create
 const form = document.querySelector('#form');
 // chekboxes
@@ -37,11 +36,6 @@ form.addEventListener('submit', function (e) {
     // Controlla se almeno un checkbox è stato selezionato
     isAnyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
 
-    checkboxes.forEach(checkbox => {
-        // Aggiungi le classi di validità o invalidità in base allo stato del checkbox
-        checkbox.setAttribute('class', checkbox.checked ? 'form-check-input is-valid' : 'form-check-input is-invalid');
-    });
-
     if (!isAnyCheckboxChecked) {
         // Mostra il messaggio di errore se nessun checkbox è selezionato
         checkFeed.style.display = 'block';
@@ -59,7 +53,6 @@ form.addEventListener('submit', function (e) {
         e.preventDefault()
     }
 });
-
 
 function addressCheck(address) {
     // se address esiste

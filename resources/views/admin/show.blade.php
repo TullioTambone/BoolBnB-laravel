@@ -138,7 +138,7 @@
                         {{-- payment form --}}
                         <div class="mt-4 card p-3 w-100 sub">                        
                             <form id="payment-form" action="{{route('subscription')}}" method="POST">
-                                <h2 class="text-center">Sponsorizza l'appartamento</h2>           
+                                <h3 class="text-center mb-3">Sponsorizza l'appartamento</h3>           
                                 {{-- token --}}
                                 @csrf
                                 <div class="row">
@@ -254,16 +254,18 @@
                 l.style.backgroundColor = '';
             });
 
-            // Seleziona il label cliccato e cambia il colore di sfondo
-            
+            // Seleziono il label cliccato per cambiare il colore dello sfondo            
             if(label === labels[0]){
                 label.style.backgroundColor = activeBrown;
+                label.style.color = '#ffffff';
 
             } else if(label === labels[1]){
                 label.style.backgroundColor = activeGold;
+                label.style.color = '#ffffff';
 
             } else if(label === labels[2]){
                 label.style.backgroundColor = activePlatinum;
+                label.style.color = '#ffffff';
             }
         }
 
@@ -297,57 +299,4 @@
 @section('braintree')
 <script src="https://js.braintreegateway.com/web/dropin/1.39.0/js/dropin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-@endsection
-
-@section('style')
-
-<style>
-    #map, #sticky{
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    #sticky{
-        position: -webkit-sticky;
-        top: 11vh;
-    }
-    .media-table{
-        display: none;
-    }
-    .guest-message{
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    .bas {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-    }
-    
-
-    @media screen and (min-width:576px){
-        .media-table{
-            display: table-cell;
-        }
-    }
-    @media screen and (max-width: 428px) {
-        .bas {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        .bas {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-        .sub {
-            margin-right: 100px;
-        }
-    }
-
-</style>
 @endsection

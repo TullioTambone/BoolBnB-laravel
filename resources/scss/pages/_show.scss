@@ -25,6 +25,28 @@
             }
             .sub {
                 
+                #payment-form {
+                    .row {
+                        #checkboxes {
+                            .labels {
+                                span {
+                                    text-shadow: 0px 0px 5px #00000041;
+                                }
+                            }
+                        }
+                    }
+                    .btn {
+                        border: 3px solid #ffffff !important;
+
+                        &:active {
+                            color: #C6AB7C;
+                        }
+                        &:hover {
+                            border: 3px solid #C6AB7C !important;
+                            color: #C6AB7C;
+                        }
+                    }
+                }
 
                 .card {
                     border-radius: 15px;
@@ -115,6 +137,7 @@
                             button {
                                 border-color: transparent !important;
                                 color: #ffffff;
+                                border: 3px solid #ffffff;
                             }
                         }
                         h3{
@@ -163,4 +186,51 @@
 
 .myshow {
     display: block !important;
+}
+
+#map, #sticky{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#sticky{
+    position: -webkit-sticky;
+    top: 11vh;
+}
+.media-table{
+    display: none;
+}
+.guest-message{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.bas {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+@media screen and (min-width:576px){
+    .media-table{
+        display: table-cell;
+    }
+}
+@media screen and (max-width: 428px) {
+    .bas {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bas {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .sub {
+        margin-right: 100px;
+    }
 }

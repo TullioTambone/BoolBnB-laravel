@@ -226,10 +226,14 @@ class ApartmentController extends Controller
         }
         
         //condizione per passare true o false come numeri poiché mysql accetta per valori boolean 0 e 1 e non stringhe
-        if($request->has('visibility') == 'true'){
-            $form_data['visibility'] = 1;
-        }else {
-            $form_data['visibility'] = 0;
+        if($request->has('visibility')){
+
+            if ($request->input('visibility') == 1 ) {
+
+                $form_data['visibility'] = 1;
+            } else {
+                $form_data['visibility'] = 0;
+            }
         }
         
         $slug = Apartment::toSlug($request->title, $apartment->user_id);
