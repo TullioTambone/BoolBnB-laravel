@@ -199,6 +199,8 @@
                                         </div>
                                     @endif
                                 @endif
+
+                                {{-- delete --}}
                                 <form action="{{ route('admin.subscription.destroy') }}" onclick="showConfirmModal2();" method="POST" id="my-sub-form">
                                     @csrf
                                     @method('DELETE')
@@ -207,8 +209,8 @@
                                     <button type="submit" class="btn btn-danger mb-4">Annulla</button>
 
                                 </form>
-                                {{-- confirm modal subscription --}}
                                 
+                                {{-- confirm modal subscription --}}                                
                                 <div id="my-modal">
                                     <div id="confirm-modal" class="modal">
                                         <div class="modal-content">
@@ -279,8 +281,6 @@
             var confirmYes = document.getElementById("confirm-yes");
             confirmYes.onclick = function () {
                 modal.style.display = "none";
-                // Esegui l'azione di conferma (eliminazione sottoscrizione)
-                // Qui puoi aggiungere codice per inviare il form utilizzando AJAX o il metodo nativo del form.
                 document.querySelector("#my-sub-form").submit();
             };
 

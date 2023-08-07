@@ -1,14 +1,203 @@
-.container-fluid{
+#dashboard-container {
+    background: rgb(198,171,124);
+    background: linear-gradient(0deg, rgba(198,171,124,1) 0%, rgba(206,183,142,1) 2%, rgba(221,205,176,1) 10%, rgba(235,225,207,1) 31%, rgba(255,255,255,1) 100%);
+    #nav-intro {
+        margin-top: 125px;
+    
+        #navbarDashboard {
+            .container {
+                ul.row {
+                    list-style-type: none;
+    
+                    li {
+                        color: grey;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                    }
+    
+                    li.active {
+                        border-bottom: 4px solid #C6AB7C;
+                        padding-bottom: 0.5rem;
+                        color: #000000;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+    
     .container{
+        .dashboard-table {
+            display: none;    
+        }
         .table-responsive{
-            tr{
-                td{
-                    #overlink{
-                        
-                        text-decoration: none;
-                        color: black;
-                        &:hover{
-                            color: rgb(221, 191, 21);
+            .table {
+                --bs-table-bg: transparent;
+                tbody {
+                    background-color: #ffffff;
+                }
+            }
+            
+            .table-hover-dash {
+                tbody {
+                    tr:hover {
+                        background-color: #c6ab7c1c;
+                    }
+                }
+            }
+        }
+
+        // apartment : title - image
+        a.apartment {                                
+            text-decoration: none;
+            
+            .img {
+                img {
+                    width: 120px;
+                    height: 80px;
+                    object-fit: cover;
+                }
+            }
+
+            .title {
+                color: #000000;                        
+
+                .address {
+                    font-size: 0.9rem;
+                    color: grey;
+                }
+            }    
+        }
+        
+        // appartamenti
+        #appartamenti {        
+            .table-responsive{
+                .table {    
+                    thead {
+                        tr {
+                            .prezzoNotte {
+                                width: 17%;
+                            }
+                            .azioni {
+                                width: 10%;
+                            }
+                        }
+                    }
+    
+                    tbody {
+                        tr {    
+                            .azioni {
+                                div {
+                                    form {
+                                        .fa-trash {
+                                            &:hover {
+                                                color: #c72938;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // sponsorizzati
+        #sponsorizzati {        
+            .table-responsive{
+                .table {    
+                    thead {
+                        tr {
+                            .prezzoNotte {
+                                width: 17%;
+                            }
+                            .azioni {
+                                width: 10%;
+                            }
+                        }
+                    }
+    
+                    tbody {
+                        tr {
+                            .azioni {
+                                form {
+                                    .fa-square-xmark {
+                                        &:hover {
+                                            color: #c72938;
+                                        }
+                                    }
+                                }
+                                #my-modal{
+                                    .modal {
+                                        display: none;
+                                        position: fixed;
+                                        z-index: 99999;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        overflow: auto;
+                                        background-color: rgba(0, 0, 0, 0.4);
+                                    }
+                                
+                                    .modal-content {
+                                        background-color: #fff;
+                                        margin: 15% auto;
+                                        padding: 20px;
+                                        border: 1px solid #888;
+                                        width: 80%;
+                                        max-width: 400px;
+                                        border-radius: 5px;
+                                    }
+                                
+                                    .modal-buttons {
+                                        text-align: right;
+                                        margin-top: 10px;
+                                    }
+                                
+                                    .btn {
+                                        padding: 8px 16px;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                    }
+                                
+                                    .btn-danger {
+                                        border: 3px solid #ffffff;
+                                        background-color: #dc3545;
+                                        color: #ffffff;
+        
+                                        &:hover {
+                                            border: 3px solid #ffffff;
+                                            color: #ffffff;
+                                            background-color: #f54052ee;
+                                        }
+        
+                                        &:active {
+                                            border: 3px solid #ffffff !important;
+                                            color: #ffff !important;
+                                            background-color: #f54052ee;
+        
+                                        }
+                                    }
+                                
+                                    .btn-secondary {
+                                        background-color: #C6AB7C;
+                                        color: white;
+                                        border: 3px solid #ffffff;
+                                    
+                                        &:hover {
+                                            border: 3px solid #C6AB7C;
+                                            color: #C6AB7C;
+                                            background-color: #ffffff;
+                                        }
+                                    
+                                        &:active {
+                                            color: #C6AB7C !important;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

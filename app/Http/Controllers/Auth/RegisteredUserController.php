@@ -33,7 +33,9 @@ class RegisteredUserController extends Controller
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'birthday' => 'nullable|before:2006-01-01|after:1923-01-01|date'
+            'birthday' => 'nullable|before:2006-01-01|after:1923-01-01|date',
+            'name' => 'nullable',
+            'surname' => 'nullable'
             
         ],
         [
@@ -46,12 +48,14 @@ class RegisteredUserController extends Controller
             'password.confirmed' => 'Il campo Password deve essere confermato riempendo il campo Conferma Password',
             'birthday.before' => 'Devi avere almeno 16 anni per creare un appartamento',
             'birthday.after' => 'Noi di Boolbnb crediamo che tu non possa essere ancora insieme a noi!!!'
-        ]
-    );
+        ]);
 
         $user = User::create([
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'birthday' => $request->birthday
         ]);
 
         event(new Registered($user));

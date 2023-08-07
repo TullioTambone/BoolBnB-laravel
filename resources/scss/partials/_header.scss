@@ -1,4 +1,4 @@
-.navbar {
+.header {
     height: 5rem;
     width: 100vw;
     margin-top: 0;
@@ -29,9 +29,20 @@
             margin: 15px;
         }
     
-        // .navbar-collapse {
-        //     flex-grow: 0;
-        // }
+        .navbar-collapse {
+            .navbar-nav {
+                & .nav-link {
+                    &.show {
+                        color: #C6AB7C;
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+                    }
+                }
+
+            }
+        }
     
         ul {
             margin: 0;

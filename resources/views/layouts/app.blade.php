@@ -28,7 +28,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
-    @vite(['resources/scss/pages/_nav.scss'])
     @yield('style')
     @yield('script')
 </head>

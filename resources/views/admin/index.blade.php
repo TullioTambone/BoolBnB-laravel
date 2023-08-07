@@ -28,7 +28,7 @@
             </div>
         @else
             <div class="row">
-                <h1 class="text-center text-dark my-5">I Tuoi Appartamenti</h1>
+                <h2 class="text-center text-dark mt-3 mb-5 pb-3 fs-1">I Tuoi Appartamenti</h2>
 
                 @foreach($apartments->reverse() as $elem)
                 

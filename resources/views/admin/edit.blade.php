@@ -123,7 +123,7 @@
                                     @if($apartment->cover)
 
                                         @if(str_contains($apartment->cover, 'apartment_cover_img'))
-                                        <img style="width: 250px; aspect-ration: 1; border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
+                                            <img style="width: 250px; aspect-ration: 1; border-radius: 20px" class="img-fluid" src="{{ asset('storage/'. $apartment->cover) }}" alt="{{ $apartment->title }}">
                                         @else
                                             <img style="width: 250px; aspect-ration: 1; border-radius: 20px" class="img-fluid" src="{{$apartment->cover}}" alt="{{ $apartment->title }}">
                                         @endif
